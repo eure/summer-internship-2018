@@ -1,6 +1,10 @@
-<h1>Githubs#index</h1>
-<p>Find me in app/views/githubs/index.html.erb</p>
+<h1>Githubs#Index</h1>
+<p>Find me in app/views/githubs/developers.html.erb</p>
 
 <% @contents.each do |content| %>
-  <%= link_to "#{content.inner_text}", "https://github.com#{content[:href]}" %> <br>
+  <%= link_to("https://github.com#{content[:href]}") do %>
+    <div class="media text-muted box">
+      <%= content.inner_text %>
+    </div>
+  <% end %>
 <% end %>

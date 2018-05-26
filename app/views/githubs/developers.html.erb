@@ -1,6 +1,11 @@
 <h1>Githubs#Developers</h1>
 <p>Find me in app/views/githubs/index.html.erb</p>
 
-<% @contents.each do |content| %>
-  <%= link_to "#{content.inner_text}", "https://github.com#{content[:href]}" %> <br>
+<% @contents.zip(@images).each do |content, image| %>
+  <%= link_to("https://github.com#{content[:href]}") do %>
+    <div class="media text-muted box">
+      <%= image_tag("#{image[:src]}", size: "50x50") %>
+      <%= content.inner_text %>
+    </div>
+  <% end %>
 <% end %>

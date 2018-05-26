@@ -12,5 +12,6 @@ class GithubsController < ApplicationController
     url = "https://github.com/trending/developers"
     doc = Nokogiri.HTML(open(url))
     @contents = doc.xpath('//h2').css('a')
+    @images = doc.xpath('//img')
   end
 end
