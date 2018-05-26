@@ -1,0 +1,6 @@
+<h1>Githubs#Developers</h1>
+<p>Find me in app/views/githubs/index.html.erb</p>
+
+<% @contents.each do |content| %>
+  <%= link_to "#{content.inner_text}", "https://github.com#{content[:href]}" %> <br>
+<% end %>

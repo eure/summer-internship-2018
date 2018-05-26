@@ -7,4 +7,10 @@ class GithubsController < ApplicationController
     doc = Nokogiri.HTML(open(url))
     @contents = doc.xpath('//h3').css('a')
   end
+
+  def developers
+    url = "https://github.com/trending/developers"
+    doc = Nokogiri.HTML(open(url))
+    @contents = doc.xpath('//h2').css('a')
+  end
 end
