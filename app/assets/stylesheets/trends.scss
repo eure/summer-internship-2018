@@ -1,0 +1,116 @@
+@import "variables";
+/* posts/index ================================ */
+.posts-index-item {
+  padding: 20px 30px;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 2px 6px #c1ced7;
+  .post-left {
+    float: left;
+    width: 20%;
+    img {
+      width: 75px;
+      height: 90px;
+      box-shadow: 0 2px 6px #c1ced7;
+    }
+  }
+  .post-right {
+    position: relative;
+    float: left;
+    width: 80%;
+    height: 90px;
+    padding-left: 25px;
+    text-align: left;
+    .book-name {
+      a {
+        font-weight: 600;
+        transition: 0.3s;
+        &:hover {
+          color: #3ecdc6;
+        }
+      }
+    }
+    .reserved-state {
+        position: absolute;
+        bottom: 0;
+      p {
+        font-size: 14px;
+      }
+      a {
+        color: $main-color;
+      }
+    }
+  }
+}
+/* posts/show ================================ */
+.posts-show {
+  .posts-show-item {
+    padding: 30px;
+    background-color: white;
+    box-shadow: 0 2px 6px #c1ced7;
+    overflow: hidden;
+    img {
+      display: block;
+      box-shadow: 0 2px 6px #c1ced7;
+      vertical-align: middle;
+      margin: 0 auto;
+      object-fit: cover;
+    }
+    p {
+      font-size: 20px;
+      margin: 20px 0;
+    }
+    a {
+      font-size: 20px;
+      color: $main-color;
+    }
+    .book-reserve {
+      text-align: center;
+      position:relative;
+      margin: 0 auto 50px;
+      .reserved-btn {
+        display: inline-block;
+        width: 450px;
+        line-height: 50px;
+        padding: 15px 20px;
+        background-color: #393e46;
+        box-shadow: 0 8px $main-color;
+        border-radius: 3px;
+        border: none;
+        outline: none;
+        letter-spacing: 6px;
+        font-size: 24px;
+        font-weight: 600;
+        color: white;
+        cursor: pointer;
+      }
+      .reserved-active {
+        box-shadow: none;
+        position: relative;
+        top: 8px;
+      }
+      i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -0.2em;
+        margin-left: -6em;
+        color: white;
+        font-size: 30px;
+      }
+    }
+    .post-time {
+      color: #8899a6;
+      margin-bottom: 10px;
+    }
+    .post-menus {
+      float: right;
+      a, input {
+        cursor: pointer;
+        color: $edit-color;
+        text-decoration: underline;
+        font-size: 14px;
+      }
+    }
+  }
+}
