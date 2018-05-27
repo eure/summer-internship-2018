@@ -43,5 +43,17 @@ textarea {
   border: medium solid black;
   padding: 10px;
   margin: 10px;
+  font-size: 20px;
+  label {
+    float: right;
+    padding-right: 30px;
+  }
+  .btn {
+    float: right;
+  }
+}
+
+.article {
+  margin-top: 20px;
 }
 

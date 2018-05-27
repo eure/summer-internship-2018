@@ -6,6 +6,16 @@ class GithubsController < ApplicationController
     url = "https://github.com/trending"
     doc = Nokogiri.HTML(open(url))
     @contents = doc.xpath('//h3').css('a')
+    @stars = doc.xpath('//span[@class="d-inline-block float-sm-right"]')
+  end
+
+  def show
+    @url = "https://github.com" + params[:repo]
+    doc = Nokogiri.HTML(open(@url))
+    @title = params[:title]
+    @detail = doc.xpath('//div[@class="js-repo-meta-container"]').css('span')
+    @tags = doc.xpath('//div[@class="js-repo-meta-container"]').css('a')
+    @article = doc.xpath('//article')[0]
   end
 
   def developers
