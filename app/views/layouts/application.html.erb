@@ -7,8 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <header>
+    <div class="header-logo">
+      <%= link_to("TrendMil", "/") %>
+    </div>
+    <ul class="header-menus">
+      <li><%= link_to("About", "/about") %></li>
+      <li><%= link_to("トレンド一覧", "/trends/index") %></li>
+    </ul>
+  </header>
+  <% if flash[:notice] %>
+    <div class="flash" id="flash">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
 <%= yield %>
-
 </body>
 </html>
