@@ -15,7 +15,12 @@ class CommitListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let activityIndicatorView = createActivityIndicatorView()
+        self.view.addSubview(activityIndicatorView)
+        activityIndicatorView.startAnimating()
+        
         commitManager.fetch(){
+            activityIndicatorView.stopAnimating()
             self.commitTableView.reloadData()
         }
         // delegateやxibの登録
@@ -42,6 +47,17 @@ class CommitListViewController: UIViewController {
         self.commitTableView.delegate = self
         self.commitTableView.dataSource = self
         self.commitTableView.register(UINib(nibName: Strings.commitTableViewCell, bundle: nil), forCellReuseIdentifier: Strings.commitTableViewCellIdentifer)
+    }
+    
+    private func createActivityIndicatorView() -> UIActivityIndicatorView{
+        let activityIndicatorView = UIActivityIndicatorView()
+        activityIndicatorView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        activityIndicatorView.center = self.view.center
+        activityIndicatorView.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        
+        activityIndicatorView.hidesWhenStopped = true
+        
+        return activityIndicatorView
     }
     
 
