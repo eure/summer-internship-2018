@@ -13,7 +13,7 @@ extension CommitDetailsViewController: UITableViewDelegate{
     //urlを押されたらsafariで開く
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let url = commit?.url else {return}
-        if sectionName[indexPath.section] == "URL"{
+        if sectionName[indexPath.section] == Strings.url{
             if UIApplication.shared.canOpenURL(url) {
                 UIApplication.shared.open(url, options: [:], completionHandler: {(isOpenSuccess) in
                     if isOpenSuccess {
