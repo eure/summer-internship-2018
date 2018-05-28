@@ -17,15 +17,15 @@ extension CommitDetailsViewController: UITableViewDataSource{
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
         guard let _commit = commit else {return cell}
         switch sectionName[indexPath.section] {
-        case "Sha":
+        case Strings.sha:
             cell.textLabel?.text = _commit.sha
-        case "AuthorName":
+        case Strings.author:
             cell.textLabel?.text = _commit.name
-        case "Email":
+        case Strings.email:
             cell.textLabel?.text = _commit.email
-        case "Message":
+        case Strings.message:
             cell.textLabel?.text = _commit.message
-        case "URL":
+        case Strings.url:
             cell.textLabel?.text = _commit.url?.absoluteString
         default:
             print("***section overflow")

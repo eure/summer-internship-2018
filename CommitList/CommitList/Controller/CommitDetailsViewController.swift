@@ -11,13 +11,15 @@ import UIKit
 class CommitDetailsViewController: UIViewController {
     @IBOutlet weak var detailsTableView: UITableView!
     var commit: Commit? = nil
-    let sectionName = ["Sha", "AuthorName", "Email", "Message", "URL"]
+    let sectionName = [Strings.sha, Strings.author, Strings.email, Strings.message, Strings.url]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        detailsTableView.dataSource = self
         self.title = Strings.commitDetailsViewTitleText
+        
+        detailsTableView.dataSource = self
+        detailsTableView.delegate = self
         // Do any additional setup after loading the view.
     }
 

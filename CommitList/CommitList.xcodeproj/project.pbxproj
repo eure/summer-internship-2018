@@ -12,6 +12,7 @@
 		1B367FBC20BC3C0F00BDD9FB /* CommitDetailsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B367FBB20BC3C0F00BDD9FB /* CommitDetailsView.storyboard */; };
 		1B367FBE20BC3CDE00BDD9FB /* CommitDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B367FBD20BC3CDE00BDD9FB /* CommitDetailsViewController.swift */; };
 		1B367FC020BC3F7800BDD9FB /* CommitDetailsViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B367FBF20BC3F7800BDD9FB /* CommitDetailsViewController+UITableViewDataSource.swift */; };
+		1B367FC220BC491100BDD9FB /* CommitDetailsViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B367FC120BC491100BDD9FB /* CommitDetailsViewController+UITableViewDelegate.swift */; };
 		1BFF776F20BC0ACA00B22A0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFF776E20BC0ACA00B22A0C /* AppDelegate.swift */; };
 		1BFF777420BC0ACA00B22A0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BFF777220BC0ACA00B22A0C /* Main.storyboard */; };
 		1BFF777620BC0ACE00B22A0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BFF777520BC0ACE00B22A0C /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		1B367FBB20BC3C0F00BDD9FB /* CommitDetailsView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommitDetailsView.storyboard; sourceTree = "<group>"; };
 		1B367FBD20BC3CDE00BDD9FB /* CommitDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitDetailsViewController.swift; sourceTree = "<group>"; };
 		1B367FBF20BC3F7800BDD9FB /* CommitDetailsViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CommitDetailsViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
+		1B367FC120BC491100BDD9FB /* CommitDetailsViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CommitDetailsViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
 		1BFF776B20BC0ACA00B22A0C /* CommitList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommitList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BFF776E20BC0ACA00B22A0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BFF777320BC0ACA00B22A0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				1BFF778B20BC0ED900B22A0C /* CommitTableViewController+UITableViewDelegate.swift */,
 				1B367FBD20BC3CDE00BDD9FB /* CommitDetailsViewController.swift */,
 				1B367FBF20BC3F7800BDD9FB /* CommitDetailsViewController+UITableViewDataSource.swift */,
+				1B367FC120BC491100BDD9FB /* CommitDetailsViewController+UITableViewDelegate.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				1BFF778F20BC0FAB00B22A0C /* Strings.swift in Sources */,
 				1BFF778C20BC0ED900B22A0C /* CommitTableViewController+UITableViewDelegate.swift in Sources */,
 				1B367FBE20BC3CDE00BDD9FB /* CommitDetailsViewController.swift in Sources */,
+				1B367FC220BC491100BDD9FB /* CommitDetailsViewController+UITableViewDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
