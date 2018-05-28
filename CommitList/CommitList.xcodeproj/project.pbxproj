@@ -10,6 +10,8 @@
 		13B9D9D8F5DB3AFEF4152EC5 /* Pods_CommitList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64241025B2A286EDEE2E867A /* Pods_CommitList.framework */; };
 		1B367FBA20BC3AC800BDD9FB /* CommitListView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B367FB920BC3AC800BDD9FB /* CommitListView.storyboard */; };
 		1B367FBC20BC3C0F00BDD9FB /* CommitDetailsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B367FBB20BC3C0F00BDD9FB /* CommitDetailsView.storyboard */; };
+		1B367FBE20BC3CDE00BDD9FB /* CommitDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B367FBD20BC3CDE00BDD9FB /* CommitDetailsViewController.swift */; };
+		1B367FC020BC3F7800BDD9FB /* CommitDetailsViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B367FBF20BC3F7800BDD9FB /* CommitDetailsViewController+UITableViewDataSource.swift */; };
 		1BFF776F20BC0ACA00B22A0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFF776E20BC0ACA00B22A0C /* AppDelegate.swift */; };
 		1BFF777420BC0ACA00B22A0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BFF777220BC0ACA00B22A0C /* Main.storyboard */; };
 		1BFF777620BC0ACE00B22A0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BFF777520BC0ACE00B22A0C /* Assets.xcassets */; };
@@ -28,6 +30,8 @@
 		108E9E87D693661035FD890C /* Pods-CommitList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommitList.release.xcconfig"; path = "Pods/Target Support Files/Pods-CommitList/Pods-CommitList.release.xcconfig"; sourceTree = "<group>"; };
 		1B367FB920BC3AC800BDD9FB /* CommitListView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommitListView.storyboard; sourceTree = "<group>"; };
 		1B367FBB20BC3C0F00BDD9FB /* CommitDetailsView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommitDetailsView.storyboard; sourceTree = "<group>"; };
+		1B367FBD20BC3CDE00BDD9FB /* CommitDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitDetailsViewController.swift; sourceTree = "<group>"; };
+		1B367FBF20BC3F7800BDD9FB /* CommitDetailsViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CommitDetailsViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
 		1BFF776B20BC0ACA00B22A0C /* CommitList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommitList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BFF776E20BC0ACA00B22A0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BFF777320BC0ACA00B22A0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -118,6 +122,8 @@
 				1BFF778720BC0E2A00B22A0C /* CommitListViewController.swift */,
 				1BFF778920BC0EC400B22A0C /* CommitTableViewController+UITableViewDataSource.swift */,
 				1BFF778B20BC0ED900B22A0C /* CommitTableViewController+UITableViewDelegate.swift */,
+				1B367FBD20BC3CDE00BDD9FB /* CommitDetailsViewController.swift */,
+				1B367FBF20BC3F7800BDD9FB /* CommitDetailsViewController+UITableViewDataSource.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -269,9 +275,11 @@
 				1BFF779420BC12F400B22A0C /* CommitManager.swift in Sources */,
 				1BFF779120BC12B200B22A0C /* Commit.swift in Sources */,
 				1BFF776F20BC0ACA00B22A0C /* AppDelegate.swift in Sources */,
+				1B367FC020BC3F7800BDD9FB /* CommitDetailsViewController+UITableViewDataSource.swift in Sources */,
 				1BFF778A20BC0EC400B22A0C /* CommitTableViewController+UITableViewDataSource.swift in Sources */,
 				1BFF778F20BC0FAB00B22A0C /* Strings.swift in Sources */,
 				1BFF778C20BC0ED900B22A0C /* CommitTableViewController+UITableViewDelegate.swift in Sources */,
+				1B367FBE20BC3CDE00BDD9FB /* CommitDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

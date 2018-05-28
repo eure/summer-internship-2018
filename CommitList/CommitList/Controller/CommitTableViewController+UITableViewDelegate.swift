@@ -19,6 +19,9 @@ extension CommitListViewController: UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let storyboard: UIStoryboard = UIStoryboard(name: Strings.commitDetailsView, bundle: nil)
+        guard let nextView = storyboard.instantiateInitialViewController() as? CommitDetailsViewController else {return}
+        nextView.commit = self.commitManager.commits[indexPath.row]
+        self.navigationController?.pushViewController(nextView, animated: true)
     }
 }

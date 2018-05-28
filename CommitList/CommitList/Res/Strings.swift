@@ -8,6 +8,7 @@
 
 import Foundation
 
+//打ち間違い防止のため
 struct Strings{
     static let  commitListViewController = "CommitListViewController"
     static let commitTableViewCell = "CommitTableViewCell"
@@ -23,4 +24,7 @@ struct Strings{
     static let email = "email"
     static let message = "message"
     static let url = "url"
+    static let commitDetailsView = "CommitDetailsView"
+    static let commitListViewTitleText = "eureka-twelve's PushEvents"
+    static let commitDetailsViewTitleText = "details"
 }

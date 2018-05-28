@@ -21,6 +21,8 @@ class CommitListViewController: UIViewController {
         // delegateやxibの登録
         setUpTableView()
         
+        self.title = Strings.commitListViewTitleText
+        
         // Do any additional setup after loading the view.
     }
     
