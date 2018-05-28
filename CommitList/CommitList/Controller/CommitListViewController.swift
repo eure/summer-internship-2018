@@ -15,7 +15,9 @@ class CommitListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        commitManager.fetch()
+        commitManager.fetch(){
+            self.commitTableView.reloadData()
+        }
         // delegateやxibの登録
         setUpTableView()
         

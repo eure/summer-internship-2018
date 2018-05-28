@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		13B9D9D8F5DB3AFEF4152EC5 /* Pods_CommitList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64241025B2A286EDEE2E867A /* Pods_CommitList.framework */; };
+		1B367FBA20BC3AC800BDD9FB /* CommitListView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B367FB920BC3AC800BDD9FB /* CommitListView.storyboard */; };
+		1B367FBC20BC3C0F00BDD9FB /* CommitDetailsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B367FBB20BC3C0F00BDD9FB /* CommitDetailsView.storyboard */; };
 		1BFF776F20BC0ACA00B22A0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFF776E20BC0ACA00B22A0C /* AppDelegate.swift */; };
 		1BFF777420BC0ACA00B22A0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BFF777220BC0ACA00B22A0C /* Main.storyboard */; };
 		1BFF777620BC0ACE00B22A0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BFF777520BC0ACE00B22A0C /* Assets.xcassets */; };
@@ -24,6 +26,8 @@
 
 /* Begin PBXFileReference section */
 		108E9E87D693661035FD890C /* Pods-CommitList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommitList.release.xcconfig"; path = "Pods/Target Support Files/Pods-CommitList/Pods-CommitList.release.xcconfig"; sourceTree = "<group>"; };
+		1B367FB920BC3AC800BDD9FB /* CommitListView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommitListView.storyboard; sourceTree = "<group>"; };
+		1B367FBB20BC3C0F00BDD9FB /* CommitDetailsView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommitDetailsView.storyboard; sourceTree = "<group>"; };
 		1BFF776B20BC0ACA00B22A0C /* CommitList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommitList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BFF776E20BC0ACA00B22A0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BFF777320BC0ACA00B22A0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 				1BFF777220BC0ACA00B22A0C /* Main.storyboard */,
 				1BFF778320BC0D9B00B22A0C /* CommitTableViewCell.swift */,
 				1BFF778420BC0D9B00B22A0C /* CommitTableViewCell.xib */,
+				1B367FB920BC3AC800BDD9FB /* CommitListView.storyboard */,
+				1B367FBB20BC3C0F00BDD9FB /* CommitDetailsView.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -204,7 +210,9 @@
 				1BFF778620BC0D9B00B22A0C /* CommitTableViewCell.xib in Resources */,
 				1BFF777920BC0ACE00B22A0C /* LaunchScreen.storyboard in Resources */,
 				1BFF777620BC0ACE00B22A0C /* Assets.xcassets in Resources */,
+				1B367FBC20BC3C0F00BDD9FB /* CommitDetailsView.storyboard in Resources */,
 				1BFF777420BC0ACA00B22A0C /* Main.storyboard in Resources */,
+				1B367FBA20BC3AC800BDD9FB /* CommitListView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

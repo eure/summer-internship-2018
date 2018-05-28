@@ -10,11 +10,14 @@ import UIKit
 
 extension CommitListViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return commitManager.commits.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Strings.commitTableViewCellIdentifer, for: indexPath) as! CommitTableViewCell
+        let commit = commitManager.commits[indexPath.row]
+        cell.nameLabel?.text = commit.name
+        cell.messageLabel?.text = commit.message
         return cell
     }
     

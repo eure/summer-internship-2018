@@ -19,7 +19,7 @@ class CommitManager: NSObject{
         self.commits.append(commit)
     }
     
-    func fetch(){
+    func fetch(completion: (() -> Void)?){
         self.commits = []
         
         //githubにリクエスト
@@ -37,6 +37,9 @@ class CommitManager: NSObject{
                 }
             }
             
+            if let _completion = completion{
+                _completion()
+            }
         }
     }
     
