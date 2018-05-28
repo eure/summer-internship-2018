@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13B9D9D8F5DB3AFEF4152EC5 /* Pods_CommitList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64241025B2A286EDEE2E867A /* Pods_CommitList.framework */; };
 		1BFF776F20BC0ACA00B22A0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFF776E20BC0ACA00B22A0C /* AppDelegate.swift */; };
 		1BFF777120BC0ACA00B22A0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFF777020BC0ACA00B22A0C /* ViewController.swift */; };
 		1BFF777420BC0ACA00B22A0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BFF777220BC0ACA00B22A0C /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		108E9E87D693661035FD890C /* Pods-CommitList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommitList.release.xcconfig"; path = "Pods/Target Support Files/Pods-CommitList/Pods-CommitList.release.xcconfig"; sourceTree = "<group>"; };
 		1BFF776B20BC0ACA00B22A0C /* CommitList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommitList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BFF776E20BC0ACA00B22A0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BFF777020BC0ACA00B22A0C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +24,8 @@
 		1BFF777520BC0ACE00B22A0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1BFF777820BC0ACE00B22A0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1BFF777A20BC0ACE00B22A0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64241025B2A286EDEE2E867A /* Pods_CommitList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CommitList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC1A50E46D89A7256590A6F5 /* Pods-CommitList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommitList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CommitList/Pods-CommitList.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13B9D9D8F5DB3AFEF4152EC5 /* Pods_CommitList.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				1BFF776D20BC0ACA00B22A0C /* CommitList */,
 				1BFF776C20BC0ACA00B22A0C /* Products */,
+				7AB34E135A4FB727DA656023 /* Pods */,
+				25BC82775EBA073A46CDD25D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = CommitList;
 			sourceTree = "<group>";
 		};
+		25BC82775EBA073A46CDD25D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				64241025B2A286EDEE2E867A /* Pods_CommitList.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7AB34E135A4FB727DA656023 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EC1A50E46D89A7256590A6F5 /* Pods-CommitList.debug.xcconfig */,
+				108E9E87D693661035FD890C /* Pods-CommitList.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1BFF777D20BC0ACE00B22A0C /* Build configuration list for PBXNativeTarget "CommitList" */;
 			buildPhases = (
+				767340F53535B454965F86B3 /* [CP] Check Pods Manifest.lock */,
 				1BFF776720BC0ACA00B22A0C /* Sources */,
 				1BFF776820BC0ACA00B22A0C /* Frameworks */,
 				1BFF776920BC0ACA00B22A0C /* Resources */,
+				A1722AE0270DD1CC944DC380 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,47 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		767340F53535B454965F86B3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CommitList-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1722AE0270DD1CC944DC380 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CommitList/Pods-CommitList-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CommitList/Pods-CommitList-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1BFF776720BC0ACA00B22A0C /* Sources */ = {
@@ -278,14 +345,12 @@
 		};
 		1BFF777E20BC0ACE00B22A0C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC1A50E46D89A7256590A6F5 /* Pods-CommitList.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CommitList/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kawaguchiKohei.CommitList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -295,14 +360,12 @@
 		};
 		1BFF777F20BC0ACE00B22A0C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 108E9E87D693661035FD890C /* Pods-CommitList.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CommitList/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kawaguchiKohei.CommitList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
