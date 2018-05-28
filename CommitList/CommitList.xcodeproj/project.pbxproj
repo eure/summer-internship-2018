@@ -9,21 +9,35 @@
 /* Begin PBXBuildFile section */
 		13B9D9D8F5DB3AFEF4152EC5 /* Pods_CommitList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64241025B2A286EDEE2E867A /* Pods_CommitList.framework */; };
 		1BFF776F20BC0ACA00B22A0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFF776E20BC0ACA00B22A0C /* AppDelegate.swift */; };
-		1BFF777120BC0ACA00B22A0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFF777020BC0ACA00B22A0C /* ViewController.swift */; };
 		1BFF777420BC0ACA00B22A0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BFF777220BC0ACA00B22A0C /* Main.storyboard */; };
 		1BFF777620BC0ACE00B22A0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BFF777520BC0ACE00B22A0C /* Assets.xcassets */; };
 		1BFF777920BC0ACE00B22A0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BFF777720BC0ACE00B22A0C /* LaunchScreen.storyboard */; };
+		1BFF778520BC0D9B00B22A0C /* CommitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFF778320BC0D9B00B22A0C /* CommitTableViewCell.swift */; };
+		1BFF778620BC0D9B00B22A0C /* CommitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BFF778420BC0D9B00B22A0C /* CommitTableViewCell.xib */; };
+		1BFF778820BC0E2A00B22A0C /* CommitListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFF778720BC0E2A00B22A0C /* CommitListViewController.swift */; };
+		1BFF778A20BC0EC400B22A0C /* CommitTableViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFF778920BC0EC400B22A0C /* CommitTableViewController+UITableViewDataSource.swift */; };
+		1BFF778C20BC0ED900B22A0C /* CommitTableViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFF778B20BC0ED900B22A0C /* CommitTableViewController+UITableViewDelegate.swift */; };
+		1BFF778F20BC0FAB00B22A0C /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFF778E20BC0FAB00B22A0C /* Strings.swift */; };
+		1BFF779120BC12B200B22A0C /* Commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFF779020BC12B200B22A0C /* Commit.swift */; };
+		1BFF779420BC12F400B22A0C /* CommitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFF779320BC12F400B22A0C /* CommitManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		108E9E87D693661035FD890C /* Pods-CommitList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommitList.release.xcconfig"; path = "Pods/Target Support Files/Pods-CommitList/Pods-CommitList.release.xcconfig"; sourceTree = "<group>"; };
 		1BFF776B20BC0ACA00B22A0C /* CommitList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommitList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BFF776E20BC0ACA00B22A0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1BFF777020BC0ACA00B22A0C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1BFF777320BC0ACA00B22A0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1BFF777520BC0ACE00B22A0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1BFF777820BC0ACE00B22A0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1BFF777A20BC0ACE00B22A0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BFF778320BC0D9B00B22A0C /* CommitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitTableViewCell.swift; sourceTree = "<group>"; };
+		1BFF778420BC0D9B00B22A0C /* CommitTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommitTableViewCell.xib; sourceTree = "<group>"; };
+		1BFF778720BC0E2A00B22A0C /* CommitListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitListViewController.swift; sourceTree = "<group>"; };
+		1BFF778920BC0EC400B22A0C /* CommitTableViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CommitTableViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
+		1BFF778B20BC0ED900B22A0C /* CommitTableViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CommitTableViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
+		1BFF778E20BC0FAB00B22A0C /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		1BFF779020BC12B200B22A0C /* Commit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commit.swift; sourceTree = "<group>"; };
+		1BFF779320BC12F400B22A0C /* CommitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitManager.swift; sourceTree = "<group>"; };
 		64241025B2A286EDEE2E867A /* Pods_CommitList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CommitList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC1A50E46D89A7256590A6F5 /* Pods-CommitList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommitList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CommitList/Pods-CommitList.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,14 +75,53 @@
 		1BFF776D20BC0ACA00B22A0C /* CommitList */ = {
 			isa = PBXGroup;
 			children = (
+				1BFF778D20BC0F8C00B22A0C /* Res */,
+				1BFF778220BC0D5F00B22A0C /* Controller */,
+				1BFF778120BC0D5800B22A0C /* View */,
+				1BFF778020BC0D4F00B22A0C /* Model */,
 				1BFF776E20BC0ACA00B22A0C /* AppDelegate.swift */,
-				1BFF777020BC0ACA00B22A0C /* ViewController.swift */,
-				1BFF777220BC0ACA00B22A0C /* Main.storyboard */,
 				1BFF777520BC0ACE00B22A0C /* Assets.xcassets */,
 				1BFF777720BC0ACE00B22A0C /* LaunchScreen.storyboard */,
 				1BFF777A20BC0ACE00B22A0C /* Info.plist */,
 			);
 			path = CommitList;
+			sourceTree = "<group>";
+		};
+		1BFF778020BC0D4F00B22A0C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1BFF779020BC12B200B22A0C /* Commit.swift */,
+				1BFF779320BC12F400B22A0C /* CommitManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1BFF778120BC0D5800B22A0C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1BFF777220BC0ACA00B22A0C /* Main.storyboard */,
+				1BFF778320BC0D9B00B22A0C /* CommitTableViewCell.swift */,
+				1BFF778420BC0D9B00B22A0C /* CommitTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1BFF778220BC0D5F00B22A0C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1BFF778720BC0E2A00B22A0C /* CommitListViewController.swift */,
+				1BFF778920BC0EC400B22A0C /* CommitTableViewController+UITableViewDataSource.swift */,
+				1BFF778B20BC0ED900B22A0C /* CommitTableViewController+UITableViewDelegate.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1BFF778D20BC0F8C00B22A0C /* Res */ = {
+			isa = PBXGroup;
+			children = (
+				1BFF778E20BC0FAB00B22A0C /* Strings.swift */,
+			);
+			path = Res;
 			sourceTree = "<group>";
 		};
 		25BC82775EBA073A46CDD25D /* Frameworks */ = {
@@ -148,6 +201,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BFF778620BC0D9B00B22A0C /* CommitTableViewCell.xib in Resources */,
 				1BFF777920BC0ACE00B22A0C /* LaunchScreen.storyboard in Resources */,
 				1BFF777620BC0ACE00B22A0C /* Assets.xcassets in Resources */,
 				1BFF777420BC0ACA00B22A0C /* Main.storyboard in Resources */,
@@ -202,8 +256,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BFF777120BC0ACA00B22A0C /* ViewController.swift in Sources */,
+				1BFF778820BC0E2A00B22A0C /* CommitListViewController.swift in Sources */,
+				1BFF778520BC0D9B00B22A0C /* CommitTableViewCell.swift in Sources */,
+				1BFF779420BC12F400B22A0C /* CommitManager.swift in Sources */,
+				1BFF779120BC12B200B22A0C /* Commit.swift in Sources */,
 				1BFF776F20BC0ACA00B22A0C /* AppDelegate.swift in Sources */,
+				1BFF778A20BC0EC400B22A0C /* CommitTableViewController+UITableViewDataSource.swift in Sources */,
+				1BFF778F20BC0FAB00B22A0C /* Strings.swift in Sources */,
+				1BFF778C20BC0ED900B22A0C /* CommitTableViewController+UITableViewDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,8 +409,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W9NRS56RXP;
 				INFOPLIST_FILE = CommitList/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = kawaguchiKohei.CommitList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -364,8 +428,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W9NRS56RXP;
 				INFOPLIST_FILE = CommitList/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = kawaguchiKohei.CommitList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
