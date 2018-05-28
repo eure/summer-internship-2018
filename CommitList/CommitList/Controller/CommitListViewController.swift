@@ -10,10 +10,12 @@ import UIKit
 
 class CommitListViewController: UIViewController {
     @IBOutlet weak var commitTableView: UITableView!
+    let commitManager = CommitManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        commitManager.fetch()
         // delegateやxibの登録
         setUpTableView()
         
@@ -35,7 +37,7 @@ class CommitListViewController: UIViewController {
     private func setUpTableView(){
         self.commitTableView.delegate = self
         self.commitTableView.dataSource = self
-        self.commitTableView.register(UINib(nibName: Strings.commitListViewController, bundle: nil), forCellReuseIdentifier: Strings.commitCellIdentifer)
+        self.commitTableView.register(UINib(nibName: Strings.commitTableViewCell, bundle: nil), forCellReuseIdentifier: Strings.commitTableViewCellIdentifer)
     }
     
 

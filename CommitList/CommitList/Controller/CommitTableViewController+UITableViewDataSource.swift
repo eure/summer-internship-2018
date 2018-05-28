@@ -14,7 +14,7 @@ extension CommitListViewController: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Strings.commitTableViewCell, for: indexPath) as! CommitTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Strings.commitTableViewCellIdentifer, for: indexPath) as! CommitTableViewCell
         return cell
     }
     
