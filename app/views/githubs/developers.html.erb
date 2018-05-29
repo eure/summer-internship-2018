@@ -1,5 +1,7 @@
-<h1>Githubs#Developers</h1>
-<p>Find me in app/views/githubs/index.html.erb</p>
+<h1>
+  <%= image_tag 'Octocat.png', size:"128x128" %>
+  Githubs#Trend#Developers
+</h1>
 
 <% @contents.zip(@images).each do |content, image| %>
   <%= link_to("https://github.com#{content[:href]}") do %>
