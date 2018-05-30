@@ -1,6 +1,22 @@
-<div class="main posts-index">
+<div class="main trends-index">
   <div class="container">
     <div class="trends-items">
+      <% @trends.each do |trend| %>
+        <div class="trends-index-item">
+          <div class="trend-right">
+            <div class="repositorie">
+              <%= link_to(trend['title'], "/trends/index") %>
+            </div>
+            <div class="info">
+              <% if trend['language'].present? %>
+                <div class="language"><%= trend['language'] %></div>
+              <% end %>
+              <div class="star"><%= "star:" + trend['star'] %></div>
+              <div class="fork"><%= "fork:" + trend['fork'] %></div>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

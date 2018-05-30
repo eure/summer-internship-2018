@@ -1,11 +1,11 @@
 @import "variables";
 /* posts/index ================================ */
-.posts-index-item {
+.trends-index-item {
   padding: 20px 30px;
   background-color: white;
   overflow: hidden;
   box-shadow: 0 2px 6px #c1ced7;
-  .post-left {
+  .trend-left {
     float: left;
     width: 20%;
     img {
@@ -14,14 +14,14 @@
       box-shadow: 0 2px 6px #c1ced7;
     }
   }
-  .post-right {
+  .trend-right {
     position: relative;
     float: left;
     width: 80%;
     height: 90px;
     padding-left: 25px;
     text-align: left;
-    .book-name {
+    .repositorie {
       a {
         font-weight: 600;
         transition: 0.3s;
@@ -30,14 +30,15 @@
         }
       }
     }
-    .reserved-state {
-        position: absolute;
-        bottom: 0;
-      p {
+    .info {
+      position: absolute;
+      bottom: 0;
+      .language, .star, .fork {
+        display: inline-block;
+        margin-right: 20px;
         font-size: 14px;
-      }
-      a {
-        color: $main-color;
+        color: $edit-color;
+        cursor: default;
       }
     }
   }
