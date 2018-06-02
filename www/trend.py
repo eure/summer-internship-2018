@@ -7,7 +7,6 @@ import urllib.parse
 app = Flask(__name__)
 
 #jsonパース
-#url= 'https://trendings.herokuapp.com/repo?&since=daily'
 def get_trend(url):
     global content
     response = urllib.request.urlopen(url)
