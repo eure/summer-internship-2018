@@ -34,23 +34,11 @@ def get_readme(url):
 def index():
     return render_template('index.html')
 
-@app.route('/daily')
-def daily_trend():
-    url = 'https://trendings.herokuapp.com/repo?&since=daily'
+@app.route('/<find_type>')
+def daily_trend(find_type):
+    url = 'https://trendings.herokuapp.com/repo?&since=%s' % (find_type)
     get_trend(url)
-    return render_template('daily.html',table_content = zip(get_data("repo"),get_data("added_stars")))
-
-@app.route('/weekly')
-def weekly_trend():
-    url = 'https://trendings.herokuapp.com/repo?&since=weekly'
-    get_trend(url)
-    return render_template('weekly.html',table_content = zip(get_data("repo"),get_data("added_stars")))
-
-@app.route('/monthly')
-def monthly_trend():
-    url = 'https://trendings.herokuapp.com/repo?&since=monthly'
-    get_trend(url)
-    return render_template('monthly.html',table_content = zip(get_data("repo"),get_data("added_stars")))
+    return render_template('%s.html' % (find_type),table_content = zip(get_data("repo"),get_data("added_stars")))
 
 @app.route('/trend/<int:post_id>')
 def show_post(post_id):
