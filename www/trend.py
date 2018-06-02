@@ -31,7 +31,7 @@ def get_readme(url):
 @app.route('/')
 def trend():
 
-    return render_template('index.html',table_content = get_data("repo"))
+    return render_template('index.html',table_content = zip(get_data("repo"),get_data("added_stars")))
 
 @app.route('/trend/<int:post_id>')
 def show_post(post_id):

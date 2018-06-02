@@ -86,13 +86,15 @@
       <tr>
         <th id="rank-hed">Rank</th>
         <th>Repository</th>
+        <th>Today's Stars</th>
       </tr>
     </thead>
     <tbody>
-      {% for repo in table_content %}
+      {% for repo,today_stars in table_content %}
       <tr>
         <td id="rank" style="width: 20px;">{{loop.index}}</td>
         <td style="width: 50px;"><a href="./trend/{{loop.index}}">{{repo}}</a></td>
+        <td style="width: 40px;">{{today_stars}}</td>
       </tr>
       {% endfor %}
     </tbody>
