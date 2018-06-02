@@ -71,7 +71,9 @@
       </div>
       <div class="navbar-collapse collapse" id="navbar-main">
         <ul class="nav navbar-nav">
-          <li><a href="//github.com">Github</a></li>
+          <li><a href="/daily">Daily Trend</a></li>
+          <li><a href="/weekly">Weekly Trend</a></li>
+          <li><a href="/monthly">Monthly Trend</a></li>
         </ul>
       </div>
     </div>
@@ -79,26 +81,8 @@
 </header>
 
 <div class="container">
-  <h2>Today's Trend</h2>
-  <p>See what the GitHub community is most excited about today.</p>
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th id="rank-hed">Rank</th>
-        <th>Repository</th>
-        <th>Today's Stars</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for repo,today_stars in table_content %}
-      <tr>
-        <td id="rank" style="width: 20px;">{{loop.index}}</td>
-        <td style="width: 50px;"><a href="./trend/{{loop.index}}">{{repo}}</a></td>
-        <td style="width: 40px;">{{today_stars}}</td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+  <h2>Summer Internship 2018</h2>
+  <p>This page is created for eureka summer internship2018.</p>
 
 </div>
 

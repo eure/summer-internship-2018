@@ -30,6 +30,10 @@ def get_readme(url):
     panel_content = f.read().decode('utf-8')
     return panel_content
 
+@app.route('/')
+def index():
+    return render_template('index.html')
+
 @app.route('/daily')
 def daily_trend():
     url = 'https://trendings.herokuapp.com/repo?&since=daily'
@@ -52,7 +56,6 @@ def monthly_trend():
 def show_post(post_id):
     #README.mdのURL生成
     url = 'https://raw.githubusercontent.com/%s/master/README.md' % (get_data("repo")[post_id-1])
-
     return render_template('repo_detail.html',name = get_data("repo")[post_id-1],desc = get_data("desc")[post_id-1],panel_content = get_readme(url),repolink = get_data("repo_link")[post_id-1],forks = get_data("forks")[post_id-1],stars = get_data("stars")[post_id-1],lang=get_data("lang")[post_id-1])
 
 
