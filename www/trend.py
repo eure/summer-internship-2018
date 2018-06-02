@@ -6,7 +6,7 @@ import urllib.parse
 
 app = Flask(__name__)
 
-#jsonパース
+#トレンドAPIのパース
 def get_trend(url):
     global content
     response = urllib.request.urlopen(url)
@@ -30,19 +30,22 @@ def get_readme(url):
     panel_content = f.read().decode('utf-8')
     return panel_content
 
+#TOPページ表示
 @app.route('/')
 def index():
     return render_template('index.html')
 
+#daily,weekly,monthlyランキングの表示
 @app.route('/<find_type>')
 def daily_trend(find_type):
     url = 'https://trendings.herokuapp.com/repo?&since=%s' % (find_type)
     get_trend(url)
     return render_template('%s.html' % (find_type),table_content = zip(get_data("repo"),get_data("added_stars")))
 
+#リポジトリの詳細表示
 @app.route('/trend/<int:post_id>')
 def show_post(post_id):
-    #README.mdのURL生成
+    #埋め込み用のREADMEの取得
     url = 'https://raw.githubusercontent.com/%s/master/README.md' % (get_data("repo")[post_id-1])
     return render_template('repo_detail.html',name = get_data("repo")[post_id-1],desc = get_data("desc")[post_id-1],panel_content = get_readme(url),repolink = get_data("repo_link")[post_id-1],forks = get_data("forks")[post_id-1],stars = get_data("stars")[post_id-1],lang=get_data("lang")[post_id-1])
 
