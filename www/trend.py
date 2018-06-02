@@ -7,9 +7,12 @@ import urllib.parse
 app = Flask(__name__)
 
 #jsonパース
-url= 'https://trendings.herokuapp.com/repo?&since=daily'
-response = urllib.request.urlopen(url)
-content = json.loads(response.read().decode('utf8'))
+#url= 'https://trendings.herokuapp.com/repo?&since=daily'
+def get_trend(url):
+    global content
+    response = urllib.request.urlopen(url)
+    content = json.loads(response.read().decode('utf8'))
+    return content
 
 #リポジトリ情報取得
 def get_data(data_type):
@@ -28,10 +31,23 @@ def get_readme(url):
     panel_content = f.read().decode('utf-8')
     return panel_content
 
-@app.route('/')
-def trend():
+@app.route('/daily')
+def daily_trend():
+    url = 'https://trendings.herokuapp.com/repo?&since=daily'
+    get_trend(url)
+    return render_template('daily.html',table_content = zip(get_data("repo"),get_data("added_stars")))
 
-    return render_template('index.html',table_content = zip(get_data("repo"),get_data("added_stars")))
+@app.route('/weekly')
+def weekly_trend():
+    url = 'https://trendings.herokuapp.com/repo?&since=weekly'
+    get_trend(url)
+    return render_template('weekly.html',table_content = zip(get_data("repo"),get_data("added_stars")))
+
+@app.route('/monthly')
+def monthly_trend():
+    url = 'https://trendings.herokuapp.com/repo?&since=monthly'
+    get_trend(url)
+    return render_template('monthly.html',table_content = zip(get_data("repo"),get_data("added_stars")))
 
 @app.route('/trend/<int:post_id>')
 def show_post(post_id):
