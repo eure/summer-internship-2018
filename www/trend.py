@@ -11,9 +11,6 @@ url= 'https://trendings.herokuapp.com/repo?&since=daily'
 response = urllib.request.urlopen(url)
 content = json.loads(response.read().decode('utf8'))
 
-#ランキング用List
-rank = range(1,26)
-
 #リポジトリ情報取得
 def get_data(data_type):
     data_list = []
@@ -33,16 +30,15 @@ def get_readme(url):
 
 @app.route('/')
 def trend():
-    return render_template('index.html',table_content = zip(rank,get_data("repo")))
+
+    return render_template('index.html',table_content = get_data("repo"))
 
 @app.route('/trend/<int:post_id>')
 def show_post(post_id):
-    #README.mdの取得
+    #README.mdのURL生成
     url = 'https://raw.githubusercontent.com/%s/master/README.md' % (get_data("repo")[post_id-1])
 
-    return render_template('repo_detail.html',name = get_data("repo")[post_id-1],desc = get_data("desc")[post_id-1],panel_content = get_readme(url),repolink = get_data("repo_link")[post_id-1])
-
-
+    return render_template('repo_detail.html',name = get_data("repo")[post_id-1],desc = get_data("desc")[post_id-1],panel_content = get_readme(url),repolink = get_data("repo_link")[post_id-1],forks = get_data("forks")[post_id-1],stars = get_data("stars")[post_id-1],lang=get_data("lang")[post_id-1])
 
 
 if __name__ == '__main__':

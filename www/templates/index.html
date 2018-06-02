@@ -89,10 +89,10 @@
       </tr>
     </thead>
     <tbody>
-      {% for rank,repo in table_content %}
+      {% for repo in table_content %}
       <tr>
-        <td id="rank" style="width: 20px;">{{rank}}</td>
-        <td style="width: 50px;"><a href="./trend/{{rank}}">{{repo}}</a></td>
+        <td id="rank" style="width: 20px;">{{loop.index}}</td>
+        <td style="width: 50px;"><a href="./trend/{{loop.index}}">{{repo}}</a></td>
       </tr>
       {% endfor %}
     </tbody>
