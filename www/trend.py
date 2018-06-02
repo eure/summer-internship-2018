@@ -6,19 +6,30 @@ import urllib.parse
 
 app = Flask(__name__)
 
-rank = range(1,26)
-
 #jsonパース
 url= 'https://trendings.herokuapp.com/repo?&since=daily'
 response = urllib.request.urlopen(url)
 content = json.loads(response.read().decode('utf8'))
 
-#情報取得用関数
+#ランキング用List
+rank = range(1,26)
+
+#リポジトリ情報取得
 def get_data(data_type):
     data_list = []
     for contents in content["items"]:
         data_list.append(contents[data_type])
     return data_list
+
+#README取得
+def get_readme(url):
+    response = urllib.request.urlopen(url)
+    data = response.read()
+    request = urllib.request.Request('https://api.github.com/markdown/raw')
+    request.add_header('Content-Type','text/plain')
+    f = urllib.request.urlopen(request,data)
+    panel_content = f.read().decode('utf-8')
+    return panel_content
 
 @app.route('/')
 def trend():
@@ -27,15 +38,9 @@ def trend():
 @app.route('/trend/<int:post_id>')
 def show_post(post_id):
     #README.mdの取得
-    url = 'https://raw.githubusercontent.com/%s/master/README.md' % (get_data("repo")[post_id])
-    response = urllib.request.urlopen(url)
-    data = response.read()
-    request = urllib.request.Request('https://api.github.com/markdown/raw')
-    request.add_header('Content-Type','text/plain')
-    f = urllib.request.urlopen(request,data)
-    panel_content = f.read().decode('utf-8')
+    url = 'https://raw.githubusercontent.com/%s/master/README.md' % (get_data("repo")[post_id-1])
 
-    return render_template('repo_detail.html',name = get_data("repo")[post_id],desc = get_data("desc")[post_id],panel_content = panel_content,repolink = get_data("repo_link")[post_id])
+    return render_template('repo_detail.html',name = get_data("repo")[post_id-1],desc = get_data("desc")[post_id-1],panel_content = get_readme(url),repolink = get_data("repo_link")[post_id-1])
 
 
 
