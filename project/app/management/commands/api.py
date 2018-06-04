@@ -11,9 +11,10 @@ def get_trend():
     soup = BeautifulSoup(r.text, 'lxml')
 
     repo_list = soup.select('.repo-list h3 a')
-    for e in repo_list:
-        yield e.get("href")
+    desc_list = soup.select('div.py-1')
+    for repo,desc in zip(repo_list,desc_list):
+        yield repo.get("href"), desc.get_text().strip()
 
 if __name__ == '__main__':
-    for repo in get_trend():
-        print(repo)
+    for repo,desc in get_trend():
+        print(repo,desc)

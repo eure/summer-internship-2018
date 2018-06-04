@@ -6,5 +6,5 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         TrendRepo.objects.all().delete()
-        for repo in get_trend():
-            TrendRepo.objects.create(repo=repo)
+        for repo,desc in get_trend():
+            TrendRepo.objects.create(repo=repo,desc=desc)
