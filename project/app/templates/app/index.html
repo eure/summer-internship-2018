@@ -1,0 +1,4 @@
+<p>Trend</p>
+{% for trend in trend_list %}
+    <a href="https://github.com/{{ trend.repo }}">{{ trend.repo }}</a><br>
+{% endfor %}
