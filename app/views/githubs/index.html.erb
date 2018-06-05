@@ -1,0 +1,17 @@
+<h1>
+  <%= image_tag 'Octocat.png', size:"128x128" %>
+  Githubs#Trend#Repository
+</h1>
+
+
+
+<% @contents.zip(@stars).each do |content, star| %>
+
+  <div class="media text-muted box">
+    <%= link_to "#{content.inner_text}", "https://github.com#{content[:href]}" %>
+    <%= link_to(githubs_show_path(repo: "#{content[:href]}", title: "#{content.inner_text}")) do %>
+      <button type="button" class="btn btn-success">詳細</button>
+    <% end %>
+    <label><%= star.inner_text %></label>
+  </div>
+<% end %>

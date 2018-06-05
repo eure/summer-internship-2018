@@ -1,0 +1,38 @@
+
+<div class="">
+  <h1>
+    <%= image_tag 'Octocat.png', size:"128x128" %>
+    <%= @title %>
+  </h1>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      Description
+    </div>
+    <div class="panel-body">
+      <%= @detail.inner_text %>
+    </div>
+  </div>
+
+  <%= link_to("#{@url}")  do%>
+    <button type="button" class="btn btn-primary">リポジトリへ</button>
+  <% end %>
+  <br><br>
+
+  <h2>Tags:
+  <% @tags.each do |tag| %>
+    <button type="button" class="btn btn-info">
+      <%= tag.inner_text %>
+    </button>
+  <% end %>
+  </h2>
+  <br>
+  <div class="panel panel-default article">
+    <div class="panel-heading">
+      README
+    </div>
+    <div class="panel-body">
+      <%= @article.inner_text %>
+    </div>
+  </div>
+</div>

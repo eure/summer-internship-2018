@@ -1,0 +1,13 @@
+<h1>
+  <%= image_tag 'Octocat.png', size:"128x128" %>
+  Githubs#Trend#Developers
+</h1>
+
+<% @contents.zip(@images).each do |content, image| %>
+  <%= link_to("https://github.com#{content[:href]}") do %>
+    <div class="media text-muted box">
+      <%= image_tag("#{image[:src]}", size: "50x50") %>
+      <%= content.inner_text %>
+    </div>
+  <% end %>
+<% end %>
