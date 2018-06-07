@@ -1,0 +1,44 @@
+body{
+  font-family: Open Sans,"Noto Sans Japanese", sans-serif;
+}
+
+.header{
+  text-align: center;
+  margin: 30px;
+}
+
+.header h1{
+  font-size: 80px;
+  margin-bottom: 10px;
+}
+
+.header h2{
+  font-size: 40px;
+  font-weight: 300;
+  margin-top: 0;
+}
+
+.post{
+  width: 850px;
+  margin: 50px auto;
+  font-weight: 200;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+a:hover{
+  color: #dbdbdb;
+}
+
+.title{
+  font-size: 30px;
+}
+
+footer{
+  text-align: center;
+  color: #c6c4c4;
+  margin: 20px;
+}
