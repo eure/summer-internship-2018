@@ -1,0 +1,24 @@
+<html>
+<head>
+  <title>eureka intern</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" />
+  <link rel="stylesheet"
+  href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700">
+
+</head>
+<body>
+  <div class="header">
+    <h1>RECO</h1>
+    <h2>recently posts<h2>
+  </div>
+  <% @posts.each do |post| %>
+    <div class="post">
+      <a class = "title" href = <%= post[:link] %>><%= post[:title] %></a>
+      <p class="description"><%= post[:description] %></p>
+      <p class="date"><%= post[:date] %></p>
+    </div>
+  <% end %>
+  <footer>©2018 eureka-summer-internship</footer>
+  </body>
+</html>
