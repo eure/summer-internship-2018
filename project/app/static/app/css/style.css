@@ -1,0 +1,38 @@
+body{
+  font-family: "proxima-nova","Hiragino Kaku Gothic Pro","Meiryo","sans-serif" !important;
+}
+header a{
+  color: #3D3F41;
+}
+.container{
+  margin: 0 98px !important;
+  padding: 0 !important;
+}
+.navbar.navbar-expand-lg.bg-white.fixed-top{
+  height: 60px;
+  padding: 20px 98px;
+  margin: 0px;
+}
+.nav-item.active:hover .nav-link {
+    color: #A8BC3F;
+}
+a.navbar-brand:hover{
+  color: #3D3F41;
+}
+.jumbotron.jumbotron-fluid{
+  background-color: white;
+}
+.jumbotron.jumbotron-fluid h1{
+  font-size: 76px;
+  font-weight: 700;
+  color: #3D3F41;
+}
+.trend-repo{
+  width: 80%;
+  margin: 10px auto;
+  padding: 5px 10px;
+  border: 1px solid #000;
+}
+.trend-list a{
+  font-size: 23px;
+}

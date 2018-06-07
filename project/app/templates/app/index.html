@@ -1,4 +1,11 @@
-<p>Trend</p>
+{% extends "app/base.html" %}
+{% block content %}
+    <h2>Github Trend</h2>
+<div class="trend-list">
 {% for trend in trend_list %}
-    <a href="{% url 'app:detail' trend.pk %}">{{ trend.repo }}</a><br>
+    <div class="trend-repo rounded">
+    <a href="{% url 'app:detail' trend.pk %}">{{ trend.repo }}</a>
+    </div>
 {% endfor %}
+</div>
+{% endblock %}
