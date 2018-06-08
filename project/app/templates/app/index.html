@@ -1,11 +1,18 @@
 {% extends "app/base.html" %}
+{% block extra_header %}
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1>To create a world<br>where everyone can maximize their<br>life's potential.</h1>
+    </div>
+</div>
+{% endblock %}
+
 {% block content %}
     <h2>Github Trend</h2>
 <div class="trend-list">
 {% for trend in trend_list %}
     <div class="trend-repo rounded">
         <a href="{% url 'app:detail' trend.pk %}">{{ trend.repo }}</a><p>{{ trend.star }} stars today</p>
-
     </div>
 {% endfor %}
 </div>

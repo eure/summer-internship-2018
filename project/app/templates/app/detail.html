@@ -1,1 +1,25 @@
+{% extends "app/base.html" %}
+{% load static %}
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'app/css/detailpage_style.css' %}" />
+{% endblock %}
+{% block content %}
+    <h2>
 {{ trend.repo }}
+    </h2>
+<ul class="pagehead-actions">
+<li class="social-count watch">
+<span>watch:</span>{{ trend.watch }}
+</li>
+<li class="social-count total_star">
+<span>star:</span>{{ trend.total_star }}
+</li>
+<li class="social-count fork">
+<span>fork:</span>{{ trend.fork }}
+</li>
+</ul>
+<h2>README.md</h2>
+<div class="detail_desc rounded">
+    <pre>{{ trend.detail_desc }}</pre>
+</div>
+{% endblock %}

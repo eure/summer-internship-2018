@@ -30,7 +30,7 @@ a.navbar-brand:hover{
 .trend-repo{
   width: 80%;
   margin: 10px auto;
-  border: 1px solid #A8BC3F;
+  border: 2px solid #A8BC3F;
   height: 44px;
   position: relative;
 }
@@ -59,7 +59,7 @@ a.navbar-brand:hover{
 .trend-list a::after {
   border-bottom: 2px solid #3D3F41;
   bottom: 0;
-  content: "";
+  content:2"";
   display: block;
   position: absolute;
   transition: all .3s ease;

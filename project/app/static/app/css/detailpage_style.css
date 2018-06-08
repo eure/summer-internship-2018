@@ -1,0 +1,16 @@
+body{
+  padding-top: 64px;
+}
+
+ul{
+  text-align:right;
+}
+
+li{
+  display:inline;
+  padding:0 10px;
+}
+.detail_desc{
+  border: 2px solid #A8BC3F;
+  padding: 20px;
+}
