@@ -4,7 +4,8 @@ from django.db import models
 class TrendRepo(models.Model):
 
     repo = models.TextField()
-    desc = models.TextField(null=True)
+    desc = models.TextField()
+    star = models.IntegerField()
 
     def __str__(self):
         return self.repo

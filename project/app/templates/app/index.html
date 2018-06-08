@@ -4,7 +4,8 @@
 <div class="trend-list">
 {% for trend in trend_list %}
     <div class="trend-repo rounded">
-    <a href="{% url 'app:detail' trend.pk %}">{{ trend.repo }}</a>
+        <a href="{% url 'app:detail' trend.pk %}">{{ trend.repo }}</a><p>{{ trend.star }} stars today</p>
+
     </div>
 {% endfor %}
 </div>
