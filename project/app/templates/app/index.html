@@ -1,4 +1,5 @@
 {% extends "app/base.html" %}
+{% load static %}
 {% block extra_header %}
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
@@ -12,8 +13,9 @@
 <div class="trend-list">
 {% for trend in trend_list %}
     <div class="trend-repo rounded">
-        <a href="{% url 'app:detail' trend.pk %}">{{ trend.repo }}</a><p>{{ trend.star }} stars today</p>
+        <a href="{% url 'app:detail' trend.pk %}" title="{{ trend.desc }}">{{ trend.repo }}</a><p>{{ trend.star }} stars today</p>
     </div>
 {% endfor %}
 </div>
 {% endblock %}
+{% block extra_js %}<script src="{% static 'app/js/index.js' %}"></script>{% endblock %}

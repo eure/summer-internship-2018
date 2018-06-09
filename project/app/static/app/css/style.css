@@ -80,3 +80,19 @@ a.navbar-brand:hover{
   text-decoration: none !important;
   color: #3D3F41;
 }
+div.tooltip {
+  width: 350px;
+  position: absolute;
+  left: -9999px;
+  background: #EEE;
+
+  padding: 5px;
+  border: 1px solid #AAA;
+}
+
+div.tooltip p{
+  color: #FFF;
+  background: #333;
+  padding: 5px 10px;
+  margin: auto;
+}

@@ -4,18 +4,19 @@
     <link rel="stylesheet" type="text/css" href="{% static 'app/css/detailpage_style.css' %}" />
 {% endblock %}
 {% block content %}
+repository name
     <h2>
 {{ trend.repo }}
     </h2>
 <ul class="pagehead-actions">
 <li class="social-count watch">
-<span>watch:</span>{{ trend.watch }}
+<span>Watch <img src="{% static 'app/img/eye.png' %}" height="28"/> : </span>{{ trend.watch }}
 </li>
 <li class="social-count total_star">
-<span>star:</span>{{ trend.total_star }}
+<span>Star <img src="{% static 'app/img/star.png' %}" height="28"/> : </span>{{ trend.total_star }}
 </li>
 <li class="social-count fork">
-<span>fork:</span>{{ trend.fork }}
+<span>Fork <img src="{% static 'app/img/fork.png' %}" height="28"/> : </span>{{ trend.fork }}
 </li>
 </ul>
 <h2>README.md</h2>
