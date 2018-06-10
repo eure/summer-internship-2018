@@ -10,12 +10,16 @@ header a{
   margin: 0 auto;
 }
 .jumbotron.jumbotron-fluid .container{
-  padding: 0px;
   max-width: 1300px;
   padding: 8px 16px;
 }
 .jumbotron.jumbotron-fluid{
   padding-top: 60px;
+}
+.jumbotron.jumbotron-fluid .container h1{
+  font-size: 72px;
+  font-weight: 700;
+  color: #3D3F41;
 }
 @media screen and (max-width: 1200px){
   .jumbotron.jumbotron-fluid .container h1{
@@ -52,11 +56,6 @@ a.navbar-brand:hover{
 }
 .jumbotron.jumbotron-fluid{
   background-color: white;
-}
-.jumbotron.jumbotron-fluid h1{
-  font-size: 72px;
-  font-weight: 700;
-  color: #3D3F41;
 }
 .trend-repo{
   width: 80%;
@@ -95,7 +94,6 @@ div.tooltip {
   position: absolute;
   left: -9999px;
   background: #EEE;
-
   padding: 5px;
   border: 1px solid #AAA;
 }

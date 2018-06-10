@@ -1,5 +1,6 @@
 # -*- coding:utf-8 -*-
 
+# Githubトレンド取得のクローラー
 import requests
 import re
 from bs4 import BeautifulSoup
