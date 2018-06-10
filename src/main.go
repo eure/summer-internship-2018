@@ -45,7 +45,7 @@ func rootHandler(w http.ResponseWriter, r *http.Request) {
         Projects:  projects,
     }
 
-    tmpl := template.Must(template.ParseFiles("../src/templates/index.tpl"))
+    tmpl := template.Must(template.ParseFiles("../src/templates/index.html"))
     tmpl.Execute(w, p)
 }
 
@@ -59,7 +59,7 @@ func detailHandler(w http.ResponseWriter, r *http.Request) {
         Url:    "https://github.com/" + name,
     }
 
-    tmpl := template.Must(template.ParseFiles("../src/templates/detail.tpl"))
+    tmpl := template.Must(template.ParseFiles("../src/templates/detail.html"))
     tmpl.Execute(w, d)
 }
 
