@@ -13,7 +13,17 @@ def get_trend(url):
     content = json.loads(response.read().decode('utf8'))
     return content
 
-#リポジトリ情報取得
+'''
+#リポジトリの情報を取得する
+引数一覧
+  repo:リポジトリ名を取得
+  desc:ディスクリプションを取得
+  repo_link:リポジトリのリンクを取得
+  added_stars:日計獲得スター数を取得
+  stars:累計獲得スター数を取得
+  forks:フォーク数を取得
+  lang:使用言語を取得
+'''
 def get_data(data_type):
     data_list = []
     for contents in content["items"]:
