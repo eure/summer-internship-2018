@@ -10,7 +10,7 @@
       <ol class="trending-repos">
       {{range $i, $v := .Projects}}
         <li class="repo">
-          <a href={{$v.URL}} class="detail-link">{{$v.Name}}</a>
+          <a href="/detail/?repo={{$v.Name}}" class="detail-link">{{$v.Name}}</a>
         </li>
       {{end}}
       </ol>
