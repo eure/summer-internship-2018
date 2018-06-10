@@ -7,7 +7,7 @@
 {% block content %}
     <h3>repository name</h3>
     <h2>
-        <img src="{% static 'app/img/book.png' %}" height="28"/> {{ trend.repo }}
+        <img src="{% static 'app/img/book.png' %}" height="28"/> <a href="https://github.com/{{ trend.repo }}">{{ trend.repo }}</a>
     </h2>
 <ul class="pagehead-actions">
 <li class="social-count watch">
