@@ -4,15 +4,46 @@ body{
 header a{
   color: #3D3F41;
 }
-.container{
-  margin: 0 98px !important;
-  padding: 0 !important;
-}
 .navbar.navbar-expand-lg.bg-white.fixed-top{
+  max-width: 1300px;
   height: 60px;
-  padding: 20px 98px;
-  margin: 0px;
+  margin: 0 auto;
 }
+.jumbotron.jumbotron-fluid .container{
+  padding: 0px;
+  max-width: 1300px;
+  padding: 8px 16px;
+}
+.jumbotron.jumbotron-fluid{
+  padding-top: 60px;
+}
+@media screen and (max-width: 1200px){
+  .jumbotron.jumbotron-fluid .container h1{
+    font-size: 60px;
+  }
+}
+@media screen and (max-width: 992px){
+  .jumbotron.jumbotron-fluid .container h1{
+    font-size: 45px;
+  }
+}
+@media screen and (max-width: 768px){
+  .jumbotron.jumbotron-fluid .container h1{
+    font-size: 32px;
+  }
+  .trend-repo.rounded a{
+    font-size: 20px;
+  }
+  .trend-repo.rounded span{
+    display: none;
+  }
+}
+@media screen and (max-width: 576px){
+  .jumbotron.jumbotron-fluid .container h1{
+    font-size: 20px;
+  }
+}
+
 .nav-item.active:hover .nav-link {
   color: #A8BC3F;
 }
@@ -50,32 +81,11 @@ a.navbar-brand:hover{
   height: 100%;
   padding: 2px 10px;
 }
-.trend-list p{
-  text-align: right;
+.trend-repo.rounded span{
+  float: right;
   padding-right: 10px;
+  font-size: 18px;
 }
-/*
-.trend-list a::before,
-.trend-list a::after {
-  border-bottom: 2px solid #3D3F41;
-  bottom: 0;
-  content:2"";
-  display: block;
-  position: absolute;
-  transition: all .3s ease;
-  -webkit-transition: all .3s ease;
-  width: 0;
-  left: 50%;
-}
-.trend-list a::after {
-  right: 50%;
-
-}
-.trend-list a:hover::before,
-.trend-list a:hover::after {
-  width: 50%;
-}
-*/
 .trend-list a:hover{
   text-decoration: none !important;
   color: #3D3F41;

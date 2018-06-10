@@ -7,13 +7,13 @@
     </div>
 </div>
 {% endblock %}
-
+{% block title %}Index Page{% endblock %}
 {% block content %}
     <h2>Github Trend</h2>
 <div class="trend-list">
 {% for trend in trend_list %}
     <div class="trend-repo rounded">
-        <a href="{% url 'app:detail' trend.pk %}" title="{{ trend.desc }}">{{ trend.repo }}</a><p>{{ trend.star }} stars today</p>
+        <a href="{% url 'app:detail' trend.pk %}" title="{{ trend.desc }}">{{ trend.repo }}<span>{{ trend.star }} stars today</span></a>
     </div>
 {% endfor %}
 </div>

@@ -38,5 +38,5 @@ function simple_tooltip(target_items, name){
 
 
 $(document).ready(function(){
-    simple_tooltip("a","tooltip");
+    simple_tooltip(".trend-repo.rounded a","tooltip");
 });

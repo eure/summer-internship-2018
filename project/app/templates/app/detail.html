@@ -3,10 +3,11 @@
 {% block extra_css %}
     <link rel="stylesheet" type="text/css" href="{% static 'app/css/detailpage_style.css' %}" />
 {% endblock %}
+{% block title %}DetailPage : {{ trend.repo }}{% endblock %}
 {% block content %}
-repository name
+    <h3>repository name</h3>
     <h2>
-{{ trend.repo }}
+        <img src="{% static 'app/img/book.png' %}" height="28"/> {{ trend.repo }}
     </h2>
 <ul class="pagehead-actions">
 <li class="social-count watch">
@@ -19,7 +20,7 @@ repository name
 <span>Fork <img src="{% static 'app/img/fork.png' %}" height="28"/> : </span>{{ trend.fork }}
 </li>
 </ul>
-<h2>README.md</h2>
+<h3>README.md</h3>
 <div class="detail_desc rounded">
     <pre>{{ trend.detail_desc }}</pre>
 </div>
