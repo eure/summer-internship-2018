@@ -7,7 +7,7 @@
 
   <title>GitHub Trend</title>
 
-  <link rel="stylesheet" type="text/css" href="static/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
   <style type="text/css">
   #rank{ text-align: center;}
   #rank-hed{ text-align: center;}
@@ -95,7 +95,7 @@
       {% for repo,stars in table_content %}
       <tr>
         <td id="rank" style="width: 20px;">{{loop.index}}</td>
-        <td style="width: 50px;"><a href="./trend/{{loop.index}}">{{repo}}</a></td>
+        <td style="width: 50px;"><a href="./trend/daily/{{loop.index}}">{{repo}}</a></td>
         <td style="width: 80px;">{{stars}}</td>
       </tr>
       {% endfor %}

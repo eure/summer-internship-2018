@@ -7,7 +7,7 @@
 
   <title>GitHub Trend</title>
 
-  <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
   <style type="text/css">
   body { padding-top: 80px; }
   @media ( min-width: 768px ) {
@@ -102,7 +102,7 @@
 
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="../static/js/bootstrap.min.js"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"</script>
 
 <script type="text/javascript">
   $('.bs-component [data-toggle="popover"]').popover();
