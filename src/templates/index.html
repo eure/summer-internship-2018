@@ -3,14 +3,18 @@
   <head>
     <meta charset="utf-8" />
     <title>Github-Trend</title>
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
   </head>
   <body>
-    <div>
-      <h3>Items</h3>
+    <div class="main-container">
+      <h1>Github Trend</h1>
+      <h2>Today</h2>
       <ol class="trending-repos">
       {{range $i, $v := .Projects}}
         <li class="repo">
-          <a href="/detail/?repo={{$v.Name}}" class="detail-link">{{$v.Name}}</a>
+          <a href="/detail/?repo={{$v.Owner}}{{$v.RepositoryName}}" class="detail-link">
+              <span class="text-normal">{{$v.Owner}} / </span>{{$v.RepositoryName}}
+          </a>
         </li>
       {{end}}
       </ol>

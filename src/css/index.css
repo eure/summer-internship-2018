@@ -1,0 +1,45 @@
+.main-container {
+  max-width: 800px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+ol {
+  counter-reset: rank;
+  list-style: none;
+  margin: 0; 
+  padding-left: 0;
+}
+  
+ol li {
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+  
+ol li:before {
+  counter-increment: rank;
+  content: counter(rank) ".";
+  color: #24292e;
+  font-weight: bold;
+  display: inline-block;
+  width: 2em;
+  text-align: right;
+  margin-right: 1em;
+}
+
+ol li:nth-child(even) {
+  background: #f7f8f9;
+}
+
+a {
+  color: #0366d6;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.text-normal {
+  font-weight: 400;
+}
