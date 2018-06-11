@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>GitHub Trend</title>
+  <title>GitHub Trend - WeeklyRanking</title>
 
   <link rel="stylesheet" type="text/css" href="static/css/bootstrap.css">
   <style type="text/css">
@@ -95,7 +95,7 @@
       {% for repo,stars in table_content %}
       <tr>
         <td id="rank" style="width: 20px;">{{loop.index}}</td>
-        <td style="width: 50px;"><a href="./trend/weekly/{{loop.index}}">{{repo}}</a></td>
+        <td style="width: 50px;"><a href="./weekly/{{loop.index}}">{{repo}}</a></td>
         <td style="width: 80px;">{{stars}}</td>
       </tr>
       {% endfor %}
