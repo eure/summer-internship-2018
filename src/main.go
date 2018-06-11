@@ -1,10 +1,10 @@
 package main
 
 import (
-    "context"
+	"context"
 	"fmt"
 	"github.com/andygrunwald/go-trending"
-    "github.com/google/go-github/github"
+	"github.com/google/go-github/github"
 	"log"
 	"net/http"
 	"strings"
@@ -16,9 +16,12 @@ type Person struct {
 }
 
 type Repo struct {
-	Name        string
-	Url         string
-    ReadmeHTML  string
+    Rank            string
+	Name            string
+    Owner           string
+    RepositoryName  string
+	Url             string
+	ReadmeHTML      string
 }
 
 func main() {
@@ -44,21 +47,25 @@ func rootHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func detailHandler(w http.ResponseWriter, r *http.Request) {
-    // Parse received query
+	// Parse received query
 	q := r.URL.Query()
+    rank := q["rank"][0]
 	name := q["repo"][0]
-    owner := strings.Split(name, "/")[0]
-    repo := strings.Split(name, "/")[1]
+	owner := strings.Split(name, "/")[0]
+	repo := strings.Split(name, "/")[1]
 
-    // Get and render README of the repo
-    client := github.NewClient(nil)
-    readme := getReadmeHTML(client, getReadme(client, owner, repo), name)
+	// Get and render README of the repo
+	client := github.NewClient(nil)
+	readme := getReadmeHTML(client, getReadme(client, owner, repo), name)
 
-    // Template
+	// Template
 	d := Repo{
-		Name:       name,
-		Url:        "https://github.com/" + name,
-        ReadmeHTML: readme,
+        Rank:           rank,
+		Name:           name,
+        Owner:          owner,
+        RepositoryName: repo,
+		Url:            "https://github.com/" + name,
+		ReadmeHTML:     readme,
 	}
 	tmpl := template.Must(template.ParseFiles("../src/templates/detail.html"))
 	tmpl.Execute(w, d)
@@ -85,26 +92,26 @@ func getProjects() []trending.Project {
 }
 
 func getReadme(client *github.Client, owner string, repo string) string {
-    readme, _, err := client.Repositories.GetReadme(context.Background(), owner, repo, nil)
-    if err != nil {
-        log.Fatal("GetReadme", err)
-    }
+	readme, _, err := client.Repositories.GetReadme(context.Background(), owner, repo, nil)
+	if err != nil {
+		log.Fatal("GetReadme", err)
+	}
 
-    content, err := readme.GetContent()
-    if err != nil {
-        log.Fatal("GetContent", err)
-    }
+	content, err := readme.GetContent()
+	if err != nil {
+		log.Fatal("GetContent", err)
+	}
 
-    return content
+	return content
 }
 
-func getReadmeHTML(client *github.Client, readme string, context string) string {
-    opt := &github.MarkdownOptions{Mode: "gfm", Context: context}
+func getReadmeHTML(client *github.Client, readme string, repo_context string) string {
+	opt := &github.MarkdownOptions{Mode: "gfm", Context: repo_context}
 
-    output, _, err := client.Markdown(context.Background(), readme, opt)
-    if err != nil {
-        log.Fatal("Markdown", err)
-    }
+	output, _, err := client.Markdown(context.Background(), readme, opt)
+	if err != nil {
+		log.Fatal("Markdown", err)
+	}
 
-    return output
+	return output
 }
