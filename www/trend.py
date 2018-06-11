@@ -52,13 +52,26 @@ def daily_trend(find_type):
     get_trend(url)
     return render_template('%s.html' % (find_type),table_content = zip(get_data("repo"),get_data("added_stars")))
 
-#リポジトリの詳細表示
-@app.route('/trend/<int:post_id>')
-def show_post(post_id):
+#Dailyランキングのリポジトリの詳細表示
+@app.route('/trend/daily/<int:post_id>')
+def show_daily_repo(post_id):
     #埋め込み用のREADMEの取得
     url = 'https://raw.githubusercontent.com/%s/master/README.md' % (get_data("repo")[post_id-1])
     return render_template('repo_detail.html',name = get_data("repo")[post_id-1],desc = get_data("desc")[post_id-1],panel_content = get_readme(url),repolink = get_data("repo_link")[post_id-1],forks = get_data("forks")[post_id-1],stars = get_data("stars")[post_id-1],lang=get_data("lang")[post_id-1])
 
+#Weeklyランキングのリポジトリの詳細表示
+@app.route('/trend/weekly/<int:post_id>')
+def show_weekly_repo(post_id):
+    #埋め込み用のREADMEの取得
+    url = 'https://raw.githubusercontent.com/%s/master/README.md' % (get_data("repo")[post_id-1])
+    return render_template('repo_detail.html',name = get_data("repo")[post_id-1],desc = get_data("desc")[post_id-1],panel_content = get_readme(url),repolink = get_data("repo_link")[post_id-1],forks = get_data("forks")[post_id-1],stars = get_data("stars")[post_id-1],lang=get_data("lang")[post_id-1])
+
+#Monthlyランキングのリポジトリの詳細表示
+@app.route('/trend/monthly/<int:post_id>')
+def show_monthly_repo(post_id):
+    #埋め込み用のREADMEの取得
+    url = 'https://raw.githubusercontent.com/%s/master/README.md' % (get_data("repo")[post_id-1])
+    return render_template('repo_detail.html',name = get_data("repo")[post_id-1],desc = get_data("desc")[post_id-1],panel_content = get_readme(url),repolink = get_data("repo_link")[post_id-1],forks = get_data("forks")[post_id-1],stars = get_data("stars")[post_id-1],lang=get_data("lang")[post_id-1])
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000, debug=True)
