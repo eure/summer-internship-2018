@@ -16,12 +16,12 @@ type Trends struct {
 }
 
 type Repo struct {
-    Rank            string
-	Name            string
-    Owner           string
-    RepositoryName  string
-	Url             string
-	ReadmeHTML      string
+	Rank           string
+	Name           string
+	Owner          string
+	RepositoryName string
+	Url            string
+	ReadmeHTML     string
 }
 
 func main() {
@@ -49,7 +49,7 @@ func rootHandler(w http.ResponseWriter, r *http.Request) {
 func detailHandler(w http.ResponseWriter, r *http.Request) {
 	// Parse received query
 	q := r.URL.Query()
-    rank := q["rank"][0]
+	rank := q["rank"][0]
 	name := q["repo"][0]
 	owner := strings.Split(name, "/")[0]
 	repo := strings.Split(name, "/")[1]
@@ -60,10 +60,10 @@ func detailHandler(w http.ResponseWriter, r *http.Request) {
 
 	// Template
 	d := Repo{
-        Rank:           rank,
+		Rank:           rank,
 		Name:           name,
-        Owner:          owner,
-        RepositoryName: repo,
+		Owner:          owner,
+		RepositoryName: repo,
 		Url:            "https://github.com/" + name,
 		ReadmeHTML:     readme,
 	}
