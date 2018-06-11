@@ -1,8 +1,10 @@
 package main
 
 import (
+    "context"
 	"fmt"
 	"github.com/andygrunwald/go-trending"
+    "github.com/google/go-github/github"
 	"log"
 	"net/http"
 	"strings"
@@ -14,8 +16,52 @@ type Person struct {
 }
 
 type Repo struct {
-	Name string
-	Url  string
+	Name        string
+	Url         string
+    ReadmeHTML  string
+}
+
+func main() {
+	// Server
+	http.Handle("/css/", http.StripPrefix("/css/", http.FileServer(http.Dir("../src/css"))))
+	http.HandleFunc("/", rootHandler)
+	http.HandleFunc("/detail/", detailHandler)
+
+	if err := http.ListenAndServe(":8080", nil); err != nil {
+		log.Fatal("ListenAndServe:", err)
+	}
+}
+
+func rootHandler(w http.ResponseWriter, r *http.Request) {
+	projects := getProjects()
+
+	p := Person{
+		Projects: projects,
+	}
+
+	tmpl := template.Must(template.ParseFiles("../src/templates/index.html"))
+	tmpl.Execute(w, p)
+}
+
+func detailHandler(w http.ResponseWriter, r *http.Request) {
+    // Parse received query
+	q := r.URL.Query()
+	name := q["repo"][0]
+    owner := strings.Split(name, "/")[0]
+    repo := strings.Split(name, "/")[1]
+
+    // Get and render README of the repo
+    client := github.NewClient(nil)
+    readme := getReadmeHTML(client, getReadme(client, owner, repo), name)
+
+    // Template
+	d := Repo{
+		Name:       name,
+		Url:        "https://github.com/" + name,
+        ReadmeHTML: readme,
+	}
+	tmpl := template.Must(template.ParseFiles("../src/templates/detail.html"))
+	tmpl.Execute(w, d)
 }
 
 func getProjects() []trending.Project {
@@ -38,38 +84,27 @@ func getProjects() []trending.Project {
 	return projects
 }
 
-func rootHandler(w http.ResponseWriter, r *http.Request) {
-	projects := getProjects()
+func getReadme(client *github.Client, owner string, repo string) string {
+    readme, _, err := client.Repositories.GetReadme(context.Background(), owner, repo, nil)
+    if err != nil {
+        log.Fatal("GetReadme", err)
+    }
 
-	p := Person{
-		Projects: projects,
-	}
+    content, err := readme.GetContent()
+    if err != nil {
+        log.Fatal("GetContent", err)
+    }
 
-	tmpl := template.Must(template.ParseFiles("../src/templates/index.html"))
-	tmpl.Execute(w, p)
+    return content
 }
 
-func detailHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Print(r.URL.RawQuery)
+func getReadmeHTML(client *github.Client, readme string, context string) string {
+    opt := &github.MarkdownOptions{Mode: "gfm", Context: context}
 
-	q := r.URL.Query()
-	name := strings.Replace(q["repo"][0], " ", "", -1) // trim all %20
-	d := Repo{
-		Name: name, //[0]:[]string to string
-		Url:  "https://github.com/" + name,
-	}
+    output, _, err := client.Markdown(context.Background(), readme, opt)
+    if err != nil {
+        log.Fatal("Markdown", err)
+    }
 
-	tmpl := template.Must(template.ParseFiles("../src/templates/detail.html"))
-	tmpl.Execute(w, d)
-}
-
-func main() {
-	// Server
-	http.Handle("/css/", http.StripPrefix("/css/", http.FileServer(http.Dir("../src/css"))))
-	http.HandleFunc("/", rootHandler)
-	http.HandleFunc("/detail/", detailHandler)
-
-	if err := http.ListenAndServe(":8080", nil); err != nil {
-		log.Fatal("ListenAndServe:", err)
-	}
+    return output
 }

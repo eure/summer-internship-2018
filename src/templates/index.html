@@ -12,7 +12,7 @@
       <ol class="trending-repos">
       {{range $i, $v := .Projects}}
         <li class="repo">
-          <a href="/detail/?repo={{$v.Owner}}{{$v.RepositoryName}}" class="detail-link">
+          <a href="/detail/?repo={{$v.Owner}}/{{$v.RepositoryName}}" class="detail-link">
               <span class="text-normal">{{$v.Owner}} / </span>{{$v.RepositoryName}}
           </a>
         </li>
