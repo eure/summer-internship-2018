@@ -11,7 +11,7 @@ import (
 	"text/template"
 )
 
-type Person struct {
+type Trends struct {
 	Projects []trending.Project
 }
 
@@ -38,7 +38,7 @@ func main() {
 func rootHandler(w http.ResponseWriter, r *http.Request) {
 	projects := getProjects()
 
-	p := Person{
+	p := Trends{
 		Projects: projects,
 	}
 
