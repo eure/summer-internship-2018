@@ -1,0 +1,27 @@
+@import "variables";
+
+.sort-section-title {
+  -webkit-appearance: none;
+  display: inline-block;
+  font-size: 27px;
+  font-weight: 500;
+  margin: 10px;
+}
+
+.sortbtn {
+  -webkit-appearance: none;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  margin: 10px;
+  font-weight: 600;
+  width: 100px;
+  line-height: 40px;
+  border-radius: 3px;
+  border: 1px solid $main-color;
+}
+
+.active {
+  background-color: $main-color;
+  color: white;
+}

@@ -1,0 +1,1 @@
+json.repository(@data) { |d| json.extract!(d, :description, :userImage) }
