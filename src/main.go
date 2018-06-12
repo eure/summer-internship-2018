@@ -7,8 +7,12 @@ import (
 	"github.com/google/go-github/github"
 	"log"
 	"net/http"
+	"os"
+	"os/signal"
 	"strings"
+	"syscall"
 	"text/template"
+	"time"
 )
 
 type Trends struct {
@@ -25,14 +29,38 @@ type Repo struct {
 }
 
 func main() {
-	// Server
+	// Config server
+	fmt.Println("Github Trend List")
+
 	http.Handle("/css/", http.StripPrefix("/css/", http.FileServer(http.Dir("../src/css"))))
 	http.HandleFunc("/", rootHandler)
 	http.HandleFunc("/detail/", detailHandler)
 
-	if err := http.ListenAndServe(":8080", nil); err != nil {
-		log.Fatal("ListenAndServe:", err)
+	srv := &http.Server{Addr: ":8080"}
+	fmt.Println("Port 8080")
+
+	// Start server
+	go func() {
+		if err := srv.ListenAndServe(); err != nil {
+			log.Fatal("ListenAndServe:", err)
+		}
+	}()
+	fmt.Println("Server start")
+
+	// Wait signal
+	sigCh := make(chan os.Signal, 1)
+	signal.Notify(sigCh, syscall.SIGINT, syscall.SIGTERM)
+	<-sigCh
+
+	// Graceful shutdown
+    fmt.Print("Shutdown...")
+
+	ctx, _ := context.WithTimeout(context.Background(), 5*time.Second)
+	if err := srv.Shutdown(ctx); err != nil {
+		log.Fatal("Shutdown", err)
 	}
+
+    fmt.Println("done")
 }
 
 func rootHandler(w http.ResponseWriter, r *http.Request) {
@@ -80,6 +108,7 @@ func getProjects() []trending.Project {
 		log.Fatal("GetProjects", err)
 	}
 
+    /*
 	for index, project := range projects {
 		no := index + 1
 		if len(project.Language) > 0 {
@@ -88,6 +117,7 @@ func getProjects() []trending.Project {
 			fmt.Printf("%d: %s (with %d * )\n", no, project.Name, project.Stars)
 		}
 	}
+    */
 	return projects
 }
 
