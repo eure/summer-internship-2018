@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+  // sortボタンが押されたときの処理を行うコンポーネント
 class TrendsClickableBtn extends Component {
   constructor(props) {
     super(props);

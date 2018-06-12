@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import TrendRow from './TrendRow';
 import TrendsClickableBtn from './TrendsClickableBtn';
 
+// トレンドリストを扱うコンポーネント
 const TrendsTable = ({ trends, sortKey, onSort }) => (
   <div className="trends-items">
     <div className="sort-section-title">Sort</div>

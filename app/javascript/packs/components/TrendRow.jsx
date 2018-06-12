@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// 一つのリストを扱うコンポーネント
 const TrendRow = ({ trend }) => (
   <div className="trends-index-item">
     <div className="trend-right">
