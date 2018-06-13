@@ -1,0 +1,47 @@
+.main-container {
+  max-width: 900px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.header-container {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.readme-label, .readme-container {
+  border: solid 1px #ddd;
+}
+
+.readme-label {
+  padding: 5px;
+  padding-left: 10px;
+  font-size: 16px;
+  height: 1.5em;
+  background-color: #f5f8fa;
+  border-bottom: 0;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+.readme-container {
+  padding: 45px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.rank {
+  font-size: 28px;
+  margin-right: 0.6em;
+}
+
+.repo {
+  font-size: 30px;
+  color: #0366d6;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.text-normal {
+  font-weight: 400;
+}

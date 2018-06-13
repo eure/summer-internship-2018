@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>{{.Rank}} {{.Name}}</title>
+    <link rel="stylesheet" type="text/css" href="../css/detail.css">
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="header-container">
+        <span class="rank">{{.Rank}}.</span><a href="{{.Url}}" class="repo"><span class="text-normal">{{.Owner}} / </span>{{.RepositoryName}}</a>
+      </div>
+      <div class="readme-label">README.md</div>
+      <div class="readme-container">
+        {{.ReadmeHTML}}
+      </div>
+    </div>
+  </body>
+</html>

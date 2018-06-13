@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Github-Trend</title>
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+  </head>
+  <body>
+    <div class="main-container">
+      <h1>Github Trend</h1>
+      <h2>Today</h2>
+      <ol class="trending-repos">
+      {{range $v := .TrendProjects}}
+        <li class="repo">
+            <a href="/detail/?repo={{$v.Project.Owner}}/{{$v.Project.RepositoryName}}&rank={{$v.Rank}}" class="detail-link">
+                <span class="text-normal">{{$v.Project.Owner}} / </span>{{$v.Project.RepositoryName}}
+          </a>
+          <span class="updown {{$v.Updown}}">{{$v.Updown}}</span>
+        </li>
+      {{end}}
+      </ol>
+    </div>
+  </body>
+</html>
