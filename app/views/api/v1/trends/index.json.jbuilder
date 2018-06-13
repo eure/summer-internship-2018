@@ -1,0 +1,1 @@
+json.trends(@data) { |d| json.extract!(d, :title, :language, :star, :fork) }

@@ -1,0 +1,34 @@
+@import "variables";
+/* repository/show ================================ */
+.repository {
+  text-align: center;
+  margin-bottom: 20px;
+  img {
+    display: inline;
+    width: 80px;
+    height: 80px;
+    border-radius: 20%;
+    box-shadow: 0 2px 6px #c1ced7;
+    margin: 20px 0 10px;
+    object-fit: cover;
+  }
+  p {
+    font-size: 15px;
+    margin-top: 15px;
+  }
+  a {
+      text-decoration: underline;
+      font-size: 16px;
+      font-weight: 200;   
+    &:hover {
+      color: $link-hover-color;
+      
+    }
+  }
+  span {
+    color: $sub-font-color;
+    font-weight: 200;
+    padding: 0 6px 0 8px;
+  }
+}
+

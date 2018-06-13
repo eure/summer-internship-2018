@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TrendMil</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header>
+    <div class="header-logo">
+      <%= link_to("TrendMil", "/") %>
+    </div>
+    <ul class="header-menus">
+      <li><%= link_to("トレンド一覧", "/trends/index") %></li>
+    </ul>
+  </header>
+  <% if flash[:notice] %>
+    <div class="flash" id="flash">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+<%= yield %>
+</body>
+</html>
