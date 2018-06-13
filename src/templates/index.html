@@ -10,11 +10,12 @@
       <h1>Github Trend</h1>
       <h2>Today</h2>
       <ol class="trending-repos">
-      {{range $i, $v := .Projects}}
+      {{range $v := .TrendProjects}}
         <li class="repo">
-            <a href="/detail/?repo={{$v.Owner}}/{{$v.RepositoryName}}&rank={{$i}}" class="detail-link">
-              <span class="text-normal">{{$v.Owner}} / </span>{{$v.RepositoryName}}
+            <a href="/detail/?repo={{$v.Project.Owner}}/{{$v.Project.RepositoryName}}&rank={{$v.Rank}}" class="detail-link">
+                <span class="text-normal">{{$v.Project.Owner}} / </span>{{$v.Project.RepositoryName}}
           </a>
+          <span class="updown {{$v.Updown}}">{{$v.Updown}}</span>
         </li>
       {{end}}
       </ol>

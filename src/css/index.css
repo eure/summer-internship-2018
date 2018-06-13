@@ -1,5 +1,5 @@
 .main-container {
-  max-width: 800px;
+  max-width: 700px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -40,6 +40,31 @@ a {
   text-decoration: none;
 }
 
+.updown {
+  display: inline-block;
+  float: right;
+  margin-right: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.updown.new {
+  color: red;
+}
+
+.updown.↑ {
+  color: #e36209;
+}
+
+.updown.→ {
+  color: #28a745;
+}
+
+.updown.↓ {
+  color: #24292e;
+}
+
 .text-normal {
   font-weight: 400;
 }
+
