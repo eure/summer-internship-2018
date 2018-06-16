@@ -32,6 +32,7 @@ export default class First extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      userName: props.navigation.state.params.userName,
       items: new ListView.DataSource({
         rowHasChanged: (row1, row2) => row1 !== row2,
       }),
@@ -51,7 +52,6 @@ export default class First extends Component {
 
   //描画
   render() {
-
     var site = this.state.loaded
     if (!site) {
       // loadedのstateが falseの時は ロード中のViewを返す
@@ -117,6 +117,9 @@ export default class First extends Component {
 
   // データ取得関数の用意
   fetchData() {
+
+    const { userName } = this.state;
+    REQUEST_URL = `https://api.github.com/users/${userName}/repos`;
     fetch(REQUEST_URL)
         .then((response) => response.json())
         .then((responseData) => {

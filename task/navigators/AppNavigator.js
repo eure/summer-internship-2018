@@ -2,10 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { StackNavigator, addNavigationHelpers } from 'react-navigation';
+import LogIn from '../LogIn';
 import First from '../First';
 import Detail from '../Detail';
 
 export const AppNavigator = StackNavigator({
+  LogIn: LogIn,
   First: First,
   Detail: Detail,
 });
