@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1c026fe1-9473-43b9-85a2-a13ab5358f28" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/.babelrc" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/.buckconfig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/.flowconfig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/.gitattributes" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/.gitignore" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/.watchmanconfig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/App.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/Detail.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/First.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/README.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/android/app/BUCK" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/android/app/build.gradle" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/android/app/proguard-rules.pro" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/android/app/src/main/AndroidManifest.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/android/app/src/main/java/com/task/MainActivity.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/android/app/src/main/java/com/task/MainApplication.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/android/app/src/main/res/values/strings.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/android/app/src/main/res/values/styles.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/android/build.gradle" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/android/gradle.properties" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/android/gradle/wrapper/gradle-wrapper.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/android/gradle/wrapper/gradle-wrapper.properties" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/android/gradlew" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/android/gradlew.bat" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/android/keystores/BUCK" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/android/keystores/debug.keystore.properties" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/android/settings.gradle" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/app.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/components/Loader.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/img/loading.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/index.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/ios/task-tvOS/Info.plist" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/ios/task-tvOSTests/Info.plist" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/ios/task.xcodeproj/project.pbxproj" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/ios/task.xcodeproj/xcshareddata/xcschemes/task-tvOS.xcscheme" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/ios/task.xcodeproj/xcshareddata/xcschemes/task.xcscheme" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/ios/task/AppDelegate.h" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/ios/task/AppDelegate.m" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/ios/task/Base.lproj/LaunchScreen.xib" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/ios/task/Images.xcassets/AppIcon.appiconset/Contents.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/ios/task/Images.xcassets/Contents.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/ios/task/Info.plist" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/ios/task/main.m" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/ios/taskTests/Info.plist" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/ios/taskTests/taskTests.m" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/navigators/AppNavigator.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/package-lock.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/package.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/redux/actions/index.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/redux/actions/loggedOut.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/redux/actions/types.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/redux/helpers/createReducer.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/redux/reducers/index.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/redux/reducers/loggedOut.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/redux/reducers/navigation.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/redux/store.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/screenShot/androidScreenShot/screenShot5.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/screenShot/androidScreenShot/screenShot7.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/screenShot/androidScreenShot/screenShot8.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/screenShot/androidScreenShot/screenshot6.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/screenShot/iosScreenShot/srcShot1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/screenShot/iosScreenShot/srcShot2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/screenShot/iosScreenShot/srcShot3.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/task/screenShot/iosScreenShot/srcShot4.png" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$/../task/android" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="23" />
+    <option name="width" value="1280" />
+    <option name="height" value="724" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="AndroidView" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
+    <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="Applet" default="true" selected="false">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="JUnit" default="true" selected="false">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1c026fe1-9473-43b9-85a2-a13ab5358f28" name="Default" comment="" />
+      <created>1529125899253</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1529125899253</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1280" height="726" extended-state="6" />
+    <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2494043" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
