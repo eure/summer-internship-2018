@@ -36,6 +36,7 @@ export default class LogIn extends Component {
 			  autoFocus = {true}
 			  autoCapitalize = {false}
 			  autoCorrect = {false}
+			  // value = "GitHub user name here!" android simulator では、これを入れると文字入力ができない!!
 			  placeholder = "user name here"
 			  underlineColorAndroid = "transparent"
 			/>

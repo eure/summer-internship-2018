@@ -46,12 +46,12 @@ export default class detail extends Component {
             	  style = {[{margintop: 10}, {marginBottom: 10}]}
             	>
             	  <Text>
-            	    {key}: {value}
+            	    {key}: {String(value)}
             	  </Text>
             	   <View style = {[{margin:10}]}>
             	    <Image 
             	      source = { key === "avatar_url" && {uri: value}}
-            	      style={{width: 70, height: 70}}
+            	      style = {{width: 70, height: 70}}
             	      resizeMode = "contain"
             	    />
             	   </View>
