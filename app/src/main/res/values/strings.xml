@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">EurekaTask</string>
+    <string name="connection_failed">通信に失敗しました</string>
+</resources>
