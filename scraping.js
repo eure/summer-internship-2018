@@ -1,11 +1,11 @@
 var request = require("request");
 var cheerio = require("cheerio");
 
-var Repository = require('./models/repository');
+var Repository = require('./models/Repository');
 
-var url = "https://github.com/trending"
+var target = "https://github.com/trending";
 
-scrapingTrend = (item, callBack) => {
+scrapingTrend = (url) => {
     items = [];
     request(url, (err, response, body) => {
         if (err) {
@@ -16,22 +16,24 @@ scrapingTrend = (item, callBack) => {
                 const $repositorys = $('.col-12.d-block.width-full.py-4.border-bottom');
                 $repositorys.each( (idx, elem) => {
                     let link = $(elem).find('a').attr('href').split("/");
-                    let lang = $(elem).find('span meta[itemprop="programmingLanguage"]').text();
-                    if (lang == null) {
+                    let lang = $(elem).find('span [itemprop="programmingLanguage"]').text().trim();
+                    if (lang == "") {
                         lang = "none";
                     } 
                     let todaysStar = $(elem).find('span.d-inline-block.float-sm-right').text().trim();
                     let repo = new Repository(link[1], link[2], lang, todaysStar);
-                    items.push(repo);
                     console.log(repo);
+                    // console.log(link + " " + lang + " " + todaysStar);
                 });
-                callBack()
+                // callBack()
             } catch (e) {
                 console.error(e);
             }
         }
     });
 }
+
+scrapingTrend(target);
 
 module.exports = scrapingTrend;
 

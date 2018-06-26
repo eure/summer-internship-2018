@@ -1,8 +1,8 @@
-var Repository = function(user, name, lang, star) {
-    self.user = user;
-    self.name = name;
-    self.lang = lang;
-    self.star = star;
-};
+var Repository = (_user, _name, _lang, _star) => {
+    this.user = _user;
+    this.name = _name;
+    this.lang = _lang;
+    this.star = _star;
+}
 
 module.exports = Repository;
