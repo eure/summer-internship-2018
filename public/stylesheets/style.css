@@ -1,8 +1,83 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+@charset "UTF-8";
+
+/* html {
+  font-size: 62.5%;
+} */
 
 a {
-  color: #00B7FF;
+  text-decoration: none;
+  color: gray;
 }
+
+a:visited {
+  color: #333;
+  color: gray;
+}
+
+body {
+  color: #333;
+  font-size: 1.2rem;
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  /* -webkit-font-smoothing: antialiased; */
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.header {
+  background-image: linear-gradient(-90deg, #B3CCFF, #FFB3E5);
+  width: 100%;
+  height: 300px;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  box-shadow: 0 0 10px 1px gray;
+}
+
+.header .container {
+  margin-left: 3rem;
+  color: white;
+}
+
+.header .title {
+  font-size: 3rem;
+  border: 1px;
+  display: box;
+}
+
+.header .subTitle {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  display: box;
+}
+
+/* .wrapper {
+  width: 64%;
+  display: flex;
+  justify-content: center;
+} */
+
+
+
+.main .itemList {
+  width: 60%;
+  margin-left: 20%;
+}
+
+.main .item {
+  color: red;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 5px 1px lightgray;
+  padding: 2rem;
+}
+
+.main .item .repository {
+  font-size: 2.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+
