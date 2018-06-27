@@ -28,11 +28,10 @@ body {
 .header {
   background-image: linear-gradient(-90deg, #B3CCFF, #FFB3E5);
   width: 100%;
-  height: 300px;
+  height: 400px;
   display: flex;
   /* justify-content: center; */
   align-items: center;
-  box-shadow: 0 0 10px 1px gray;
 }
 
 .header .container {
@@ -41,13 +40,13 @@ body {
 }
 
 .header .title {
-  font-size: 3rem;
+  font-size: 3.6rem;
   border: 1px;
   display: box;
 }
 
 .header .subTitle {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   margin-top: 1rem;
   display: box;
 }
@@ -59,25 +58,48 @@ body {
 } */
 
 
+.main {
+  background: #fafafa;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
 
 .main .itemList {
-  width: 60%;
-  margin-left: 20%;
+  width: 64%;
+  margin-left: 18%;
 }
 
 .main .item {
-  color: red;
+  background-color: #fff;
   margin-top: 3rem;
   margin-bottom: 3rem;
   border-radius: 1rem;
-  box-shadow: 0 0 5px 1px lightgray;
+  box-shadow: 0 0 9px 3px lightgray;
   padding: 2rem;
 }
 
+.main .item:hover {
+  box-shadow: 0 0 15px 5px #B3CCFF;
+  transition: 0.4s;
+}
+
+
 .main .item .repository {
   font-size: 2.5rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+
+.main .item .language {
+  font-size: 1.8rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.footer {
+  height: 200px;
+  width: 100%;
+  background-color: gray;
 }
 
 

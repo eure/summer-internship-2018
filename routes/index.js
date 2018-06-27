@@ -12,8 +12,6 @@ router.get('/', function(req, res, next) {
     .catch( (err) => {
       console.log(err);
     });
-
-  // res.render('index', { title: 'GitHub Trend' });
 });
 
 module.exports = router;
