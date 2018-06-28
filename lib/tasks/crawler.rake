@@ -3,6 +3,7 @@ namespace :crawler do
   desc 'Reset article status'
   task reset_status: :environment do
     puts "====reset article status===="
+    puts Time.now()
     Article.all.each do |article|
       article.update!(status: :close)
     end
@@ -10,7 +11,7 @@ namespace :crawler do
 
   desc 'Fetch each page url'
   task fetch_url: :environment do
-    puts "====building master...===="
+    puts "====fetching master...===="
     charset = nil
     html = open("https://github.com/trending") do |f|
       charset = f.charset
