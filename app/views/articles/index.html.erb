@@ -13,7 +13,15 @@
     <tbody>
       <% @articles.each_with_index do |article, idx| %>
         <tr>
-          <td><%= article.ranking %></td>
+        <% if idx == 0 %>
+          <td class="gold"><%= article.ranking %></td>
+        <% elsif idx == 1 %>
+          <td class="silver"><%= article.ranking %></td>
+        <% elsif idx == 2 %>
+          <td class="bronze"><%= article.ranking %></td>
+        <% else %>
+          <td class="normal"><%= article.ranking %></td>
+        <% end %>
           <td><%= article.name %></td>
           <td><%= link_to '→', article %></td>
         </tr>
