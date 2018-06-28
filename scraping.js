@@ -36,8 +36,12 @@ scrapingTrend = (url) => {
         });
     })
 }
-// debug
-scrapingTrend("https://github.com/trending");
 
-module.exports = scrapingTrend;
+scrapingMarkdown = (url) => {
+    
+}
+// debug
+// scrapingTrend("https://github.com/trending");
+
+exports.scrapingTrend = scrapingTrend;
 

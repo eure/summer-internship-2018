@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+
+
 var scrapingTrend = require("../scraping");
 
 /* GET home page. */
@@ -13,5 +15,6 @@ router.get('/', function(req, res, next) {
       console.log(err);
     });
 });
+
 
 module.exports = router;

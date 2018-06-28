@@ -5,6 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
+
+// なぜか動かない
 var detailRouter = require('./routes/detail');
 
 var app = express();
@@ -20,7 +22,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/.+/.+', detailRouter);
+app.get('/detail/:user/:repo', (req, res, next) => {
+    console.log(req.params.user);
+});
+
+
+// なぜか動かない
+app.use('/detail/:user/:repo', detailRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

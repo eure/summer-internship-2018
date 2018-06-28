@@ -22,7 +22,7 @@
     <ul class="itemList">
       <% for (var item of items) { %>
         <li class="item">
-          <a href=<%= item.getLink() %> >
+          <a href=<%= '/' + item.getLink() %> >
             <p class="repository"><%= item.user + "/" + item.name %></p>
             <p class="language">Language: <%= item.lang %></p>
             <p class="todaysStar">⭐️ <%= item.star %></p>
@@ -31,7 +31,7 @@
       <% } %>
     </ul>
   </main>
-  
+
   <footer class="footer">
 
   </footer>
