@@ -1,0 +1,33 @@
+<div class="article index">
+  <p id="notice"><%= notice %></p>
+  <h1>Github トレンドランキング</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>ランキング</th>
+        <th>タイトル</th>
+        <th colspan="3">詳細を確認</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @articles.each_with_index do |article, idx| %>
+        <tr>
+        <% if idx == 0 %>
+          <td class="gold"><%= article.ranking %></td>
+        <% elsif idx == 1 %>
+          <td class="silver"><%= article.ranking %></td>
+        <% elsif idx == 2 %>
+          <td class="bronze"><%= article.ranking %></td>
+        <% else %>
+          <td class="normal"><%= article.ranking %></td>
+        <% end %>
+          <td><%= article.name %></td>
+          <td><%= link_to '→', article %></td>
+        </tr>
+
+      <% end %>
+    </tbody>
+  </table>
+
+</div>

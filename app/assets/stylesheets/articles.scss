@@ -1,0 +1,47 @@
+.article{
+  margin: 32px;
+  &.index{
+    tr{
+      .gold{
+        color: gold;
+      }
+      .silver{
+        color: silver;
+      }
+      .bronze {
+        color: brown;
+      }
+      .normal{
+        color: #333;
+      }
+      td{
+        text-align: center;
+        line-height: 36px;
+        a{
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  &.show{
+    tr{
+      th{
+        width: 150px;
+        text-align: left;
+      }
+      td{
+        text-align: left;
+        line-height: 36px;
+        a{
+          color: blue;
+        }
+      }
+    }
+  }
+  #readme{
+    .title{
+      font-size: 24px;
+      font-weight: bold;
+    }
+  }
+}

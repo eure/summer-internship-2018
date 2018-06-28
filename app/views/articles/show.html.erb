@@ -1,0 +1,25 @@
+<div class="article show">
+<table>
+    <tr>
+      <th>タイトル：</th>
+      <td><%= @article.name %></td>
+    </tr>
+    <tr>
+      <th>概要：</th>
+      <td><%= @article.description %></td>
+    </tr>
+    <tr>
+      <th>公式リポジトリ：</th>
+      <td><%= link_to @article.url, @article.url, target: "_blank" %></td>
+    </tr>
+
+</table>
+
+  <div id="readme">
+    <p class="title">Readme</p>
+    <%= simple_format @article.readme %>
+  </div>
+
+  <%= link_to '戻る', articles_path %>
+
+</div>
