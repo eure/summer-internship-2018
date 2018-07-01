@@ -82,8 +82,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-    //MARK: - UITableViewDataSource
+    //MARK: - Segues
+    
+    
+    //MARK: - TableView
+    // UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
         
@@ -97,7 +100,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return repositoriesInfo.count
     }
     
-    //MARK: - UITableViewDelegate
+    // UITableViewDelegate
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 64
     }
