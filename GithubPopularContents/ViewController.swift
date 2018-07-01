@@ -25,11 +25,9 @@ struct RepositoryInfo {
 }
 
 class ViewController: UIViewController {
-    
     var repositoriesInfo = [RepositoryInfo]()
     let GithubUrl = "https://api.github.com/users/HamaguchiKazuki/repos"
     
-        
     override func viewDidLoad() {
         super.viewDidLoad()
         if let url = URL(string: GithubUrl) {
@@ -59,8 +57,11 @@ class ViewController: UIViewController {
                         } else {
                             codeLanguage = repository["language"] as! String
                         }
-                        //repositoriesInfo.append( RepositoryInfo(name: name, htmlUrl: htmlUrl, repoDescription: repoDescription, codeLanguage: codeLanguage, defaultBranch: defaultBranch) )
-                        print("\(name)\(htmlUrl)\(repoDescription)\(codeLanguage)\(defaultBranch)")
+                        self.repositoriesInfo.append( RepositoryInfo(name: name, htmlUrl: htmlUrl, repoDescription: repoDescription, codeLanguage: codeLanguage, defaultBranch: defaultBranch) )
+//                        print("\(name)\(htmlUrl)\(repoDescription)\(codeLanguage)\(defaultBranch)")
+                    }
+                    for repo in self.repositoriesInfo {
+                        print("\(repo.name)\(repo.htmlUrl)\(repo.repoDescription)\(repo.codeLanguage)\(repo.defaultBranch)")
                     }
                     
                     
