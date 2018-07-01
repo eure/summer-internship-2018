@@ -10,16 +10,18 @@ import UIKit
 
 struct RepositoryInfo {
     var name: String
-    var htmlUrl: String
-    var repoDescription: String
     var codeLanguage: String
+    var repoDescription: String
+    var recentUpdate: String
+    var openIssues: Int
     var defaultBranch: String
     
-    init(name: String, htmlUrl: String, repoDescription: String, codeLanguage: String, defaultBranch: String) {
+    init(name: String, codeLanguage: String, repoDescription: String, recentUpdate: String, openIssues: Int, defaultBranch: String) {
         self.name = name
-        self.htmlUrl = htmlUrl
-        self.repoDescription = repoDescription
         self.codeLanguage = codeLanguage
+        self.repoDescription = repoDescription
+        self.recentUpdate = recentUpdate
+        self.openIssues = openIssues
         self.defaultBranch = defaultBranch
     }
 }
@@ -50,15 +52,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     for repositories in getJson {
                         let repository = repositories as! NSDictionary
                         let name = repository["name"] as! String
-                        let htmlUrl = repository["html_url"] as! String
-                        let defaultBranch = repository["default_branch"] as! String
-                        var repoDescription: String
-                        let descriptionNilCheck = repository["description"] as? String
-                        if descriptionNilCheck == nil {
-                            repoDescription = "No description"
-                        } else {
-                            repoDescription = repository["description"] as! String
-                        }
                         var codeLanguage: String
                         let languageNilCheck = repository["language"] as? String
                         if languageNilCheck == nil {
@@ -66,7 +59,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                         } else {
                             codeLanguage = repository["language"] as! String
                         }
-                        self.repositoriesInfo.append( RepositoryInfo(name: name, htmlUrl: htmlUrl, repoDescription: repoDescription, codeLanguage: codeLanguage, defaultBranch: defaultBranch) )
+                        var repoDescription: String
+                        let descriptionNilCheck = repository["description"] as? String
+                        if descriptionNilCheck == nil {
+                            repoDescription = "No description"
+                        } else {
+                            repoDescription = repository["description"] as! String
+                        }
+                        let recentUpdate = repository["updated_at"] as! String
+                        let openIssues = repository["open_issues_count"] as! Int
+                        let defaultBranch = repository["default_branch"] as! String
+                        self.repositoriesInfo.append( RepositoryInfo(name: name, codeLanguage: codeLanguage, repoDescription: repoDescription, recentUpdate: recentUpdate, openIssues: openIssues, defaultBranch: defaultBranch) )
                     }
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
@@ -78,7 +81,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             task.resume()
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -92,7 +95,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         cell.accessoryType = .none
         cell.textLabel?.text = "\(repositoriesInfo[indexPath.row].name)"
-        cell.detailTextLabel?.text = "\(repositoriesInfo[indexPath.row].repoDescription)"
+        cell.detailTextLabel?.text = "main use : \(repositoriesInfo[indexPath.row].codeLanguage)"
         return cell
     }
     
@@ -105,4 +108,3 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return 64
     }
 }
-
