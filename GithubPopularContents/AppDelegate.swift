@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  displayGithubAPI
+//  GithubPopularContents
 //
-//  Created by 濱口和希 on 2018/06/30.
+//  Created by 濱口和希 on 2018/07/01.
 //  Copyright © 2018年 HamaguchiKazuki. All rights reserved.
 //
 
