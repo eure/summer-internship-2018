@@ -32,13 +32,13 @@ class DetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    // 時刻表示を整形
+    // 時刻表示を整形(yyyy-mm-dd)
     func timeShaping(time: NSString) -> String {
         let rd = try? NSRegularExpression(pattern: "^(\\d{4})-(\\d{2})-(\\d{2})", options:  NSRegularExpression.Options() )
         if let r = rd?.firstMatch(in: time as String, options: NSRegularExpression.MatchingOptions(), range: NSMakeRange(0, time.length)) {
             print("\(time.substring(with: r.range(at: 1)))-\(time.substring(with: r.range(at: 2)))-\(time.substring(with: r.range(at: 3)))")
             return "\(time.substring(with: r.range(at: 1)))-\(time.substring(with: r.range(at: 2)))-\(time.substring(with: r.range(at: 3)))"
         }
-        return"no time"
+        return""
     }
 }

@@ -27,19 +27,14 @@ struct RepositoryInfo {
 }
 
 class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
-    let statusBarHeight = UIApplication.shared.statusBarFrame.height
-    let tableView = UITableView()
+    
+    @IBOutlet weak var tableView: UITableView!
     var repositoriesInfo = [RepositoryInfo]()
     var selectedInfo: Any?
     let GithubUrl = "https://api.github.com/users/HamaguchiKazuki/repos"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //MARK: - UITableView Setting
-        tableView.frame = CGRect(x: 0, y: statusBarHeight, width: self.view.frame.width, height: self.view.frame.height - statusBarHeight)
-        tableView.delegate = self
-        tableView.dataSource = self
-        self.view.addSubview(tableView)
         
         //MARK: - get githubAPI
         if let url = URL(string: GithubUrl) {
