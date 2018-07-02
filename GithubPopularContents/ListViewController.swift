@@ -8,29 +8,10 @@
 
 import UIKit
 
-struct RepositoryInfo {
-    var name: String
-    var codeLanguage: String
-    var repoDescription: String
-    var recentUpdate: String
-    var openIssues: Int
-    var defaultBranch: String
-    
-    init(name: String, codeLanguage: String, repoDescription: String, recentUpdate: String, openIssues: Int, defaultBranch: String) {
-        self.name = name
-        self.codeLanguage = codeLanguage
-        self.repoDescription = repoDescription
-        self.recentUpdate = recentUpdate
-        self.openIssues = openIssues
-        self.defaultBranch = defaultBranch
-    }
-}
-
-class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class ListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var repositoriesInfo = [RepositoryInfo]()
-    var selectedInfo: Any?
     let GithubUrl = "https://api.github.com/users/HamaguchiKazuki/repos"
     
     override func viewDidLoad() {
@@ -77,30 +58,11 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             task.resume()
         }
     }
+}
+
+//MARK: - TableView
+extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    //MARK: - Segues
-    func perpare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDetail" {
-            if let indexPath = tableView.indexPathForSelectedRow {
-                let repoDescription = repositoriesInfo[indexPath.row].repoDescription
-                let recentUpdate = repositoriesInfo[indexPath.row].recentUpdate
-                let openIssues = repositoriesInfo[indexPath.row].openIssues
-                let defaultBranch = repositoriesInfo[indexPath.row].defaultBranch
-                
-                let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
-                controller.repoDescription = repoDescription
-                controller.recentUpdate = recentUpdate
-                controller.openIssues = openIssues
-                controller.defaultBranch = defaultBranch
-            }
-        }
-    }
-    
-    //MARK: - TableView
     // UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
