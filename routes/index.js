@@ -1,13 +1,14 @@
 var express = require('express');
 var router = express.Router();
 
-
-var scrapingTrend = require("../scraping");
+var scraping = require("../scraping");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  console.log(req.url);
   let target = "https://github.com/trending";
-  scrapingTrend(target)
+  
+  scraping.scrapingTrend(target)
     .then( (items) => {
       res.render('index', {title: 'GitHub Trend', items: items});
     })

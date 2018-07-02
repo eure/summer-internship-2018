@@ -1,5 +1,6 @@
 var request = require("request");
 var cheerio = require("cheerio");
+var showdown = require("showdown");
 
 var Repository = require('./models/Repository');
 
@@ -34,14 +35,31 @@ scrapingTrend = (url) => {
                 }
             }
         });
-    })
+    });
 }
 
-scrapingMarkdown = (url) => {
-    
+crawlingMarkDown = (user, repo) => {
+    let target = "https://raw.githubusercontent.com/" + user + "/" + repo + "/master/README.md"
+    return new Promise( (resolve, reject) => {
+        request(target, (err, resonse, body) => {
+            if(err) {
+                reject(err);
+            } else {
+                try {
+                    var converter = new showdown.Converter();
+                    html = converter.makeHtml(body);
+                    console.log(html);
+                    resolve(html);
+                } catch (e) {
+                    reject(e);
+                }
+            }
+        });
+    });
 }
 // debug
 // scrapingTrend("https://github.com/trending");
 
+// crawlingMarkDown("https://raw.githubusercontent.com/showdownjs/showdown/master/README.md");
 exports.scrapingTrend = scrapingTrend;
-
+exports.crawlingMarkDown = crawlingMarkDown;

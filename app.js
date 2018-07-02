@@ -6,8 +6,9 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 
+var scraping = require('./scraping');
 // なぜか動かない
-var detailRouter = require('./routes/detail');
+// var detailRouter = require('./routes/detail');
 
 var app = express();
 
@@ -23,12 +24,20 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.get('/detail/:user/:repo', (req, res, next) => {
-    console.log(req.params.user);
+  let user = req.params.user;
+  let repository = req.params.repo;
+  scraping.crawlingMarkDown(user, repository)
+    .then( (readme) => {
+      res.render('detail', { "readme":readme });
+    })
+    .catch( (err) => {
+      console.log(err)
+      res.render('error', {"message": res.status(), "error":err } );
+    });
 });
 
-
 // なぜか動かない
-app.use('/detail/:user/:repo', detailRouter);
+// app.use('/detail/:user/:repo', detailRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
