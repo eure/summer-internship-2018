@@ -26,10 +26,11 @@ struct RepositoryInfo {
     }
 }
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     let statusBarHeight = UIApplication.shared.statusBarFrame.height
     let tableView = UITableView()
     var repositoriesInfo = [RepositoryInfo]()
+    var selectedInfo: Any?
     let GithubUrl = "https://api.github.com/users/HamaguchiKazuki/repos"
     
     override func viewDidLoad() {
@@ -85,8 +86,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    //MARK: - Segues
     
+    //MARK: - Segues
+    func perpare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let repoDescription = repositoriesInfo[indexPath.row].repoDescription
+                let recentUpdate = repositoriesInfo[indexPath.row].recentUpdate
+                let openIssues = repositoriesInfo[indexPath.row].openIssues
+                let defaultBranch = repositoriesInfo[indexPath.row].defaultBranch
+                
+                let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
+                controller.repoDescription = repoDescription
+                controller.recentUpdate = recentUpdate
+                controller.openIssues = openIssues
+                controller.defaultBranch = defaultBranch
+            }
+        }
+    }
     
     //MARK: - TableView
     // UITableViewDataSource
@@ -101,6 +118,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return repositoriesInfo.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let repoDescription = repositoriesInfo[indexPath.row].repoDescription
+        let recentUpdate = repositoriesInfo[indexPath.row].recentUpdate
+        let openIssues = repositoriesInfo[indexPath.row].openIssues
+        let defaultBranch = repositoriesInfo[indexPath.row].defaultBranch
+        let controller = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        controller.repoDescription = repoDescription
+        controller.recentUpdate = recentUpdate
+        controller.openIssues = openIssues
+        controller.defaultBranch = defaultBranch
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     // UITableViewDelegate
