@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link rel="stylesheet" href="/stylesheets/reset.css"> -->
+    <link rel="stylesheet" href="/stylesheets/detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+
+    <title>ReadMe</title>
+</head>
+<body>
+    <input id="md" type="hidden" value="<%= readme %>">
+    <div class="content" id="container">
+    </div>
+    <script>
+        var readme = document.getElementById('md').value;
+        document.getElementById('container').innerHTML = readme;
+        hljs.initHighlightingOnLoad();
+    </script>
+</body>
+</html>
+

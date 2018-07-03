@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel="stylesheet" href="/stylesheets/reset.css" />
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="title">
+        <%= title %>
+      </h1>
+      <p class="subTitle">made by AK-10</p>
+    </div>
+  </header>
+  <main class="main">
+    <ul class="itemList">
+      <% for (var item of items) { %>
+        <li class="item">
+          <a href=<%= 'detail/' + item.getLink() %> >
+            <p class="repository"><%= item.user + "/" + item.name %></p>
+            <p class="language">Language: <%= item.lang %></p>
+            <p class="todaysStar">⭐️ <%= item.star %></p>
+          </a>
+        </li>
+      <% } %>
+    </ul>
+  </main>
+
+  <footer class="footer">
+
+  </footer>
+</body>
+
+</html>

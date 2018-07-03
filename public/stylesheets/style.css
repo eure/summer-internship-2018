@@ -1,0 +1,105 @@
+@charset "UTF-8";
+
+/* html {
+  font-size: 62.5%;
+} */
+
+a {
+  text-decoration: none;
+  color: gray;
+}
+
+a:visited {
+  color: #333;
+  color: gray;
+}
+
+body {
+  color: #333;
+  font-size: 1.2rem;
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  /* -webkit-font-smoothing: antialiased; */
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.header {
+  background-image: linear-gradient(-90deg, #B3CCFF, #FFB3E5);
+  width: 100%;
+  height: 400px;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.header .container {
+  margin-left: 3rem;
+  color: white;
+}
+
+.header .title {
+  font-size: 3.6rem;
+  border: 1px;
+  display: box;
+}
+
+.header .subTitle {
+  font-size: 1.8rem;
+  margin-top: 1rem;
+  display: box;
+}
+
+/* .wrapper {
+  width: 64%;
+  display: flex;
+  justify-content: center;
+} */
+
+
+.main {
+  background: #fafafa;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.main .itemList {
+  width: 64%;
+  margin-left: 18%;
+}
+
+.main .item {
+  background-color: #fff;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 9px 3px lightgray;
+  padding: 2rem;
+}
+
+.main .item:hover {
+  box-shadow: 0 0 15px 5px #B3CCFF;
+  transition: 0.4s;
+}
+
+
+.main .item .repository {
+  font-size: 2.5rem;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+
+.main .item .language {
+  font-size: 1.8rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.footer {
+  height: 200px;
+  width: 100%;
+  background-color: gray;
+}
+
+
