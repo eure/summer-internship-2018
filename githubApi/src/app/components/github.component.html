@@ -1,0 +1,46 @@
+<form>
+  <div class="form-group">
+    <label for="searchUsername">ユーザー名を検索</label>
+    <input type="text" class="form-control" placeholder="ユーザー名を入力" [(ngModel)]="username" name="username" (keyup.enter)="search()">
+  </div>
+</form>
+
+<div *ngIf="user">
+  <div class="card" style="width: 25rem; float: left;">
+    <img class="card-img-top github-avatar" src="{{user.avatar_url}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{user.name}}</h5>
+      <div class="stats" style="float:left;">
+        <span class="badge badge-primary">{{user.public_repos}} Public Repos</span>
+        <span class="badge badge-secondary">{{user.public_gists}} Public Gists</span>
+        <span class="badge badge-success">{{user.followers}} フォロワー</span>
+        <span class="badge badge-info">{{user.following}} フォロー</span>
+      </div>
+      <br>
+      <ul class="list-group">
+        <li class="list-group-item"><strong>ユーザー名: </strong>{{user.login}}</li>
+        <li class="list-group-item"><strong>住所: </strong>{{user.location}}</li>
+        <li class="list-group-item"><strong>メールアドレス: </strong>{{user.email}}</li>
+        <li class="list-group-item"><strong>ブログ: </strong>{{user.blog}}</li>
+        <li class="list-group-item"><strong>作成日: </strong>{{user.created_at}}</li>
+      </ul>
+      <a href="{{user.html_url}}" class="btn btn-primary" target="_blank">プロフィールページへ</a>
+    </div>
+  </div>
+
+  <div class="card" style="width: 25rem;">
+  <div class="card-header">
+    リポジトリ
+  </div>
+  <div *ngFor="let repo of repos">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <a href="{{repo.html_url}}" target="_blank">{{repo.name}}</a>
+        <p>{{repo.description}}</p>
+      </li>
+      <hr />
+    </ul>
+
+  </div>
+</div>
+</div>
