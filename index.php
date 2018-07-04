@@ -4,6 +4,7 @@
   $query = phpQuery::newDocument($html);
   $titles = $query->find("h3");
   foreach ($titles as $title) {
-      echo "<a href='repository.php'>".pq($title)->text()."</a><br>";
+     $path = pq($title)->find('a')->attr('href');
+      echo "<a href='repository.php?path=".urlencode($path)."'>".pq($title)->text()."</a><br>";
   }
 ?>
