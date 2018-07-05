@@ -48,8 +48,8 @@
 		7525A12F20ED2C37001230AE /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				7525A12B20ED1DDC001230AE /* DetailViewController.swift */,
 				7525A12920ED1264001230AE /* RepositoryCollectionViewController.swift */,
+				7525A12B20ED1DDC001230AE /* DetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";

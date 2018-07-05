@@ -12,6 +12,7 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var detailTextView: UITextView!
     @IBOutlet weak var searchButton: UIBarButtonItem!
+    @IBOutlet weak var warningLabel: UILabel!
     
     var detail: String = ""
     var ownerName: String = ""
@@ -31,10 +32,17 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        APIClient.fetchReadMe(ownerName: ownerName, repoName: repoName) { (detail) in
-            let content = String(data: Data(base64Encoded: detail.content, options:Data.Base64DecodingOptions.ignoreUnknownCharacters)!, encoding: .utf8)
-            DispatchQueue.main.async {
-                self.detailTextView.text = content
+        APIClient.fetchReadMe(ownerName: ownerName, repoName: repoName) { (result) in
+            switch result {
+            case .success(let detail):
+                let content = String(data: Data(base64Encoded: detail.content, options:Data.Base64DecodingOptions.ignoreUnknownCharacters)!, encoding: .utf8)
+                DispatchQueue.main.async {
+                    self.detailTextView.text = content
+                }
+            case .failure:
+                DispatchQueue.main.async {
+                    self.warningLabel.isHidden = false
+                }
             }
         }
     }
