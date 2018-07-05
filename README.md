@@ -1,8 +1,8 @@
-summer-internship-2018
+#summer-internship-2018
 
 エウレカサマーインターン2018の技術課題提出用リポジトリです。
 
-概要
+###概要
 
 提出方法
 
@@ -25,7 +25,7 @@ Descriptionに以下の情報を記載してください。
 適切な命名やコメントなど、チーム開発において必要な要素が満たされていること
 設計やコーディングルールに一貫性があること
 パフォーマンスに留意した実装になっていること
-Android/iOS/Webフロントエンド
+##Android/iOS/Webフロントエンド
 
 課題
 
@@ -39,7 +39,7 @@ GitHub APIではGraphQLを使用しても構いません
 AndroidはJava/Kotlinのどちらかで開発してください
 iOSはSwiftで開発してください
 WebフロントエンドはなんらかのAltJS（Babel,TypeScript,flowなど）とSPAフレームワーク（React,Vue,Angularなど）で開発してください
-サーバーサイド
+##サーバーサイド
 
 以下のどちらかを選択してください。
 
