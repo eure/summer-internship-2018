@@ -1,0 +1,15 @@
+.rss_content{
+	padding: 20px 0 40px 20px;
+	border-top: solid 1px black;
+}
+
+.rss_title{
+	font-size: 30px;
+	font-weight: bold;
+	font-family: "ヒラギノ角ゴ ProN W6";
+}
+
+.rss_image{
+	max-width: auto;
+	max-height: 200px;
+}
