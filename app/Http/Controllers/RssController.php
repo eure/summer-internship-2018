@@ -7,14 +7,12 @@ use Illuminate\Http\Request;
 class RssController extends Controller
 {
   private $url = null;
-  private $baseUrl = 'https://note.mu/notemag/m/m57787022cedc/rss';
+  private $baseUrl = 'https://blog.prog24.com/feed/rss';
 
   public function __construct()
   {
-    // $_COOKIE['url'] = $this->baseUrl;
     if(isset($_COOKIE['url'])) $this->url = $_COOKIE['url'];
     else $this->url = $this->baseUrl;
-    // $this->url = $this->baseUrl;
   }
 
   public function showList()
