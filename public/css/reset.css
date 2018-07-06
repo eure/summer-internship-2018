@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+body{
+    line-height: 1;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+html, body, h1, h2, h3, h4, 
+ul, ol, dl, li, dt, dd, p, 
+div, span, img, a, table, tr, th, td{
+    margin  : 0;
+    padding : 0;
+    border: 0;
+    font-weight: normal;
+    font-size: 100%;
+    vertical-align: baseline;
+    -webkit-box-sizing: border-box;
+    -mox-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: "メイリオ", sans-serif;
+}
