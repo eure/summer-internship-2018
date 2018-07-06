@@ -40,7 +40,7 @@ function getRssFeedArray($url, $nKiji){
 
             $i++;
 
-			// 取得するのは$nKiji分だけ
+			// $nKiji分だけ取得する
 			if($i == $nKiji){
 				break;
 			}
@@ -51,12 +51,12 @@ function getRssFeedArray($url, $nKiji){
 		// エラーです。
     }
 
-    // お疲れ様でした
+    // 取得終了
 	return $a;
 
 }
 
-// time値から日本語値を得る。
+// time値から日本語値を得る
 function getTime_j($time){
 
 	$weeks = array('日','月','火','水','木','金','土');
