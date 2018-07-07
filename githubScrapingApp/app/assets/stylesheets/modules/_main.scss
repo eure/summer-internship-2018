@@ -1,0 +1,44 @@
+.main {
+  &__inner{
+    padding: 20px 40px;
+    max-width: 1012px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .github {
+    width: 100%;
+    min-height: 100px;
+    padding: 20px;
+    background-color: white;
+    border: solid 1px;
+    position: relative;
+    &__title {
+      font-size: 20px;
+      margin-left: 20px;
+    }
+    &__readme {
+      margin: 20px;
+    }
+    &__description {
+      margin: 20px;
+    }
+    &__bottom {
+      position: absolute;
+      bottom: 5px;
+      margin-left: 20px;
+      font-size: 12px;
+    }
+    .star-counts {
+      margin: 0px 20px;
+    }
+    .fork-counts {
+      margin: 0px 20px;
+    }
+  }
+}
+
+.float-left {
+  float: left;
+}
