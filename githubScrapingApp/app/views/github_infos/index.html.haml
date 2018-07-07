@@ -1,0 +1,4 @@
+.main
+  .main__inner
+    - @githubs.each do |github|
+      = render partial:  "github", locals: { github: github }

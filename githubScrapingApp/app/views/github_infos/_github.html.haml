@@ -1,0 +1,10 @@
+.github
+  .github__title
+    = link_to github.account + " / " + github.title, github_info_path(github.id)
+  .github__description
+    = github.description
+  .github__bottom
+    .star-counts.float-left
+      = "star: " + github.star_count.to_s
+    .fork-counts.float-left
+      = "fork: " + github.fork_count.to_s
