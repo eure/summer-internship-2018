@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Github Trending</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="/assets/bootstrap-3.3.7-dist%202/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/main-style.css" rel="stylesheet">
+</head>
+<body>
+<div class="jumbotron jumbotron-extend">
+    <div class="container-fluid jumbotron-container">
+        <h1 class="site-name">Github Trending</h1>
+        <p><a class="btn btn-black" href="#trend" role="button">トレンドを見にいく</a></p>
+    </div>
+    <div class="sns-button">
+        <ul class="list-inline">
+            <li><a href="https://github.co.jp"><img src="/assets/images/github-icn.png" alt="github-icon"></a></li>
+        </ul>
+    </div>
+</div>
+
+<main class="container-fluid contents">
+    <div class="content-repository">
+        <h1 id="trend">Repository Trend</h1><br>
+    {{ range .Trend }}
+        <div class="well repository">
+            <p>{{ .Rank }}:　 <a href="https://github.com/{{ .Owner }}/{{ .RepositoryName }}" >{{ .RepositoryName }}/{{ .Owner }}</a></p>
+            <p><i class="glyphicon glyphicon-star"></i>　{{ .Star }}</p>
+            <p>Description:　{{ .Description }}</p>
+            <form action="/detail" method="get">
+                <input type="hidden" name="Owner" value="{{.Owner}}">
+                <input type="hidden" name="RepositoryName" value="{{.RepositoryName}}">
+                <button type='submit' class="btn btn-black btn-sm btn-block">詳細</button>
+            </form><br>
+        </div>
+    {{ end }}
+    </div>
+    <div class="content-developer">
+        <h1>Developer Trend</h1><br>
+    {{ range .Develop }}
+        <div class="well developer">
+            <a href="https://github.com/{{ .DisplayName }}"><img src="{{.Avatar}}" class="Avatar"></a><br><br>
+            <p>ID:　{{ .Id }}</p>
+            <p>NAME: <a href="https://github.com/{{ .DisplayName }}">　{{ .DisplayName }}({{ .FullName }})</a></p>
+        </div>
+    {{ end }}
+    </div>
+</main>
+
+<script src="/assets/bootstrap-3.3.7-dist%202/js/bootstrap.min.js"></script>
+</body>
+</html>

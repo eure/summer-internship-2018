@@ -1,0 +1,74 @@
+.jumbotron-extend {
+    height: 100vh;
+    min-height: 350px;
+    margin-bottom: 60px;
+    background-color: white;
+    background-size: cover;
+}
+
+.jumbotron-container {
+    position: relative;
+    top: 45%;
+    left: 34%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.site-name {
+    margin-bottom: 60px;
+    font-family: 'Playfair Display', serif;
+}
+.btn-black {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Avenir', serif;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;/* for Safari and Chrome 対応*/
+    -moz-border-radius: 5px;/* for Firefox 対応*/
+}
+.btn-black:hover {
+    background-color: gainsboro;
+    color: #000;
+    border-radius: 5px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;/* for Safari and Chrome 対応*/
+    -moz-border-radius: 5px;/* for Firefox 対応*/
+}
+.sns-button {
+    position: absolute;
+    bottom: 32px;
+    left: 46px;
+}
+
+.contents {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.content-repository,
+.content-developer {
+    padding-left: 0;
+    padding-right: 0;
+}
+.content-repository {
+    float: left;
+    width: 52.08%;
+}
+.content-developer {
+    float: right;
+    width: 37.92%;
+}
+
+.repository{
+    font-size: 22px;
+}
+
+.developer{
+    font-size: 20px;
+}
+
+img.Avatar{
+    width: 130px;
+    height: 130px;
+}
