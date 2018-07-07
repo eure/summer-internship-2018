@@ -8,7 +8,6 @@
 //
 
 import UIKit
-import Alamofire
 
 class DetailViewController: UIViewController {
 

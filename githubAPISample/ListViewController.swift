@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 
 class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
