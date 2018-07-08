@@ -1,94 +1,29 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li>
-        <a
-          href="https://vuejs.org"
-          target="_blank"
-        >
-          Core Docs
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://forum.vuejs.org"
-          target="_blank"
-        >
-          Forum
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://chat.vuejs.org"
-          target="_blank"
-        >
-          Community Chat
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://twitter.com/vuejs"
-          target="_blank"
-        >
-          Twitter
-        </a>
-      </li>
-      <br>
-      <li>
-        <a
-          href="http://vuejs-templates.github.io/webpack/"
-          target="_blank"
-        >
-          Docs for This Template
-        </a>
-      </li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li>
-        <a
-          href="http://router.vuejs.org/"
-          target="_blank"
-        >
-          vue-router
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vuex.vuejs.org/"
-          target="_blank"
-        >
-          vuex
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vue-loader.vuejs.org/"
-          target="_blank"
-        >
-          vue-loader
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-        >
-          awesome-vue
-        </a>
-      </li>
-    </ul>
+  <div id="content">
+    <h1 class="title"><i class="fab fa-github" />Gitviewer</h1>
+    <div class="container">
+      <h2>ユーザーを表示</h2>
+      <input placeholder="ex:unotovive">
+      <button @click="getUser()"><span>表示 <i class="fas fa-arrow-right"/></span></button>
+    </div>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      results:''
+    }
+  },
+  methods:{
+    getUser(){
+        axios.get("https://api.github.com/users/unotovive")
+        .then(response => {this.results = response.data.results
+        console.log(response)
+        })
     }
   }
 }
@@ -96,18 +31,97 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
+@import url('https://fonts.googleapis.com/css?family=Lato:900');
+#content{
+  font-family: 'Lato', sans-serif;
+  position: absolute;
+  top :0;
+  background: #aa4b6b;
+  background: -webkit-linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b);
+  background: linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b);
+  width: 100vw;
+  height: 100vh
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+.container{
+  position: absolute;
+  top:33%;
+  right: 0;
+  left: 0;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+h1.title{
+  color: azure;
+  position: absolute;
+  top: 20px;
+  left: 20px;;
+  margin: 0;
 }
-a {
-  color: #42b983;
+h2{
+  font-weight: 400;
+  color: azure;
+  font-family: "Rounded Mplus 1c";
+  margin: 30px;
+  font-size: 30px;
+}
+input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: 0;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 250px;
+  border-radius: 3px;
+  padding: 10px 15px;
+  margin: 0 auto 10px auto;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  transition-duration: 0.25s;
+  font-weight: 300;
+}
+input:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+input:focus {
+  background-color: white;
+  width: 300px;
+  color: #aa4b6b;
+}
+input::-webkit-input-placeholder {
+    color: darkgrey;
+    opacity: 0.9;
+}
+input:-ms-input-placeholder {
+    color: darkgray;
+    opacity: 0.9;
+}
+input::-moz-placeholder {
+    color: darkgray;
+    opacity: 0.9;
+}
+input::-placeholder {
+    color:darkgray;
+    opacity: 0.9;
+}
+button {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  line-height: 50px;
+  width: 200px;
+  font-size: 16px;
+  font-weight: 200;
+  border-radius: 5px;
+  height: 50px;
+  margin: 20px;
+}
+button span{
+  position: relative;
+  left :7px;
+}
+
+button:hover {
+  background-color: rgba(255, 255, 255, .2);
 }
 </style>
