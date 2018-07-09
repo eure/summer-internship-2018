@@ -19,6 +19,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // タイトルを設定
+        title = "reima21 / Repositories"
+        
         
         // tableViewを作成
         let tableView = UITableView()
@@ -28,14 +31,30 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.dataSource = self
         self.view.addSubview(tableView)
         
+        
+        // APIからデータを取得
+        let listUrl = "https://api.github.com/users/reima21/repos"
+        Alamofire.request(listUrl).responseJSON{ response in
+            let json = JSON(response.result.value ?? 0)
+            
+            json.forEach{(_, data) in
+                self.items.append(data)
+            }
+            
+            tableView.reloadData()
+        }
+        
 
         
     }
     
 
+    // tableのcellにAPIから受け取ったデータを入れる
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "TableCell")
+        cell.textLabel?.text = items[indexPath.row]["name"].string
+        cell.detailTextLabel?.text = "description : \(items[indexPath.row]["description"])"
         
         return cell
     }
