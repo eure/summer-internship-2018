@@ -1,0 +1,97 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>GitHub Trend Repositories</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'app/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'app/css/offcanvas.css' %}" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+      var requestAjax =  function() {
+          $("#repo_list").empty();
+          $.ajax({
+              type: "GET",
+              url: "http://127.0.0.1:8000/api/trends/?format=json",
+              data: {},
+              dataType: "json",
+              success: function(response){
+                  $.each(response, function(i) {
+                      var newDate = new Date();
+                      $("#h6").empty();
+                      $("#h6").append('Updated at  '+newDate.getFullYear()+'/'+(newDate.getMonth()+1)+'/'+newDate.getDate()+'  '+newDate.getHours()+':'+newDate.getMinutes());
+
+                      $("#repo_list").append(
+                        '<div class="media text-muted pt-3">' +
+                        '<p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">' +
+                        '<strong class="d-block text-gray-dark">' + this.name + '</strong>' +
+                        this.desc +
+                        '</p></div>'
+                      );
+                  });
+              },
+              error: function(response) {
+                  $('#repo_list').append('<p>Error</p>');
+              },
+          });
+      };
+    </script>
+  </head>
+
+  <body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+      <a class="navbar-brand mr-auto mr-lg-0" href="#">GitHub Trend Repositories</a>
+      <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+
+    <main role="main" class="container">
+      <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded box-shadow">
+        <img class="mr-3" src="{% static 'app/images/icon.png' %}" alt="GitHubIcon" width="48" height="48">
+        <div class="lh-100">
+          <h6 class="mb-0 text-white lh-100">Today's Trend</h6>
+          <small>The top 25</small>
+        </div>
+      </div>
+
+      <div class="my-3 p-3 bg-white rounded box-shadow">
+        <h6 class="border-bottom border-gray pb-2 mb-0" id="h6">Recent updates</h6>
+        <div id="repo_list">
+          {% for repo in trend_list %}
+            <div class="media text-muted pt-3">
+              <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                <strong class="d-block text-gray-dark">{{ repo.name }}</strong>
+                {{ repo.desc }}
+              </p>
+            </div>
+          {% endfor %}
+        </div>
+        <small class="d-block text-right mt-3">
+          <input type="button" id="btn_test" value="All updates" onclick="requestAjax();">
+        </small>
+      </div>
+    </main>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script>window.jQuery || document.write('<script src="{% static 'app/js/jquery-slim.min.js' %}"><\/script>')</script>
+    <script src="{% static 'app/js/popper.min.js' %}"></script>
+    <script src="{% static '/app/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'app/js/holder.min.js' %}"></script>
+    <script src="{% static 'app/js/offcanvas.js' %}"></script>
+
+  </body>
+</html>
