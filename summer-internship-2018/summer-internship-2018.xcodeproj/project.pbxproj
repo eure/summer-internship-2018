@@ -14,6 +14,8 @@
 		5F40800320F3E962007D8824 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F40800120F3E962007D8824 /* LaunchScreen.storyboard */; };
 		5F40800E20F3E962007D8824 /* summer_internship_2018Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F40800D20F3E962007D8824 /* summer_internship_2018Tests.swift */; };
 		5F40801920F3E962007D8824 /* summer_internship_2018UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F40801820F3E962007D8824 /* summer_internship_2018UITests.swift */; };
+		5F40802820F3EB34007D8824 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F40802720F3EB34007D8824 /* Alamofire.framework */; };
+		5F40802A20F3EB3F007D8824 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F40802920F3EB3F007D8824 /* SwiftyJSON.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		5F40801420F3E962007D8824 /* summer-internship-2018UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "summer-internship-2018UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F40801820F3E962007D8824 /* summer_internship_2018UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = summer_internship_2018UITests.swift; sourceTree = "<group>"; };
 		5F40801A20F3E962007D8824 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F40802720F3EB34007D8824 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		5F40802920F3EB3F007D8824 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F40802A20F3EB3F007D8824 /* SwiftyJSON.framework in Frameworks */,
+				5F40802820F3EB34007D8824 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +87,7 @@
 				5F40800C20F3E962007D8824 /* summer-internship-2018Tests */,
 				5F40801720F3E962007D8824 /* summer-internship-2018UITests */,
 				5F407FF620F3E960007D8824 /* Products */,
+				5F40802620F3EB34007D8824 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +132,15 @@
 			path = "summer-internship-2018UITests";
 			sourceTree = "<group>";
 		};
+		5F40802620F3EB34007D8824 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5F40802920F3EB3F007D8824 /* SwiftyJSON.framework */,
+				5F40802720F3EB34007D8824 /* Alamofire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +151,7 @@
 				5F407FF120F3E960007D8824 /* Sources */,
 				5F407FF220F3E960007D8824 /* Frameworks */,
 				5F407FF320F3E960007D8824 /* Resources */,
+				5F40802B20F3EB43007D8824 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -250,6 +267,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5F40802B20F3EB43007D8824 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5F407FF120F3E960007D8824 /* Sources */ = {
@@ -432,6 +467,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 52S264L48C;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "summer-internship-2018/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -450,6 +489,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 52S264L48C;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "summer-internship-2018/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
