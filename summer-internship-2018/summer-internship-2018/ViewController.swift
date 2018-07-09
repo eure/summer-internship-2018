@@ -61,6 +61,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        //SecondViewcontrollerのurl_linkプロパティURLを格納
+        let secondView:SecondViewController = SecondViewController()
+        secondView.url_link = items[indexPath.row]["html_url"].string!
+        
+        //セルの選択解除
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        //遷移処理
+        self.present(secondView, animated: true, completion: nil)
         
         
     }
