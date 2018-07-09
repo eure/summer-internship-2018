@@ -1,29 +1,25 @@
 <template>
   <div id="content">
-    <h1 class="title"><i class="fab fa-github" />Gitviewer</h1>
+    <h1 class="title"><i class="fab fa-github" /> Gitviewer</h1>
     <div class="container">
       <h2>ユーザーを表示</h2>
-      <input placeholder="ex:unotovive">
-      <button @click="getUser()"><span>表示 <i class="fas fa-arrow-right"/></span></button>
+      <input placeholder="ex:unotovive" v-model="name">
+      <button @click="goUserPage()"><span>表示 <i class="fas fa-arrow-right"/></span></button>
     </div>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
 export default {
   name: 'HelloWorld',
   data () {
     return {
-      results:''
+      name:''
     }
   },
   methods:{
-    getUser(){
-        axios.get("https://api.github.com/users/unotovive")
-        .then(response => {this.results = response.data.results
-        console.log(response)
-        })
+    goUserPage(){
+        this.$router.push({path:`/user/${this.name}`})
     }
   }
 }
@@ -37,8 +33,8 @@ export default {
   position: absolute;
   top :0;
   background: #aa4b6b;
-  background: -webkit-linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b);
-  background: linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b);
+  background: -webkit-linear-gradient(to right, #00b09b,#96c93d);
+  background: linear-gradient(to right, #00b09b,#96c93d);
   width: 100vw;
   height: 100vh
 }
@@ -59,7 +55,7 @@ h2{
   font-weight: 400;
   color: azure;
   font-family: "Rounded Mplus 1c";
-  margin: 30px;
+  margin: 25px;
   font-size: 30px;
 }
 input {
@@ -72,7 +68,7 @@ input {
   width: 250px;
   border-radius: 3px;
   padding: 10px 15px;
-  margin: 0 auto 10px auto;
+  margin: 10px auto 10px auto;
   display: block;
   text-align: center;
   font-size: 18px;
@@ -86,22 +82,22 @@ input:hover {
 input:focus {
   background-color: white;
   width: 300px;
-  color: #aa4b6b;
+  color: #00b09b;
 }
 input::-webkit-input-placeholder {
-    color: darkgrey;
+    color: azure;
     opacity: 0.9;
 }
 input:-ms-input-placeholder {
-    color: darkgray;
+    color: azure;
     opacity: 0.9;
 }
 input::-moz-placeholder {
-    color: darkgray;
+    color: azure;
     opacity: 0.9;
 }
 input::-placeholder {
-    color:darkgray;
+    color:azure;
     opacity: 0.9;
 }
 button {
@@ -114,7 +110,7 @@ button {
   font-weight: 200;
   border-radius: 5px;
   height: 50px;
-  margin: 20px;
+  margin: 25px;
 }
 button span{
   position: relative;

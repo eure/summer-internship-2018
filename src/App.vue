@@ -5,7 +5,6 @@
         <span class="bar top"></span>
         <span class="bar middle"></span>
         <span class="bar bottom"></span>
-        <span class="menu-btn__text">MENU</span>
     </label>
     <label class="close-menu" for="checked"></label>
     <nav class="drawer-menu">
@@ -146,7 +145,7 @@ ul {
 .menu-btn {
     position: fixed;
     display: block;
-    top: 40px;
+    top: 30px;
     right: 40px;
     display: block;
     width: 40px;
@@ -184,19 +183,7 @@ ul {
     transform-origin: left bottom;
 }
 
-.menu-btn__text {
-    position: absolute;
-    bottom: -15px;
-    left: 0;
-    right: 0;
-    margin: auto;
-    color: #fff;
-    -webkit-transition: all .5s;
-    transition: all .5s;
-    display: block;
-    visibility: visible;
-    opacity: 1;
-}
+
 
 .menu-btn:hover .bar {
     background: #999;
