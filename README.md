@@ -5,6 +5,12 @@
 
 #### スクリーンショット
 
+図1
+![Alt text](./images/image1.jpg?raw=true "image1")
+
+図2
+![Alt text](./images/image2.jpg?raw=true "image2")
+
 ### 環境構築マニュアル
 Cartfileがある summer-internship-2018/summer-internship-2018 ディレクトリ内で以下のコードを実行.
 
