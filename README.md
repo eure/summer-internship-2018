@@ -5,10 +5,10 @@
 
 #### スクリーンショット
 
-図1
+##### 図1
 ![Alt text](./images/image1.png?raw=true "image1")
 
-図2
+##### 図2
 ![Alt text](./images/image2.png?raw=true "image2")
 
 ### 環境構築マニュアル
