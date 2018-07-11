@@ -26,5 +26,6 @@ class IndexView(generic.ListView):
 
 class DetailView(generic.DetailView):
     model = GitHubTrend
+    context_object_name = 'repo'
     template_name = 'app/detail.html'
 

@@ -72,7 +72,7 @@
           {% for repo in trend_list %}
             <div class="media text-muted pt-3">
               <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-                <strong class="d-block text-gray-dark">{{ repo.name }}</strong>
+                  <strong class="d-block text-gray-dark"><a  href="{% url 'app:detail' repo.id %}">{{ repo.name }}</a></strong>
                 {{ repo.desc }}
               </p>
             </div>
