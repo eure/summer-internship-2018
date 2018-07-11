@@ -1,0 +1,71 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>GitHub Trend Repositories</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'app/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'app/css/offcanvas.css' %}" rel="stylesheet">
+
+    <style>
+        .row {
+            margin-bottom: 1rem;
+        }
+        .row .row {
+            margin-top: 1rem;
+            margin-bottom: 0;
+        }
+        [class*="col-"] {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            background-color: rgba(86, 61, 124, .15);
+            border: 1px solid rgba(86, 61, 124, .2);
+        }
+    </style>
+  </head>
+
+  <body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+      <a class="navbar-brand mr-auto mr-lg-0" href="#">GitHub Trend Repositories</a>
+      <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+
+    <h1 align="center">{{ repo.name }}</h1>
+    <h5 align="center">detail information</h5>
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-3">Today's Star: {{ repo.today_star }}</div>
+            <div class="col-3">Total Star: {{ repo.total_star }}</div>
+            <div class="col-3">Fork: {{ repo.fork }}</div>
+            <div class="col-3">Watch: {{ repo.watch }}</div>
+        </div>
+        <div class="row">
+            <div class="col-12" id="detail">{{ repo.detail_desc }}</div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script>window.jQuery || document.write('<script src="{% static 'app/js/jquery-slim.min.js' %}"><\/script>')</script>
+    <script src="{% static 'app/js/popper.min.js' %}"></script>
+    <script src="{% static '/app/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'app/js/holder.min.js' %}"></script>
+    <script src="{% static 'app/js/offcanvas.js' %}"></script>
+
+  </body>
+</html>
