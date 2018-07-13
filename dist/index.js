@@ -4,21 +4,34 @@ var _express = require('express');
 
 var _express2 = _interopRequireDefault(_express);
 
+var _GitHubController = require('./controllers/GitHubController');
+
+var _GitHubController2 = _interopRequireDefault(_GitHubController);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var app = (0, _express2.default)(); // アプリのセットアップ
+//========= アプリのセットアップ ==============
 
+var app = (0, _express2.default)();
 
 app.use(_express2.default.static('public'));
 
 app.set("views", 'public/views');
 app.set("view engine", "ejs");
 
-// routing
-app.get('/', function (req, res) {
-	console.log('hoge');
-	// res.send('Hello Worldd');
-	res.render('index', { title: "タイトル" });
+//============ routing ================
+
+// リスト
+app.get('/github/', function (req, res) {
+	var gitHubController = new _GitHubController2.default();
+	gitHubController.index(res, req);
 });
 
+// 詳細
+app.get('/github/:id', function (req, res) {
+	var gitHubController = new _GitHubController2.default();
+	gitHubController.show(res, req);
+});
+
+//============== start ==================
 app.listen(3000);
