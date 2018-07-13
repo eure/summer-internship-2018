@@ -1,0 +1,21 @@
+<ul id="dropdown1" class="dropdown-content">
+    <li><a href="#!">today</a></li>
+    <li><a href="#!">week</a></li>
+    <li><a href="#!">month</a></li>
+</ul>
+<nav>
+    <div class="nav-wrapper orange">
+        <a href="#!" class="brand-logo">GiTrend</a>
+        <ul class="right hide-on-med-and-down">
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Select Date<i class="material-icons right">arrow_drop_down</i></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.dropdown-trigger');
+        var instances = M.Dropdown.init(elems);
+    });
+</script>
