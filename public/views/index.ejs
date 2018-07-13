@@ -10,10 +10,59 @@
   </head>
 
   <body>
-  	<header></header>
-    <h1><%= title %></h1>
+  	<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #84B6F2!important;">
+	  <a class="navbar-brand mb-0 h1" href="/github" style="color: #022C6A">GitHubClient by Rentaro Igari</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	    <ul class="navbar-nav mr-auto">
+	      <li class="nav-item dropdown">
+	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          Sort
+	        </a>
+	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+	          <a class="dropdown-item" href="?today">today</a>
+	          <a class="dropdown-item" href="?week">this week</a>
+	          <a class="dropdown-item" href="?month">this month</a>
+	        </div>
+	      </li>
+	    </ul>
+	  </div>
+	</nav>
+
+	<h1 class="text-center m-5" style="color: #022C6A">Github Trending Repositories</h1>
+
+	<ul class="list-unstyled">
+	  <li class="media m-5">
+		<div class="container">
+		  <div class="row">
+			<!-- <img class="mr-3" src=".../64x64" alt="Generic placeholder image"> -->
+	  	    <div class="media-body">
+			<h5 class="mt-0 mb-1 text-center">List-based media object</h5>
+			  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+		    </div>
+	      </div>
+		</div>
+	  </li>
+	  <li class="media m-5">
+		<div class="container">
+		  <div class="row">
+			<!-- <img class="mr-3" src=".../64x64" alt="Generic placeholder image"> -->
+	  	    <div class="media-body">
+			<h5 class="mt-0 mb-1 text-center">List-based media object</h5>
+			  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+		    </div>
+	      </div>
+		</div>
+	  </li>
+	</ul>
+
   </body>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="../bower_components/bootstrap/dist/js/bootstrap.bundle.js"></script>
   <script></script>
 </html>
 
