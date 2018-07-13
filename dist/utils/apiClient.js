@@ -13,7 +13,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var githubClient = _axios2.default.create({
   baseURL: 'https://github.com',
-  timeout: 2000
+  timeout: 5000
 });
 
 exports.githubClient = githubClient;
