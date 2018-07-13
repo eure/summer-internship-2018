@@ -1,0 +1,20 @@
+{
+  "name": "summer-internship-2018",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Rentearo Igari"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Rentaro-Igari/summer-internship-2018",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.1.2"
+  }
+}
