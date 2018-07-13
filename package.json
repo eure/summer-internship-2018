@@ -6,12 +6,14 @@
   "author": "Rentearo Igari",
   "license": "MIT",
   "dependencies": {
+    "app-root-path": "^2.1.0",
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
+    "ejs": "^2.6.1",
     "express": "^4.16.3",
     "nodemon": "^1.18.1"
   },
   "scripts": {
-    "build": "babel app.js -w -d dist"
+    "build": "babel app/index.js -w -d dist"
   }
 }
