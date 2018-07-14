@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Github Trend List</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+	<h1 data-filed="title">...</h1>
+	<ul id="trends"></ul>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script src="//www.google.com/jsapi"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script>
+google.setOnLoadCallback(function() {
+    $(function() {
+      var trend = location.href.split("trends=")[1];
+      console.log(trend)
+      var update = function() {
+	// $.get("http://localhost:8080/" + trend + "?key=abc", null, null, "json")
+	$.get("http://localhost:8080/trends/?key=abc", null, null, "json")
+	  .done(function(polls) {
+	    var poll = polls[0];
+	    $('[data-filed="title"]').text(poll.title);
+	    $('#trends').empty();
+	    for (var o in poll.list) {
+	      $('#trends').append(
+		$("<li>").append(
+		  $("<small>").addClass("label label-default").text(o)," " , poll.list[o]
+		  )
+		)
+	    };
+	  });
+      };
+      update();
+    });
+});
+</script>
