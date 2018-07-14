@@ -9,28 +9,30 @@
   </head>
 
   <body>
-  	  	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-	    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-	        <ul class="navbar-nav mr-auto">
-	            <li class="nav-item active">
-	            </li>
-	        </ul>
-	    </div>
-	    <div class="mx-auto order-0">
-	        <a class="navbar-brand mx-auto" href="/github">GitHubClient by Rentaro Igari</a>
-	        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
-	            <span class="navbar-toggler-icon"></span>
-	        </button>
-	    </div>
-	    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-	        <ul class="navbar-nav ml-auto">
-	            <li class="nav-item"></li>
-	        </ul>
-	    </div>
+
+  	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+          </li>
+        </ul>
+      </div>
+      <div class="mx-auto order-0">
+	    <a class="navbar-brand mx-auto" href="/github">GitHubClient by Rentaro Igari</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+	  </div>
+	  <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+	    <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a href="/github" style="color: #fff;">ホーム</a></li>
+        </ul>
+	  </div>
 	</nav>
 
 	<h1 class="text-center mt-5 show-h1"><%= title %></h1>
 	<h2 class="text-center mb-5 show-h2">by <%= author %></h2>
+
 	<div class="row">
 	  <canvas id="myChart" height="100vh"></canvas>
 	</div>
