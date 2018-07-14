@@ -10,6 +10,13 @@
 
 ### スクリーンショット
 
+- 一覧ページ
+[![Image from Gyazo](https://i.gyazo.com/26a155ca5c1ff222ccaae3b4c0e61854.png)](https://gyazo.com/26a155ca5c1ff222ccaae3b4c0e61854)
+
+- 詳細ページ
+[![Image from Gyazo](https://i.gyazo.com/8087377da09dd159a135c1dd3fb8dde3.png)](https://gyazo.com/8087377da09dd159a135c1dd3fb8dde3)
+
+
 ### 環境構築マニュアル
 
 ### 言語/ライブラリ/アーキテクチャなどの選定理由
@@ -23,7 +30,7 @@
 - Axios.js
 
 ```
-GitHubのレスポンスを取得するため。簡単に扱えるライブラリであるからaxiosを使用した。
+GitHubのページを取得・レスポンスを取得するため。簡単に扱えるライブラリであるからaxiosを使用した。
 ```
 
 - cheerio.js
