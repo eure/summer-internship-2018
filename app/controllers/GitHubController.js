@@ -89,7 +89,7 @@ export default class GitHubController {
 	   	  	lang.children.find(child => child.type === 'tag').children.find( child => child.attribs && child.attribs.class === 'percent').children[0].data
 	   	  	.match(/(.+)%/)[1];
 
-	   	  // color
+	   	  // 言語のcolor
 	   	  lang_data.color =
 	   	  	lang.children.find(child => child.type === 'tag').children.find( child => child.attribs && child.attribs.class === 'color-block language-color').attribs.style
 	   	  	.match(/background-color:(.+);/)[1];
