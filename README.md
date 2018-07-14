@@ -2,6 +2,13 @@
 
 ## 仕様説明
 
+git cloneした後にclone先に移動し、以下のコマンドを順に実行してください。
+
+1. yarn
+2. yarn start
+
+以上を実行すると、`localhost:3000`でサーバーが立ち上がります。
+
 ### 実現した機能の簡単な解説
 
 - GitHubのtrendingページ（ https://github.com/trending ）をリスト形式に表示。
