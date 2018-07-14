@@ -7,41 +7,41 @@ export default class GitHubController {
   index(res, req) {
 
   	// クエリの解析をする
-  	let query;
-  	switch (req.query.sort) {
+    let query;
+    switch (req.query.sort) {
 
-  	  case "today":
-  	    query = "?since=daily";
-  	    break;
+      case "today":
+        query = "?since=daily";
+        break;
 
-  	  case "week":
-  	    query = "?since=weekly";
-  	    break;
+      case "week":
+        query = "?since=weekly";
+        break;
 
-  	  case "month":
-  	    query = "?since=monthly";
-  	    break;
+      case "month":
+        query = "?since=monthly";
+        break;
 
-  	  case void 0:
-  	    query = "";
-  	    break;
+      case void 0:
+        query = "";
+        break;
 
-  	}
+    }
 
   	// GitHubのトレンド一覧ページをスクレイピング・解析する
 	githubClient.get('/trending' + query).then(apiResponse => {
 
-	  // HTMLをパースする
-	  const $ = cheerio.load(apiResponse.data);
+      // HTMLをパースする
+      const $ = cheerio.load(apiResponse.data);
       const repositories = [];
 
       // 情報取得
-	  $('li', 'ol.repo-list').each((index, repo) => {
-	    const title = $(repo).find('h3').text().trim();
+      $('li', 'ol.repo-list').each((index, repo) => {
+      	const title = $(repo).find('h3').text().trim();
 
-	    const starLink = '/' + title.replace(/ /g, '') + '/stargazers';
+        const starLink = '/' + title.replace(/ /g, '') + '/stargazers';
 
-	    repositories.push({
+        repositories.push({
 	      author: title.split(' / ')[0],
 	      name: title.split(' / ')[1],
 	      path: title.replace(/ /g, ''),
@@ -56,9 +56,9 @@ export default class GitHubController {
 
 	}).catch(err => {
 
-	  console.log(err);
+      console.log(err);
 
-	  res.render('500', { message: "GitHubの情報を取得できませんでした" });
+      res.render('500', { message: "GitHubの情報を取得できませんでした" });
 
 	});
   }
