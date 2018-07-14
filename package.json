@@ -16,6 +16,7 @@
     "nodemon": "^1.18.1"
   },
   "scripts": {
-    "build": "babel app -w -d dist"
+    "build": "babel app -w -d dist",
+    "start": "nodemon dist/index.js"
   }
 }
