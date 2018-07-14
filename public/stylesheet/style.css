@@ -1,0 +1,24 @@
+.index-list {
+  color: #022C6A!important;
+}
+
+.index-link {
+  display: block;
+}
+
+.index-link:hover {
+  text-decoration: none;
+  background-color: #EAE1E9;
+}
+
+.index-h1 {
+  color: #022C6A;
+}
+
+.show-h1 {
+  color: #022C6A;
+}
+
+.show-h2 {
+  color: #022C6A
+}

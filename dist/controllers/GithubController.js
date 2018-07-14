@@ -23,28 +23,41 @@ var GitHubController = function () {
 
   _createClass(GitHubController, [{
     key: 'index',
+
+
+    // 一覧画面
     value: function index(res, req) {
+
+      // クエリの解析をする
       var query = void 0;
       switch (req.query.sort) {
+
         case "today":
           query = "?since=daily";
           break;
+
         case "week":
           query = "?since=weekly";
           break;
+
         case "month":
           query = "?since=monthly";
           break;
+
         case void 0:
           query = "";
           break;
+
       }
 
+      // GitHubのトレンド一覧ページをスクレイピング・解析する
       _apiClient.githubClient.get('/trending' + query).then(function (apiResponse) {
 
+        // HTMLをパースする
         var $ = _cheerio2.default.load(apiResponse.data);
         var repositories = [];
 
+        // 情報取得
         $('li', 'ol.repo-list').each(function (index, repo) {
           var title = $(repo).find('h3').text().trim();
 
@@ -60,15 +73,63 @@ var GitHubController = function () {
           });
         });
 
+        // ページを描画
         res.render('index', { title: "タイトル", repositories: repositories });
       }).catch(function (err) {
         console.log(err);
       });
     }
+
+    // 詳細画面
+
   }, {
     key: 'show',
     value: function show(res, req) {
-      res.render('index', { title: "show画面 id:" + req.params.id });
+
+      // Githubのリポジトリ詳細ページを解析、情報取得
+      _apiClient.githubClient.get('/' + req.params.author + '/' + req.params.title).then(function (apiResponse) {
+
+        // HTMLをパース
+        var $ = _cheerio2.default.load(apiResponse.data);
+        var languages = [];
+
+        // 情報を取得
+        $('li', 'ol.repository-lang-stats-numbers').each(function (index, lang) {
+
+          var lang_data = {};
+
+          if (lang.children.find(function (child) {
+            return child.type === 'tag';
+          })) {
+
+            // 使用言語
+            lang_data.language = lang.children.find(function (child) {
+              return child.type === 'tag';
+            }).children.find(function (child) {
+              return child.attribs && child.attribs.class === 'lang';
+            }).children[0].data;
+
+            // 使用比率
+            lang_data.percent = lang.children.find(function (child) {
+              return child.type === 'tag';
+            }).children.find(function (child) {
+              return child.attribs && child.attribs.class === 'percent';
+            }).children[0].data.match(/(.+)%/)[1];
+
+            // color
+            lang_data.color = lang.children.find(function (child) {
+              return child.type === 'tag';
+            }).children.find(function (child) {
+              return child.attribs && child.attribs.class === 'color-block language-color';
+            }).attribs.style.match(/background-color:(.+);/)[1];
+          }
+
+          languages.push(lang_data);
+        });
+
+        // 画面を描画
+        res.render('show', { title: req.params.title, author: req.params.author, languages: languages });
+      });
     }
   }]);
 

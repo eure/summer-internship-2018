@@ -19,12 +19,11 @@ app.get('/github/', (req, res) => {
 	gitHubController.index(res, req);
 });
 
-
 // 詳細
-app.get('/github/:id', (req, res) => {
+app.get('/github/:author/:title', (req, res) => {
 	const gitHubController = new GitHubController();
 	gitHubController.show(res, req);
-})
+});
 
 
 //============== start ==================
