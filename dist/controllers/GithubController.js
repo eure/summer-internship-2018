@@ -74,7 +74,7 @@ var GitHubController = function () {
         });
 
         // ページを描画
-        res.render('index', { title: "タイトル", repositories: repositories });
+        res.render('index', { title: "タイトル", repositories: repositories, sort: req.query.sort });
       }).catch(function (err) {
 
         console.log(err);

@@ -52,7 +52,7 @@ export default class GitHubController {
 	  });
 
 	  // ページを描画
-	  res.render('index', {title: "タイトル", repositories: repositories});
+	  res.render('index', {title: "タイトル", repositories: repositories, sort: req.query.sort});
 
 	}).catch(err => {
 
