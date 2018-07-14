@@ -76,7 +76,10 @@ var GitHubController = function () {
         // ページを描画
         res.render('index', { title: "タイトル", repositories: repositories });
       }).catch(function (err) {
+
         console.log(err);
+
+        res.render('500', { message: "GitHubの情報を取得できませんでした" });
       });
     }
 
@@ -129,6 +132,11 @@ var GitHubController = function () {
 
         // 画面を描画
         res.render('show', { title: req.params.title, author: req.params.author, languages: languages });
+      }).catch(function (err) {
+
+        console.log(err);
+
+        res.render('500', 'GitHubの情報を取得できませんでした。');
       });
     }
   }]);

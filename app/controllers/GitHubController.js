@@ -55,7 +55,11 @@ export default class GitHubController {
 	  res.render('index', {title: "タイトル", repositories: repositories});
 
 	}).catch(err => {
+
 	  console.log(err);
+
+	  res.render('500', { message: "GitHubの情報を取得できませんでした" });
+
 	});
   }
 
@@ -98,6 +102,13 @@ export default class GitHubController {
 
   	  // 画面を描画
   	  res.render('show', {title: req.params.title, author: req.params.author, languages: languages});
+
+  	}).catch(err => {
+
+  		console.log(err);
+
+  		res.render('500', 'GitHubの情報を取得できませんでした。');
+
   	});
 
   }
