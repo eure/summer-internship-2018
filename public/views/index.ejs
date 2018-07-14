@@ -12,62 +12,61 @@
   <body>
 
   	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-	  <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-	    <ul class="navbar-nav mr-auto">
-	      <li class="nav-item active">
-	      </li>
-	    </ul>
-	  </div>
-	  <div class="mx-auto order-0">
-	    <a class="navbar-brand mx-auto" href="/github">GitHubClient by Rentaro Igari</a>
-	    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
-	      <span class="navbar-toggler-icon"></span>
-	    </button>
-	  </div>
-	  <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-	    <ul class="navbar-nav ml-auto">
-	      <li class="nav-item dropdown">
-			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			  Sort
-			</a>
-	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	          <a class="dropdown-item" href="?sort=today">today</a>
-	          <a class="dropdown-item" href="?sort=week">this week</a>
-	          <a class="dropdown-item" href="?sort=month">this month</a>
-	        </div>
-	      </li>
-	      <li class="nav-item">&emsp;&emsp;&emsp;&emsp;&emsp;</li>
-	    </ul>
-	  </div>
-	</nav>
+	    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+	      <ul class="navbar-nav mr-auto">
+	        <li class="nav-item active">
+	        </li>
+	      </ul>
+	    </div>
+	    <div class="mx-auto order-0">
+	      <a class="navbar-brand mx-auto" href="/github">GitHubClient by Rentaro Igari</a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+	        <span class="navbar-toggler-icon"></span>
+	      </button>
+	    </div>
+	    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+	      <ul class="navbar-nav ml-auto">
+	        <li class="nav-item dropdown">
+			      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			        Sort
+			      </a>
+	          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+	            <a class="dropdown-item" href="?sort=today">today</a>
+	            <a class="dropdown-item" href="?sort=week">this week</a>
+	            <a class="dropdown-item" href="?sort=month">this month</a>
+	          </div>
+	        </li>
+	        <li class="nav-item">&emsp;&emsp;&emsp;&emsp;&emsp;</li>
+	      </ul>
+	    </div>
+	  </nav>
 
 
-	<h1 class="text-center m-5 show-h1">Github Trending Repositories</h1>
-	<% if (sort) { %>
-	  <h2 class="text-center mb-5 show-h2">sorted by <%= sort %></h2>
-	<% } %>
+	  <h1 class="text-center m-5 show-h1">Github Trending Repositories</h1>
+	  <% if (sort) { %>
+	    <h2 class="text-center mb-5 show-h2">sorted by <%= sort %></h2>
+	  <% } %>
 
-	<ul class="list-unstyled">
-	  <% repositories.forEach(function(repo) { %>
-	  <a href="<%= '/github/' + repo.path %>" class="index-link">
+	  <ul class="list-unstyled">
+	    <% repositories.forEach(function(repo) { %>
+	    <a href="<%= '/github/' + repo.path %>" class="index-link">
   	    <li class="media m-5 index-list">
-		  <div class="container">
-		    <div class="row">
-			  <!-- <img class="mr-3" src=".../64x64" alt="Generic placeholder image"> -->
-	  	      <div class="media-body text-center">
-			    <h5 class="mt-0 mb-1"><%= repo.name %></h5>
-			    <%= repo.description %>
-		      </div>
+  		    <div class="container">
+  		      <div class="row">
+  	  	      <div class="media-body text-center">
+  			        <h5 class="mt-0 mb-1"><%= repo.name %></h5>
+  			        <%= repo.description %>
+  		        </div>
+  	        </div>
+  	        <div class="row mt-3">
+  	        <div class="col text-center"><%= repo.language %></div>
+    			  <div class="col text-center"><%= repo.stars %> stars</div>
 	        </div>
-	        <div class="row mt-3">
-	          <div class="col text-center"><%= repo.language %></div>
-  			  <div class="col text-center"><%= repo.stars %> stars</div>
-	        </div>
-		  </div>
+		    </div>
 	    </li>
 	   </a>
 	  <% }); %>
-	</ul>
+	  </ul>
 
   </body>
 
@@ -76,4 +75,3 @@
   <script></script>
 
 </html>
-

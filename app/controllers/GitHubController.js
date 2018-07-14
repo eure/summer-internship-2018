@@ -29,7 +29,7 @@ export default class GitHubController {
     }
 
   	// GitHubのトレンド一覧ページをスクレイピング・解析する
-	githubClient.get('/trending' + query).then(apiResponse => {
+    githubClient.get('/trending' + query).then(apiResponse => {
 
       // HTMLをパースする
       const $ = cheerio.load(apiResponse.data);
@@ -42,25 +42,25 @@ export default class GitHubController {
         const starLink = '/' + title.replace(/ /g, '') + '/stargazers';
 
         repositories.push({
-	      author: title.split(' / ')[0],
-	      name: title.split(' / ')[1],
-	      path: title.replace(/ /g, ''),
-	      description: $(repo).find('p', '.py-1').text().trim() || null,
-	      language: $(repo).find('[itemprop=programmingLanguage]').text().trim(),
-	      stars: parseInt($(repo).find('[href="' + starLink + '"]').text().trim().replace(',', '') || 0)
+	        author: title.split(' / ')[0],
+	        name: title.split(' / ')[1],
+	        path: title.replace(/ /g, ''),
+	        description: $(repo).find('p', '.py-1').text().trim() || null,
+	        language: $(repo).find('[itemprop=programmingLanguage]').text().trim(),
+	        stars: parseInt($(repo).find('[href="' + starLink + '"]').text().trim().replace(',', '') || 0)
+	      });
 	    });
-	  });
 
-	  // ページを描画
-	  res.render('index', {title: "タイトル", repositories: repositories, sort: req.query.sort});
+	    // ページを描画
+	    res.render('index', {title: "タイトル", repositories: repositories, sort: req.query.sort});
 
-	}).catch(err => {
+	  }).catch(err => {
 
       console.log(err);
 
       res.render('500', { message: "GitHubの情報を取得できませんでした" });
 
-	});
+	  });
   }
 
   // 詳細画面
@@ -81,22 +81,22 @@ export default class GitHubController {
   	  	if(lang.children.find(child => child.type === 'tag')) {
 
   	  	  // 使用言語
-	   	  lang_data.language =
-	   	  	lang.children.find(child => child.type === 'tag').children.find( child => child.attribs && child.attribs.class === 'lang').children[0].data;
+	   	    lang_data.language =
+	   	  	  lang.children.find(child => child.type === 'tag').children.find( child => child.attribs && child.attribs.class === 'lang').children[0].data;
 
-	   	  // 使用比率
-	   	  lang_data.percent =
-	   	  	lang.children.find(child => child.type === 'tag').children.find( child => child.attribs && child.attribs.class === 'percent').children[0].data
-	   	  	.match(/(.+)%/)[1];
+	   	    // 使用比率
+	   	    lang_data.percent =
+	   	  	  lang.children.find(child => child.type === 'tag').children.find( child => child.attribs && child.attribs.class === 'percent').children[0].data
+	   	  	  .match(/(.+)%/)[1];
 
-	   	  // 言語のcolor
-	   	  lang_data.color =
-	   	  	lang.children.find(child => child.type === 'tag').children.find( child => child.attribs && child.attribs.class === 'color-block language-color').attribs.style
-	   	  	.match(/background-color:(.+);/)[1];
+	   	    // 言語のcolor
+	   	    lang_data.color =
+	   	  	  lang.children.find(child => child.type === 'tag').children.find( child => child.attribs && child.attribs.class === 'color-block language-color').attribs.style
+	   	  	  .match(/background-color:(.+);/)[1];
 
-	   	}
+	   	  }
 
-	   	languages.push(lang_data);
+	   	  languages.push(lang_data);
 
   	  });
 

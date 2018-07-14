@@ -22,20 +22,20 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
           <span class="navbar-toggler-icon"></span>
         </button>
-	  </div>
-	  <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-	    <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a href="/github" style="color: #fff;">ホームに戻る</a></li>
-        </ul>
-	  </div>
-	</nav>
+	    </div>
+	    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+	      <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a href="/github" style="color: #fff;">ホームに戻る</a></li>
+          </ul>
+	    </div>
+	  </nav>
 
-	<h1 class="text-center mt-5 show-h1"><%= title %></h1>
-	<h2 class="text-center mb-5 show-h2">by <%= author %></h2>
+	  <h1 class="text-center mt-5 show-h1"><%= title %></h1>
+	  <h2 class="text-center mb-5 show-h2">by <%= author %></h2>
 
-	<div class="row">
-	  <canvas id="myChart" height="100vh"></canvas>
-	</div>
+	  <div class="row">
+	    <canvas id="myChart" height="100vh"></canvas>
+	  </div>
 
   </body>
 
@@ -44,24 +44,23 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
   <script>
   	var ctx = document.getElementById("myChart").getContext('2d');
-	var myChart = new Chart(ctx, {
-	  type: 'pie',
-	  data: {
-	    labels: [
-		    <% languages.forEach(function(lang) { %>
-		    	"<%= lang.language %>",
-		    <% }) %>
-		  ],
-	    datasets: [{
-	      backgroundColor: [
-	      	<% languages.forEach(function(lang) { %>
-	      	  "<%= lang.color %>",
-	      	<% }) %>
-	      ],
-	      data: [<%= languages.map(function(lang) { return lang.percent }) %>]
-	    }]
-	  }
-	});
+	  var myChart = new Chart(ctx, {
+	    type: 'pie',
+	    data: {
+	      labels: [
+		      <% languages.forEach(function(lang) { %>
+		    	  "<%= lang.language %>",
+		      <% }) %>
+		    ],
+	      datasets: [{
+	        backgroundColor: [
+	      	  <% languages.forEach(function(lang) { %>
+	      	    "<%= lang.color %>",
+	      	  <% }) %>
+	        ],
+	        data: [<%= languages.map(function(lang) { return lang.percent }) %>]
+	      }]
+	    }
+	  });
   </script>
 </html>
-
