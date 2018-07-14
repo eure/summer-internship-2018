@@ -23,9 +23,9 @@
 	          Sort
 	        </a>
 	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	          <a class="dropdown-item" href="?today">today</a>
-	          <a class="dropdown-item" href="?week">this week</a>
-	          <a class="dropdown-item" href="?month">this month</a>
+	          <a class="dropdown-item" href="?sort=today">today</a>
+	          <a class="dropdown-item" href="?sort=week">this week</a>
+	          <a class="dropdown-item" href="?sort=month">this month</a>
 	        </div>
 	      </li>
 	    </ul>
@@ -36,17 +36,19 @@
 
 	<ul class="list-unstyled">
 	  <% repositories.forEach(function(repo) { %>
-	  <li class="media m-5">
-		<div class="container">
-		  <div class="row">
-			<!-- <img class="mr-3" src=".../64x64" alt="Generic placeholder image"> -->
-	  	    <div class="media-body text-center">
-			  <h5 class="mt-0 mb-1"><%= repo.name %></h5>
-			  <%= repo.description %>
-		    </div>
-	      </div>
-		</div>
-	  </li>
+	  <a href="<%= repo.path %>">
+  	    <li class="media m-5" style="color: #022C6A!important;">
+		  <div class="container">
+		    <div class="row">
+			  <!-- <img class="mr-3" src=".../64x64" alt="Generic placeholder image"> -->
+	  	      <div class="media-body text-center">
+			    <h5 class="mt-0 mb-1"><%= repo.name %></h5>
+			    <%= repo.description %>
+		      </div>
+	        </div>
+		  </div>
+	    </li>
+	   </a>
 	  <% }); %>
 	</ul>
 
