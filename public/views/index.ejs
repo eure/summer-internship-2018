@@ -42,7 +42,10 @@
 	</nav>
 
 
-	<h1 class="text-center m-5">Github Trending Repositories</h1>
+	<h1 class="text-center m-5 show-h1">Github Trending Repositories</h1>
+	<% if (sort) { %>
+	  <h2 class="text-center mb-5 show-h2">sorted by <%= sort %></h2>
+	<% } %>
 
 	<ul class="list-unstyled">
 	  <% repositories.forEach(function(repo) { %>
