@@ -4,7 +4,7 @@ BLDDIR=build
 APPS = scraper api web reciver
 
 .PHONY: $(APPS)
-all: $(APPS)
+all: deps $(APPS)
 
 $(APPS): %: $(BLDDIR)/%
 
@@ -17,6 +17,10 @@ $(BLDDIR)/% :
 	mkdir -p $(dir $@)
 	go build ${GOFLAGS} -o $@ ./$*
 
+deps:
+	dep ensure
+
 .PHONY: clean
 clean:
+	rm -rf ./vendor
 	rm -rf $(BLDDIR)

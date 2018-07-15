@@ -33,7 +33,7 @@ google.setOnLoadCallback(function() {
 	    for (var o in poll.list) {
 	      $('#trends').append(
 		$("<li>").append(
-		  $("<small>").addClass("label label-default").text(o)," " , poll.list[o]
+		  $("<small>").addClass("label label-default").text(o)," " ,$("<a>").attr("href", "detail.html/?q="+ poll.list[o]).text(poll.list[o])
 		  )
 		)
 	    };
