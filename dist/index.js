@@ -17,7 +17,7 @@ var router = _express2.default.Router();
 
 app.use(_express2.default.static('public'));
 
-app.set("views", 'public/views');
+app.set("views", 'views');
 app.set("view engine", "ejs");
 
 //============ routing ================
