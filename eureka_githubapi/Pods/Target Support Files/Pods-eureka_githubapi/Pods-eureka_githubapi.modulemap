@@ -1,0 +1,6 @@
+framework module Pods_eureka_githubapi {
+  umbrella header "Pods-eureka_githubapi-umbrella.h"
+
+  export *
+  module * { export * }
+}
