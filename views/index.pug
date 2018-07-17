@@ -1,3 +1,11 @@
 html
   body
-    p Hello World!
+    ol
+    - for(var i = 0; i < lists.length ; i++){
+      li
+        p #{lists[i].repo}
+        p #{lists[i].link}
+        p #{lists[i].description}
+        p #{lists[i].star}
+        p #{lists[i].fork}
+    - }
