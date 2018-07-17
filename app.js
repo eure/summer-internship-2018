@@ -8,8 +8,6 @@ const router = require('koa-router')();
 
 app.use(logger());
 
-
-
 app.use(router.routes());
 
 // pugの設定
@@ -22,7 +20,7 @@ const pug = new Pug({
 // ポート番号
 app.listen( process.env.PORT || 3000);
 
-// アクセスした時の処理
+// トップページにアクセスした時の処理
 router.get('/', async (ctx, next) => {
   // cherrio-httpcli を用いてgithubのトレンドページをスクレイピング
   let url = 'https://github.com/trending';
@@ -41,5 +39,11 @@ router.get('/', async (ctx, next) => {
     lists.push(list_obj);
   });
   ctx.render('index', {lists: lists});
+});
+
+// 各詳細ページにアクセスした時の処理
+router.get('/detail', async (ctx, next) => {
+  let repo = decodeURIComponent(ctx.query.repo);
+  ctx.render('detail', {repo: repo});
 });
 
