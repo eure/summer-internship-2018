@@ -2,6 +2,9 @@
 ## 仕様説明
 ### 実現した機能の簡単な解説
 GitHubトレンドをリスト形式で表示できる。レポジトリ名をクリックするとREADME.mdファイルをレンダリングして表示する。
+### スクリーンショット
+![fireshot capture 88 - github trend - http___localhost_3000_](https://user-images.githubusercontent.com/27331655/42813306-6909e0f0-8975-11e8-872b-6cfe55e7639b.png)
+![fireshot capture 89 - donnemartin_system-design-primer_ - http___localhost_3000_detail](https://user-images.githubusercontent.com/27331655/42813320-78357008-8975-11e8-8667-7403cdc5f850.png)
 
 ## 環境構築マニュアル
 MacBookA ir(2016), node v8.11.1で動作を確認しています。
