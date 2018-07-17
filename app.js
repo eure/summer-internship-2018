@@ -2,7 +2,7 @@ const Koa = require('koa');
 const app = new Koa();
 const logger = require('koa-logger');
 const Pug = require('koa-pug');
-const request = require("request");
+const rp = require("request-promise");
 const client = require('cheerio-httpcli');
 const router = require('koa-router')();
 
@@ -44,6 +44,19 @@ router.get('/', async (ctx, next) => {
 // 各詳細ページにアクセスした時の処理
 router.get('/detail', async (ctx, next) => {
   let repo = decodeURIComponent(ctx.query.repo);
-  ctx.render('detail', {repo: repo});
+  let md = await rp.get("https://raw.githubusercontent.com/"+repo+"/master/README.md");
+  console.log(md);
+
+  // let options = {
+  //   url: "https://api.github.com/markdown/",
+  //   form: {
+  //     "text": "Hello world github/linguist#1 **cool**, and #1!",
+  //   },
+  //   headers: {'User-Agent': 'request'},
+  // };
+  // let md_html = await rp.post(options);
+  // console.log(md_html);
+
+  ctx.render('detail', {repo: md});
 });
 
