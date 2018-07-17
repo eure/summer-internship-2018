@@ -2,12 +2,13 @@
 const Koa = require('koa');
 const app = new Koa();
 const logger = require('koa-logger');
+const router = require('koa-router')();
 const Pug = require('koa-pug');
+const serve = require('koa-static');
 const rp = require("request-promise");
 const client = require('cheerio-httpcli');
-const router = require('koa-router')();
 const showdown  = require('showdown');
-const serve = require('koa-static');
+
 
 
 app.use(logger());
@@ -54,7 +55,6 @@ router.get('/detail', async (ctx, next) => {
   let repo = decodeURIComponent(ctx.query.repo);
   let md = await rp.get("https://raw.githubusercontent.com/"+repo+"/master/README.md");
   let md_html = converter.makeHtml(md); // convert md to html
-
   ctx.render('detail', {md_html: md_html, repo:repo});
 });
 
