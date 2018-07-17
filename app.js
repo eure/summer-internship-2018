@@ -30,7 +30,7 @@ router.get('/', async (ctx, next) => {
   $lists.each((i,el)=>{
     let list_obj = {};
     list_obj.repo = $(el).find("h3").text().trim();
-    list_obj.link = "https://raw.githubusercontent.com" + $(el).find("h3 a").attr("href") + "/master/README.md";
+    list_obj.link = $(el).find("h3 a").attr("href");
     list_obj.description = $(el).find(".py-1").text().trim();
     list_obj.star = $(el).find("svg[aria-label='star']").parent().text().trim();
     list_obj.fork = $(el).find("svg[aria-label='fork']").parent().text().trim();
