@@ -3,9 +3,12 @@ const app = new Koa();
 const logger = require('koa-logger');
 const Pug = require('koa-pug');
 const request = require("request");
+const client = require('cheerio-httpcli');
+const router = require('koa-router')();
+
 app.use(logger());
 
-const router = require('koa-router')();
+
 
 app.use(router.routes());
 
@@ -40,4 +43,3 @@ router.get('/', async (ctx, next) => {
   ctx.render('index', {lists: lists});
 });
 
-const client = require('cheerio-httpcli');
