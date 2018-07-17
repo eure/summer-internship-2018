@@ -1,8 +1,6 @@
 package main
 
 import (
-	"flag"
-	"fmt"
 	"log"
 	"os"
 	"os/signal"
@@ -10,33 +8,25 @@ import (
 	"syscall"
 	"time"
 
-	mgo "gopkg.in/mgo.v2"
+	"gopkg.in/mgo.v2"
 
-	nsq "github.com/bitly/go-nsq"
+	"github.com/bitly/go-nsq"
 	"gopkg.in/mgo.v2/bson"
 )
 
-var fatalErr error
-
-func fatal(e error) {
-	fmt.Println(e)
-	flag.PrintDefaults()
-	fatalErr = e
+func main() {
+	err := receiverMain()
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
-func main() {
-	defer func() {
-		if fatalErr != nil {
-			os.Exit(1)
-		}
-	}()
-
+func receiverMain() error {
 	// データベース接続
 	log.Println("データベースに接続します...")
 	db, err := mgo.Dial("localhost")
 	if err != nil {
-		fatal(err)
-		return
+		return err
 	}
 	defer func() {
 		log.Println("データベース接続を閉じます...")
@@ -51,8 +41,7 @@ func main() {
 	log.Println("NSQに接続します")
 	q, err := nsq.NewConsumer("lists", "list", nsq.NewConfig())
 	if err != nil {
-		fatal(err)
-		return
+		return err
 	}
 
 	q.AddHandler(nsq.HandlerFunc(func(m *nsq.Message) error {
@@ -65,19 +54,20 @@ func main() {
 	}))
 
 	if err := q.ConnectToNSQLookupd("localhost:4161"); err != nil {
-		fatal(err)
-		return
+		return err
 	}
 
 	const updateDuration = 3 * time.Second
 
-	log.Println("NSQ上での取得を待機する...")
-	var updater *time.Timer
-	updater = time.AfterFunc(updateDuration, func() {
+	ticker := time.NewTicker(updateDuration)
+	defer ticker.Stop()
+
+	update := func() {
 		countsLock.Lock()
 		defer countsLock.Unlock()
 		if len(ranking) == 0 {
 			log.Println("新しい更新はありません")
+			return
 		} else {
 			log.Println("データベースを更新します")
 			log.Println(ranking)
@@ -87,22 +77,22 @@ func main() {
 			if _, err := pollData.UpdateAll(sel, up); err != nil {
 				log.Println("更新に失敗しました:", err)
 			}
-
-			ranking = nil
 		}
-		updater.Reset(updateDuration)
-	})
+		ranking = nil
+	}
 
 	termChan := make(chan os.Signal, 1)
 	signal.Notify(termChan, syscall.SIGINT, syscall.SIGTERM, syscall.SIGHUP)
+
 	for {
 		select {
+		case <-ticker.C:
+			update()
 		case <-termChan:
-			updater.Stop()
 			q.Stop()
 		case <-q.StopChan:
 			// 完了しました
-			return
+			return  nil
 		}
 	}
 }

@@ -4,3 +4,4 @@ db/
 vendor/
 nsqd*
 list*
+.idea

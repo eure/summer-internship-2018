@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"github.com/PuerkitoBio/goquery"
+	"context"
 )
 
 const url = "https://github.com/trending"
@@ -39,24 +40,17 @@ func readFromGitHub(lists chan<- string) {
 
 // Githubのスクレイピングworker
 // 10秒ごとに更新をチェックしにいく
-func startGitHubScraping(stopchan <-chan struct{}, lists chan<- string) <-chan struct{} {
-	stoppedChan := make(chan struct{}, 1)
-	go func() {
-		defer func() {
-			stoppedChan <- struct{}{}
-		}()
-		for {
-			select {
-			case <-stopchan:
-				log.Println("GitHubのトレンドリストの取得を終了します")
-				return
-			default:
-				log.Println("Githubのトレンドリストを取得します...")
-				readFromGitHub(lists)
-				log.Println("(待機中)")
-				time.Sleep(10 * time.Second)
-			}
+func githubScraping(ctx context.Context, lists chan<- string) {
+	defer close(lists)
+	for {
+		log.Println("GitHubのトレンドリストを取得します...")
+		readFromGitHub(lists)
+		log.Println("(待機中)")
+		select {
+		case <- ctx.Done():
+			log.Println("GitHubのトレンドリストの取得を終了します")
+			return
+		case <- time.After(10 * time.Second):
 		}
-	}()
-	return stoppedChan
+	}
 }

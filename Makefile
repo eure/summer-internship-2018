@@ -1,7 +1,7 @@
 GOFLAGS=
 BLDDIR=build
 
-APPS = scraper api web reciver
+APPS = scraper api web receiver
 
 .PHONY: $(APPS)
 all: deps $(APPS)
@@ -11,7 +11,7 @@ $(APPS): %: $(BLDDIR)/%
 $(BLDDIR)/scraper: $(wildcard scraper/*.go)
 $(BLDDIR)/api: $(wildcard api/*.go)
 $(BLDDIR)/web: $(wildcard web/*.go)
-$(BLDDIR)/reciver: $(wildcard reciver/*.go)
+$(BLDDIR)/reciver: $(wildcard receiver/*.go)
 
 $(BLDDIR)/% : 
 	mkdir -p $(dir $@)
