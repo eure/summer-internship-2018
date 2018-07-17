@@ -18,10 +18,12 @@
   "homepage": "https://github.com/gsittyz/summer-internship-2018#readme",
   "dependencies": {
     "cheerio-httpcli": "^0.7.3",
+    "github-markdown-css": "^2.10.0",
     "koa": "^2.5.2",
     "koa-logger": "^3.2.0",
     "koa-pug": "^3.0.0-2",
     "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
     "request-promise": "^4.2.2",
     "require": "^2.4.20",
     "showdown": "^1.8.6"

@@ -6,10 +6,11 @@ const rp = require("request-promise");
 const client = require('cheerio-httpcli');
 const router = require('koa-router')();
 const showdown  = require('showdown');
+const serve = require('koa-static');
 
 
 app.use(logger());
-
+app.use(serve('./public'));
 app.use(router.routes());
 
 // pugの設定
