@@ -1,13 +1,14 @@
-<ul id="dropdown1" class="dropdown-content">
-    <li><a href="#!">today</a></li>
-    <li><a href="#!">week</a></li>
-    <li><a href="#!">month</a></li>
+<ul id="dropdown" class="dropdown-content">
+    <li><a href="{% url 'trend' %}?since=today">today</a></li>
+    <li><a href="{% url 'trend' %}?since=week">week</a></li>
+    <li><a href="{% url 'trend' %}?since=month">month</a></li>
 </ul>
 <nav>
     <div class="nav-wrapper orange">
-        <a href="#!" class="brand-logo">GiTrend</a>
+        <a href="{% url 'trend' %}" class="brand-logo">GiTrend</a>
         <ul class="right hide-on-med-and-down">
-            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Select Date<i class="material-icons right">arrow_drop_down</i></a>
+            <li><a class="dropdown-trigger" data-target="dropdown" data-activates="dropdownTop">Select Date
+                <i class="material-icons right">arrow_drop_down</i></a>
             </li>
         </ul>
     </div>

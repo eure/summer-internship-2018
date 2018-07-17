@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import Http404
 from bs4 import BeautifulSoup
 import requests
 
@@ -11,31 +12,40 @@ def index(request):
     pass
 
 
-def show(request):
-    contents = today()
+def trend(request):
+    if "since" in request.GET:
+        since = request.GET.get("since")
+        if since == 'today':
+            contents = scraping(TODAY_URL)
+        elif since == 'week':
+            contents = scraping(WEEK_URL)
+        elif since == 'month':
+            contents = scraping(MONTH_URL)
+    else:
+        since = 'today'
+        contents = scraping(TODAY_URL)
+
     result = {
+        'since': since,
         'result_contents': contents,
     }
 
     return render(request, 'show.html', result)
 
 
-def today():
-    contents = scraping(TODAY_URL)
+def detail(request):
+    title = request.GET.get("title")
+    url = "https://github.com/" + title
 
-    return contents
+    request_url = requests.get(url)
+    html_text = BeautifulSoup(request_url.text, 'lxml')
+    repo_detail = html_text.find(class_='markdown-body entry-content')
 
+    result = {
+        'detail': repo_detail.prettify(),
+    }
 
-def week():
-    contents = scraping(WEEK_URL)
-
-    return contents
-
-
-def month():
-    contents = scraping(MONTH_URL)
-
-    return contents
+    return render(request, 'detail.html', result)
 
 
 def scraping(url):
@@ -47,9 +57,10 @@ def scraping(url):
     contents = []
 
     for repo in repos:
-        title = repo.a.text
+        title = ''.join(repo.a.text.split())
         url = 'https://github.com' + repo.a.get('href')
-        description = repo.find('p', class_='col-9 d-inline-block text-gray m-0 pr-4').text
+        description = repo.find('p', class_='col-9 d-inline-block text-gray m-0 pr-4')
+        desc = description.text if not isinstance(description, type(None)) else ''
         lang = repo.find('span', itemprop='programmingLanguage')
         language = lang.string if not isinstance(lang, type(None)) else ''
         star_fork_count = repo.find_all('a', class_='muted-link d-inline-block mr-3')
@@ -57,9 +68,9 @@ def scraping(url):
         fork = star_fork_count[1].text
 
         content = {
-            'title': title.strip(),
+            'title': title,
             'url': url.strip(),
-            'description': description.strip(),
+            'description': desc.strip(),
             'language': language.strip(),
             'star': star.strip(),
             'fork': fork.strip(),

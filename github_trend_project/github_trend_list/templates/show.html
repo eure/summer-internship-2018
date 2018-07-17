@@ -2,12 +2,22 @@
 {% load staticfiles %}
 {% block content %}
 
- <h4 class="collection-header center">Today Trending</h4>
+<br>
+<br>
+{% if since == 'today' %}
+ <h1 class="collection-header center">Today Trending</h1>
+{% elif since == 'week' %}
+ <h1 class="collection-header center">Week Trending</h1>
+{% elif since == 'month' %}
+<h1 class="collection-header center">Month Trending</h1>
+{% endif %}
+<br>
+
 
 <ul class="collection">
     {% for content in result_contents %}
     <li class="collection-item avatar">
-        <span class="title"><h5>{{ content.title}}</h5></span>
+        <a href="{% url 'detail' %}?title={{ content.title }}"><span class="title"><h5 >{{ content.title }}</h5></span></a>
         <p>
             {{content.description}}
         </p>
