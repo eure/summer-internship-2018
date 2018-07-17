@@ -1,3 +1,4 @@
+// モジュールの読み込み
 const Koa = require('koa');
 const app = new Koa();
 const logger = require('koa-logger');
@@ -21,7 +22,7 @@ const pug = new Pug({
 });
 
 // ポート番号
-app.listen( process.env.PORT || 3000);
+app.listen(3000);
 
 // トップページにアクセスした時の処理
 router.get('/', async (ctx, next) => {
@@ -44,25 +45,16 @@ router.get('/', async (ctx, next) => {
   ctx.render('index', {lists: lists});
 });
 
+// markdown to html converter
 const converter = new showdown.Converter();
 
 // 各詳細ページにアクセスした時の処理
 router.get('/detail', async (ctx, next) => {
+  // エスケープ
   let repo = decodeURIComponent(ctx.query.repo);
   let md = await rp.get("https://raw.githubusercontent.com/"+repo+"/master/README.md");
-  console.log(md);
-  let md_html = converter.makeHtml(md);
+  let md_html = converter.makeHtml(md); // convert md to html
 
-  // let options = {
-  //   url: "https://api.github.com/markdown/",
-  //   form: {
-  //     "text": "Hello world github/linguist#1 **cool**, and #1!",
-  //   },
-  //   headers: {'User-Agent': 'request'},
-  // };
-  // let md_html = await rp.post(options);
-  // console.log(md_html);
-
-  ctx.render('detail', {md_html: md_html});
+  ctx.render('detail', {md_html: md_html, repo:repo});
 });
 
