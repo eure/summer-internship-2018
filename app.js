@@ -5,6 +5,8 @@ const Pug = require('koa-pug');
 const rp = require("request-promise");
 const client = require('cheerio-httpcli');
 const router = require('koa-router')();
+const showdown  = require('showdown');
+
 
 app.use(logger());
 
@@ -41,11 +43,14 @@ router.get('/', async (ctx, next) => {
   ctx.render('index', {lists: lists});
 });
 
+const converter = new showdown.Converter();
+
 // 各詳細ページにアクセスした時の処理
 router.get('/detail', async (ctx, next) => {
   let repo = decodeURIComponent(ctx.query.repo);
   let md = await rp.get("https://raw.githubusercontent.com/"+repo+"/master/README.md");
   console.log(md);
+  let md_html = converter.makeHtml(md);
 
   // let options = {
   //   url: "https://api.github.com/markdown/",
@@ -57,6 +62,6 @@ router.get('/detail', async (ctx, next) => {
   // let md_html = await rp.post(options);
   // console.log(md_html);
 
-  ctx.render('detail', {repo: md});
+  ctx.render('detail', {md_html: md_html});
 });
 

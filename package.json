@@ -23,6 +23,7 @@
     "koa-pug": "^3.0.0-2",
     "koa-router": "^7.4.0",
     "request-promise": "^4.2.2",
-    "require": "^2.4.20"
+    "require": "^2.4.20",
+    "showdown": "^1.8.6"
   }
 }
