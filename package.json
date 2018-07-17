@@ -21,6 +21,7 @@
     "koa": "^2.5.2",
     "koa-logger": "^3.2.0",
     "koa-pug": "^3.0.0-2",
-    "koa-router": "^7.4.0"
+    "koa-router": "^7.4.0",
+    "require": "^2.4.20"
   }
 }
