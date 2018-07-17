@@ -1,0 +1,14 @@
+doctype
+html
+  head
+    title Github Trend
+    include header
+  body
+    article.markdown-body
+      h1 Github Trend
+      dl
+        - for(var i = 0; i < lists.length ; i++){
+        dt
+          a(href="/detail?repo="+encodeURIComponent(lists[i].link.slice(1))) #{lists[i].repo}
+        dd #{lists[i].description} [star: #{lists[i].star}, fork: #{lists[i].fork}]
+        - }
