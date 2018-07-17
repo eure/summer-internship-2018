@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/gsittyz/summer-internship-2018/issues"
   },
-  "homepage": "https://github.com/gsittyz/summer-internship-2018#readme"
+  "homepage": "https://github.com/gsittyz/summer-internship-2018#readme",
+  "dependencies": {
+    "koa": "^2.5.2"
+  }
 }
