@@ -23,7 +23,7 @@ class SecondViewController: UIViewController {
         // webビューの追加
         webview = UIWebView(frame : self.view.bounds)
         webview.delegate = self as? UIWebViewDelegate
-        // スクロールバーを無効
+        //スクロールバーのバウンスを無効
         webview.scrollView.bounces = false
         self.view.addSubview(webview)
         
