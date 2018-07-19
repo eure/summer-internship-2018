@@ -19,7 +19,7 @@ GitHubのIDを検索し, 検索ユーザーのアバター画像のURLとリポ�
 
 * 検索画面
 
-![sample](./inde.png)
+![sample](./index.png)
 
 * アバター画像表示画面
 
