@@ -1,9 +1,9 @@
 <?php
   require_once("./phpQuery-onefile.php");
   $html = file_get_contents("https://github.com".urldecode($_GET['path']));
-  $query = phpQuery::newDocument($html);
-  $title = $query->find("h1")->text();
-  $readme = $query->find("#readme");
+  $scraping_query = phpQuery::newDocument($html);
+  $title = $scraping_query->find("h1")->text();
+  $readme = $scraping_query->find("#readme");
   
 ?>
 

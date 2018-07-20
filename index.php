@@ -1,8 +1,8 @@
 <?php
   require_once("./phpQuery-onefile.php");
   $html = file_get_contents("https://github.com/trending");
-  $query = phpQuery::newDocument($html);
-  $titles = $query->find("h3");
+  $scraping_query = phpQuery::newDocument($html);
+  $repositories = $scraping_query->find("h3");
   
 ?>
 
@@ -29,9 +29,9 @@
         </div>
         <div class="repo_list">
             <ul>
-                <?php foreach ($titles as $title): ?>
-                    <?php $path = pq($title)->find('a')->attr('href');?>
-                    <li><a href='repository.php?path=<?=urlencode($path)?>'><?=pq($title)->text()?></a></li>
+                <?php foreach ($repositories as $repository): ?>
+                    <?php $detail_path = pq($repository)->find('a')->attr('href');?>
+                    <li><a href='repository.php?path=<?=urlencode($detail_path)?>'><?=pq($repository)->text()?></a></li>
                 <?php endforeach; ?>
             </ul>
             
