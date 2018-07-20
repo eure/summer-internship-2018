@@ -1,0 +1,21 @@
+html,body{
+    height: 100%;
+    width: 600px;
+}
+ul{
+    list-style: none;
+    padding:0;
+    position: relative;
+}
+li{
+    color: #2d8fdd;
+    border-left: solid 6px #2d8fdd;/*左側の線*/
+    background: #f1f8ff;/*背景色*/
+    margin-bottom: 3px;/*下のバーとの余白*/
+    line-height: 1.5;
+    padding: 0.5em;
+    font-weight: bold;
+}
+a{
+    text-decoration: none;
+}
