@@ -13,7 +13,9 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "nuxt": "^1.0.0",
+    "semantic-ui-css": "^2.3.3",
     "semantic-ui-vue": "^0.2.11"
   },
   "devDependencies": {
