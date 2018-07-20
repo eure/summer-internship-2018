@@ -97,7 +97,6 @@ class RepositoryViewController: UIViewController {
     }
     
     @objc func openSafari() {
-        print(self.repository.html_url)
         guard let url = URL(string: self.repository.html_url) else { return }
         let safari = SFSafariViewController(url: url)
         self.present(safari, animated: true, completion: nil)

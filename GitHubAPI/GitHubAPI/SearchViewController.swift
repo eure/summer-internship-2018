@@ -134,7 +134,6 @@ class SearchViewController: UIViewController {
     }
     
     internal func getSearchResult(query: String) {
-        print(query, page)
         // TODO: handle the completion
         if isLoading { return }
         isLoading = true
