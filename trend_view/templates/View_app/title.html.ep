@@ -1,0 +1,25 @@
+<! DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Trend_View
+		</title>
+	</head>
+	<body>
+		<div class="title">
+			<h1>
+				Trend_View
+			</h1>
+		</div>
+		<div class="description">
+			<h2>
+				Github Trendページから，トレンドなRepositoryを収集してリスト表示します。
+			</h2>
+		</div>
+		<div class="param_times">
+			<a href="/trending?since=daily"> daily </a>
+			<a href="/trending?since=weekly"> weekly </a>
+			<a href="/trending?since=monthly"> monthly </a>
+		</div>
+	</body>
+</html>
