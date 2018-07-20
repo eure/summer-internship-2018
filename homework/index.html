@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>課題</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="user" placeholder="ユーザー名(id)を入力して下さい">
+        <input type="button" value="決定" @click="getAPI(), isVisible=true">
+
+        <template v-if="isVisible">
+    <div v-for="repo in github.repos">
+        <h2 v-text="repo.name"></h2>
+        <input type="button"  class="btn" value="詳細" @click="change(repo)">
+        
+        <template v-if="repo.open">
+            <span><span v-text="repo.stargazers_count"></span> &star;</span>
+        <p v-text="repo.description"></p>
+        </template>
+    </div>
+    </template>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
+
+
+<!--
+<input type="button" value="詳細" @click="change(repo)">
+        
+        <template v-if="repo.open">
+            <span><span v-text="repo.stargazers_count"></span> &star;</span>
+        <p v-text="repo.description"></p>
+        </template>
+    </div>
+    </template>
+-->
+
+
+
+
+<!--:class="['repo-' + index]"-->
