@@ -35,10 +35,11 @@ class SearchViewController: UIViewController {
     let provider = MoyaProvider<GitHubAPI>()
     var repositories = Variable<[Repository]>([])
     
+    var disposeBag = DisposeBag()
+    
     var page = 0
     var isLoading = false
     
-    var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,7 +95,6 @@ class SearchViewController: UIViewController {
             self.navigationController?.pushViewController(repositoriViewController, animated: true)
         }).disposed(by: disposeBag)
         
-        // TODO: topとbottomにきたときの挙動を追加
         collectionView.rx.contentOffset
             .flatMap { offset in
                 self.isNearTheBottomEdge(contentOffset: offset, self.collectionView)

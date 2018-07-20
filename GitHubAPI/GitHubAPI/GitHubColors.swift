@@ -17,7 +17,7 @@ extension UIColor {
         do {
             let url = URL(fileURLWithPath: path)
             let data = try Data(contentsOf: url)
-            let json = try decoder.decode(GitHubColors.self, from: data)            
+            let json = try decoder.decode(GitHubColors.self, from: data)
             return json
         } catch {
             print("failed to read or decode json.", error.localizedDescription)
