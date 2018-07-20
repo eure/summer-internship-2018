@@ -8,10 +8,12 @@
 3. リストおよび詳細画面に表示する情報は自由に決めてください
 
 ## インストール方法
+MacOSで開発を行いました。
+多環境での動作確認はしておりません。
 
-1. このプログラムは NSQ と MongoDB を用いているためインストールします。
+1. このプログラムは NSQ と MongoDB また、Goのパッケージ管理にdepを用いているためこれらをインストールします。
 ```
-$ brew install nsq mongodb
+$ brew install nsq mongodb dep
 ```
 2. コマンドをビルドします。
 ```
@@ -26,6 +28,10 @@ $ nsqd nsqd --lookupd-tcp-address=localhost:4160
 $ nsqlookupd
 $ mkdir db
 $ mongod --dbpath ./db
+$ mongod
+> use trendlist
+> db.trends.insert({"title":"Github","list":[]})  
+> exit
 ```
 
 2. `resiver`を起動します。

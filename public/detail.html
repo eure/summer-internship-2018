@@ -1,42 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title></title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-  </head>
-  <body>
-    <div class="container">
-      <h1 data-filed="title">...</h1>
-      <ul id="info"></ul>
+</head>
+<body>
+<div class="container">
+    <div class="well">
+        <h1 data-filed="title">...</h1>
+        <ul id="info"></ul>
     </div>
-  </body>
+</div>
+</body>
 </html>
 
 <script src="//www.google.com/jsapi"></script>
 <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
 <script>
-google.setOnLoadCallback(function() {
-    $(function() {
-        var url = "https://api.github.com/repos" + getParam("q");
-        $.get(url,null,null,"json").then(function(repos) {
-            $('[data-filed="title"]').text(repos.name);
-	  $('#info').empty();
-	  $('#info').append(
-	    $("<li>").append(
-	      $("<a>").attr("href", repos.html_url).text(repos.full_name)
-	    )
-	    )
+    google.setOnLoadCallback(function () {
+        $(function () {
+            var url = "https://api.github.com/repos" + getParam("q");
+            $.get(url, null, null, "json").then(function (repos) {
+                $('[data-filed="title"]').text(repos.name);
+                $('#info').empty();
+                $('#info').append(
+                        $("<p>").text(repos.description),
+                        $("<p>").append(
+                                $("<a>").attr("href", repos.html_url).text(repos.full_name)
+                        )
+                )
+            })
         })
     })
-})
 
-function getParam(name, url) {
-    if (!url) url = window.location.href;
-    name = name.replace(/[\[\]]/g, "\\$&");
-    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, " "));
-}
+    function getParam(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
 </script>
