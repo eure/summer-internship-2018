@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Github Trend List</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <h1 data-filed="title">GitHub Trend List</h1>
+        <ul id="trends"></ul>
+        <div class="list-group">
+            {{range .List}}
+	    <a class="list-group-item" href="detail?key={{.}}"> {{.}} </a>
+            {{end}}
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
