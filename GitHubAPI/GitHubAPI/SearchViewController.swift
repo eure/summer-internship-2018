@@ -34,7 +34,9 @@ class SearchViewController: UIViewController {
     
     let provider = MoyaProvider<GitHubAPI>()
     var repositories = Variable<[Repository]>([])
+    
     var page = 0
+    var isLoading = false
     
     var disposeBag = DisposeBag()
     
@@ -54,8 +56,8 @@ class SearchViewController: UIViewController {
             .distinctUntilChanged()
             .subscribe(onNext: { str in
                 self.repositories.value = []
-                self.getSearchResult(query: str)
                 self.page = 0
+                self.getSearchResult(query: str)
             }).disposed(by: disposeBag)
         
         repositories.asObservable().bind(to: collectionView.rx.items) { (collectionView, row, element) in
@@ -100,7 +102,6 @@ class SearchViewController: UIViewController {
                     : Observable.empty()
             }.subscribe(onNext: { _ in
                 guard let query = self.searchBar.text else { return }
-                self.page += 1
                 self.getSearchResult(query: query)
             }).disposed(by: disposeBag)
     }
@@ -132,8 +133,12 @@ class SearchViewController: UIViewController {
     }
     
     internal func getSearchResult(query: String) {
+        print(query, page)
+        // TODO: handle the completion
+        if isLoading { return }
+        isLoading = true
         provider.rx.request(.search(q: query, page: page))
-//            .filterSuccessfulStatusCodes()
+            .filterSuccessfulStatusCodes()
             .map(SearchResult.self)
             .subscribe(onSuccess: { res in
                 guard let items = res.items else { return }
@@ -142,48 +147,12 @@ class SearchViewController: UIViewController {
                 } else {
                     self.repositories.value += items
                 }
+                self.page += 1
+                self.isLoading = false
             }, onError: { err in
                 print(err)
+                self.isLoading = false
             }).disposed(by: disposeBag)
-    }
-    
-    internal func searchRepositories(query: String) -> Observable<[Repository]> {
-        
-        //        return provider.rx.request(.search(q: query))
-        //            .filterSuccessfulStatusCodes()
-        //            .map(SearchResult.self)
-        //            .subscribe(onSuccess: { res in
-        //                guard let items = res.items else { return }
-        //                observer
-        //            }, onError: { error in
-        //                print(error)
-        //            })
-        
-        //        let searchResults = searchBar.rx.text.orEmpty
-        //            .throttle(0.3, scheduler: MainScheduler.instance)
-        //            .distinctUntilChanged()
-        //            .flatMapLatest { query -> Observable<[Repository]> in
-        //                if query.isEmpty {
-        //                    return .just([])
-        //                }
-        //                return self.searchRepositories(query: query)
-        //                    .catchErrorJustReturn([])
-        //            }.observeOn(MainScheduler.instance)
-        
-        return Observable.create { observer in
-            self.provider.rx.request(.search(q: query, page: 0))
-                .filterSuccessfulStatusCodes()
-                .map(SearchResult.self)
-                .subscribe(onSuccess: { res in
-                    if let items = res.items {
-                        observer.onNext(items)
-                    } else {
-                        observer.onNext([])
-                    }
-                }) { error in
-                    observer.onError(error)
-            }
-        }
     }
     
     func isNearTheBottomEdge(contentOffset: CGPoint, _ collectionView: UICollectionView) -> Bool {
@@ -191,6 +160,8 @@ class SearchViewController: UIViewController {
         return contentOffset.y + collectionView.frame.size.height + startLoadingOffset > collectionView.contentSize.height
     }
 }
+
+// MARK: - Cell
 
 class RepositoryCollectionViewCell: UICollectionViewCell {
     
@@ -246,22 +217,7 @@ class RepositoryCollectionViewCell: UICollectionViewCell {
         label.sizeToFit()
         return label
     }()
-    
-    // TODO: autolayout
-    
-    //    var langColorCircle: CAShapeLayer = {
-    //        let path = UIBezierPath(arcCenter: CGPoint(x: 10, y: 10),
-    //                                radius: 20.0,
-    //                                startAngle: 0.0,
-    //                                endAngle: CGFloat(Double.pi * 2),
-    //                                clockwise: true)
-    //        let layer = CAShapeLayer()
-    //        layer.path = path.cgPath
-    //        layer.fillColor = UIColor.flatGray().cgColor
-    //        layer.lineWidth = 0.0
-    //        return layer
-    //    }()
-    
+
     var langColorCircle: UIView = {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
         view.layer.cornerRadius = 5
@@ -272,8 +228,11 @@ class RepositoryCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        // TODO: - 分割
-        
+        setupViews()
+        setupConstraints()
+    }
+    
+    func setupViews() {
         self.contentView.addSubview(nameLabel)
         self.contentView.addSubview(descLabel)
         self.contentView.addSubview(langColorCircle)
@@ -281,7 +240,9 @@ class RepositoryCollectionViewCell: UICollectionViewCell {
         self.contentView.addSubview(starIconLabel)
         self.contentView.addSubview(starCountLabel)
         self.contentView.addSubview(updatedDateLabel)
-        
+    }
+    
+    func setupConstraints() {
         let guide = contentView.layoutMarginsGuide
         
         self.nameLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -337,6 +298,8 @@ class RepositoryCollectionViewCell: UICollectionViewCell {
     }
 }
 
+// MARK: - Extension
+
 extension String {
     func dateFormat() -> String? {
         let formatter = DateFormatter()
@@ -359,3 +322,4 @@ extension Int {
         return "\(rounded)\(units[exp-1])"
     }
 }
+

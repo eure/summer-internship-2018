@@ -79,29 +79,14 @@ class RepositoryViewController: UIViewController {
         
         setupViews()
         setupConstraints()
-        
-        //        descTextView.text = repository.description
     }
     
     func setupViews() {
         self.view.addSubview(markdownView)
-        //        self.view.addSubview(descTextView)
-        //        self.view.addSubview(starButton)
     }
     
     func setupConstraints() {
         let guide = self.view.safeAreaLayoutGuide
-        
-        //        self.descTextView.translatesAutoresizingMaskIntoConstraints = false
-        //        self.descTextView.topAnchor.constraint(equalTo: guide.topAnchor).isActive = true
-        //        self.descTextView.leadingAnchor.constraint(equalTo: guide.leadingAnchor).isActive = true
-        //        self.descTextView.trailingAnchor.constraint(equalTo: guide.trailingAnchor).isActive = true
-        //
-        //        self.starButton.translatesAutoresizingMaskIntoConstraints = false
-        //        self.starButton.topAnchor.constraint(equalTo: self.descTextView.bottomAnchor).isActive = true
-        //        self.starButton.centerXAnchor.constraint(equalTo: guide.centerXAnchor).isActive = true
-        //        self.starButton.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
-        //        self.starButton.heightAnchor.constraint(equalToConstant: 30.0).isActive = true
         
         self.markdownView.translatesAutoresizingMaskIntoConstraints = false
         self.markdownView.topAnchor.constraint(equalTo: guide.topAnchor).isActive = true

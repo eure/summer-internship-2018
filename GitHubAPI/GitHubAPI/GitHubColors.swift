@@ -11,16 +11,13 @@ import UIKit
 import Chameleon
 
 extension UIColor {
-    
-    // TODO: 毎回呼び出されるのでextensionやめる
-    
     var githubColors: GitHubColors? {
         let path = Bundle.main.path(forResource: "colors", ofType: "json")!
         let decoder = JSONDecoder()
         do {
             let url = URL(fileURLWithPath: path)
             let data = try Data(contentsOf: url)
-            let json = try decoder.decode(GitHubColors.self, from: data)
+            let json = try decoder.decode(GitHubColors.self, from: data)            
             return json
         } catch {
             print("failed to read or decode json.", error.localizedDescription)
