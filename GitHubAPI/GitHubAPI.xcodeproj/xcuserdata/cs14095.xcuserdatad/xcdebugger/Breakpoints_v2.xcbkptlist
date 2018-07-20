@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GitHubAPI/GitHubColors.swift"
-            timestampString = "553738500.63668"
+            timestampString = "553740796.0999711"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "init(from:)"
             landmarkType = "7">
          </BreakpointContent>

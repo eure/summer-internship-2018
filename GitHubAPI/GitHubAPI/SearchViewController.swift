@@ -13,6 +13,7 @@ import RxSwift
 import RxCocoa
 import Chameleon
 import SwiftIconFont
+import Smile
 
 class SearchViewController: UIViewController {
     
@@ -65,7 +66,7 @@ class SearchViewController: UIViewController {
             let indexPath = IndexPath(row: row, section: 0)
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "repo", for: indexPath) as! RepositoryCollectionViewCell
             
-            cell.nameLabel.text = self.repositories.value[row].full_name
+            cell.nameLabel.text = Smile.replaceAlias(string: self.repositories.value[row].full_name)
             cell.langLabel.text = self.repositories.value[row].language
             cell.starCountLabel.text = self.repositories.value[row].stargazers_count.suffixNumber()
             
@@ -76,7 +77,7 @@ class SearchViewController: UIViewController {
             }
             
             if let desc = self.repositories.value[row].description {
-                cell.descLabel.text = desc
+                cell.descLabel.text = Smile.replaceAlias(string: desc)
             } else {
                 cell.descLabel.text = "No description provided."
                 cell.descLabel.font = UIFont.preferredFont(forTextStyle: .footnote)

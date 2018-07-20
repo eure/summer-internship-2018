@@ -13,6 +13,7 @@ import Moya
 import RxSwift
 import MarkdownView
 import SafariServices
+import Smile
 
 class RepositoryViewController: UIViewController {
     
@@ -48,7 +49,7 @@ class RepositoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = repository.full_name
+        self.title = Smile.replaceAlias(string: repository.full_name)
         
         let safariButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(openSafari))
         self.navigationItem.rightBarButtonItem = safariButton

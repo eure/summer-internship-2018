@@ -11,6 +11,7 @@
 		387464FA20FDF5C200C01A69 /* Chameleon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 387464F920FDF5C200C01A69 /* Chameleon.framework */; };
 		3875ED6E20FED0CF00219615 /* MarkdownView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3875ED6D20FED0CF00219615 /* MarkdownView.framework */; };
 		38768E6C20EF108200AAB7E3 /* RepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38768E6B20EF108200AAB7E3 /* RepositoryViewController.swift */; };
+		387973312101692900028270 /* Smile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 387973302101692900028270 /* Smile.framework */; };
 		38A04A0520EE4D4D0041ADFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A04A0420EE4D4D0041ADFF /* AppDelegate.swift */; };
 		38A04A0720EE4D4D0041ADFF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A04A0620EE4D4D0041ADFF /* SearchViewController.swift */; };
 		38A04A0C20EE4D4F0041ADFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38A04A0B20EE4D4F0041ADFF /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 		387464F920FDF5C200C01A69 /* Chameleon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chameleon.framework; path = Carthage/Build/iOS/Chameleon.framework; sourceTree = "<group>"; };
 		3875ED6D20FED0CF00219615 /* MarkdownView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MarkdownView.framework; path = Carthage/Build/iOS/MarkdownView.framework; sourceTree = "<group>"; };
 		38768E6B20EF108200AAB7E3 /* RepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewController.swift; sourceTree = "<group>"; };
+		387973302101692900028270 /* Smile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Smile.framework; path = Carthage/Build/iOS/Smile.framework; sourceTree = "<group>"; };
 		38A04A0120EE4D4D0041ADFF /* GitHubAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38A04A0420EE4D4D0041ADFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38A04A0620EE4D4D0041ADFF /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				387973312101692900028270 /* Smile.framework in Frameworks */,
 				3820948D2100E445008BC620 /* SwiftIconFont.framework in Frameworks */,
 				3875ED6E20FED0CF00219615 /* MarkdownView.framework in Frameworks */,
 				387464FA20FDF5C200C01A69 /* Chameleon.framework in Frameworks */,
@@ -174,6 +177,7 @@
 		38A04A3620EE57920041ADFF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				387973302101692900028270 /* Smile.framework */,
 				3820948C2100E445008BC620 /* SwiftIconFont.framework */,
 				3875ED6D20FED0CF00219615 /* MarkdownView.framework */,
 				387464F920FDF5C200C01A69 /* Chameleon.framework */,
@@ -337,6 +341,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Chameleon.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/MarkdownView.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftIconFont.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Smile.framework",
 			);
 			name = "Run Script";
 			outputPaths = (
@@ -351,6 +356,7 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Chameleon.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/MarkdownView.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftIconFont.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Smile.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
