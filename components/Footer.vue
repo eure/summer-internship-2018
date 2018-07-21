@@ -1,7 +1,6 @@
 <template>
 <div class="footer" green >
-    <h2 is="sui-header" floated="right" color="green" >Floated Content</h2>
-    <docs-wireframe name="short-paragraph" />
+    <a is="sui-header" textAlign="left" color="black" >© jon.</a>
 </div>
 </template>
 
