@@ -66,7 +66,10 @@ const StyledCard = styled(Card)`
   width: 100%;
   margin: 0 auto 12px;
   text-align: left;
-`;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  &:hover {
+    box-shadow: 0 12px 24px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }`;
 
 const AvatarWrapper = styled('div')`
   margin-right: 12px;

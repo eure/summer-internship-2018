@@ -110,7 +110,7 @@ class EventPage extends React.Component {
   render() {
     const { eventData } = this.state;
     return (
-      <div>
+      <EventPageWrapper>
         {eventData &&
           <StyledCard>
             <CardContent>
@@ -130,10 +130,15 @@ class EventPage extends React.Component {
 
           </StyledCard>
         }
-      </div>
+      </EventPageWrapper>
     );
   }
 }
+
+const EventPageWrapper = styled('div')`
+  max-width: 1024px;
+  margin: 0 auto;
+`;
 
 const StyledCard = styled(Card)`
   width: 100%;
