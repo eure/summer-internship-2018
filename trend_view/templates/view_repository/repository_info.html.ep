@@ -1,0 +1,138 @@
+<! DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+<title> TrendView </title>
+</head>
+<body>
+	<section class="hero is-dark is-small">
+		<div class="hero-body">
+	    	<div class="container">
+		  		<a href="/">
+	     			<h1 class="title is-1">
+	       				TrendView
+	    			</h1>
+		  		</a>
+	      		<h2 class="subtitle is-5">
+	        		TrendView is you can see what the GitHub community is most excited repository on today or this week or this month.
+	     		</h2>
+	    	</div>
+		</div>
+	</section>
+
+	% my $item = stash->{trend_info};
+	<div class="box" style="width: 60%; margin: 50px auto; max-width: 1500px">
+		<article class="media">
+			<div class="media-content is-centered">
+      			<div class="content" style="text-align: center">
+        			<p>
+					<strong> <%= $item->{title} %>  </strong> <small> <%= $item->{today_star}  %> </small>
+					<br>
+					<article class="message is-dark">
+		  				<div class="message-header">
+				      		<p>Description</p>
+						</div>
+						<div class="message-body">
+							<%= $item->{desc} %>
+						</div>
+					</article>
+					<div class="level-center">
+	          			<span class="level-item" aria-label="info">
+							( Link for github.com of this repository. )
+							<a class="icon" href="https://github.com<%= $item->{href} %>">
+             					<i class="fas fa-link" aria-hidden="true"></i>
+							</a>
+          				</span>
+					</div>
+       				</p>
+      			</div> <!-- content -->
+	  			<nav class="level">
+        			<div class="level-left" style="margin: 0 auto">
+          				<span class="level-item" aria-label="language" style="margin: 0 60">
+            				<span class="icon">
+              					<i class="fas fa-circle" aria-hidden="true"></i>
+								<p> <%= $item->{language} %> </p>
+           					</span>
+          				</span>
+          				<span class="level-item" aria-label="fork" style="margin: 0 60">
+            				<span class="icon">
+              					<i class="fas fa-code-branch" aria-hidden="true"></i>
+								<p> <%= $item->{fork} %> </p>
+           					</span>
+        				</span>
+          				<span class="level-item" aria-label="star" style="margin: 0 60">
+            				<span class="icon">
+             					<i class="fas fa-star" aria-hidden="true"></i>
+								<p> <%= $item->{star} %> </p>
+            				</span>
+          				</span>
+        			</div> <!-- level-left -->
+      			</nav> <!-- level -->
+    		</div> <!--  media-content -->
+  		</article> <!-- media -->
+	</div> <!--  content -->
+
+	% my $tr_count = 1;
+	% my $date = stash->{since};
+	% my $extracted = stash->{extracted};
+	% for my $item (@{$extracted}) {
+	<div class="box" style="width: 60%; margin: 10px auto; max-width: 1500px">
+		<article class="media">
+			<div class="media-content is-centered">
+      			<div class="content" style="text-align: center">
+        			<p>
+					<strong> <%= $tr_count .".". $item->{title} %>  </strong> <small> <%= $item->{today_star}  %> </small>
+       				</p>
+      			</div> <!-- content -->
+	  			<nav class="level">
+        			<div class="level-left" style="margin: 0 auto">
+          				<span class="level-item" aria-label="language" style="margin: 0 60">
+            				<span class="icon">
+              					<i class="fas fa-circle" aria-hidden="true"></i>
+								<p> <%= $item->{language} %> </p>
+           					</span>
+          				</span>
+          				<span class="level-item" aria-label="fork" style="margin: 0 60">
+            				<span class="icon">
+              					<i class="fas fa-code-branch" aria-hidden="true"></i>
+								<p> <%= $item->{fork} %> </p>
+           					</span>
+        				</span>
+          				<span class="level-item" aria-label="star" style="margin: 0 60">
+            				<span class="icon">
+             					<i class="fas fa-star" aria-hidden="true"></i>
+								<p> <%= $item->{star} %> </p>
+            				</span>
+          				</span>
+        			</div> <!-- level-left -->
+
+      			</nav> <!-- level -->
+    		</div> <!--  media-content -->
+  		</article> <!-- media -->
+	</div> <!--  content -->
+	%	$tr_count++;
+	% }
+	<center>
+		<a class="button is-dark is-large" onclick="history.back()"> Back </a>
+	</center>
+	<br>
+
+	<footer class="footer">
+		<div class="content has-text-centered">
+			<p>
+			<strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+			<a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+			is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+			</p>
+		</div>
+		<center>
+			<a href="https://bulma.io">
+				<img src="https://bulma.io/images/made-with-bulma--dark.png" alt="Made with Bulma" width="128" height="24">
+			</a>
+		</center>
+	</footer>
+</body>
+
+</html>
