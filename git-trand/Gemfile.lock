@@ -1,5 +1,5 @@
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
     actioncable (5.0.7)
       actionpack (= 5.0.7)
@@ -165,6 +165,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   mysql2 (= 0.4.10)
+  nokogiri
   puma (~> 3.0)
   rails (~> 5.0.6)
   sass-rails (~> 5.0)
