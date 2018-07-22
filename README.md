@@ -15,9 +15,9 @@ GitHubのtrend・developers・repositoryをスクレイピングする機能を�
 README.mdは、スクレイピングでhtmlを取得しそのまま表示している。
 
 ### スクリーンショット
-(./img/top.png)
-(./img/developer.png)
-(./img/detail.png)
+![top](./img/top.png)
+![developer](./img/developer.png)
+![detail](./img/detail.png)
 
 ## 環境構築マニュアル
 ```
