@@ -2,12 +2,21 @@
 {% load staticfiles %}
 {% block content %}
 
+
 <br><br>
-<h3 class="collection-header center">REDME.md</h3>
+  <button class="btn waves-effect waves-light" type="button" onclick="history.back()">
+    <i class="material-icons left">arrow_back</i>
+    Return
+  </button>
+<a href="{{ url }}" class="waves-effect waves-light btn">GitHub Link</a>
+<br><br>
+<h4 class="collection-header center">REDME.md</h4>
 
 <div class="panel panel-default">
   <div class="panel-body">{{ detail | safe }}</div>
 </div>
+
+<br><br>
 
 
 {% endblock %}

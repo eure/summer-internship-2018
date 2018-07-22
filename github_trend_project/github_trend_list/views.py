@@ -3,34 +3,57 @@ from django.http import Http404
 from bs4 import BeautifulSoup
 import requests
 
-TODAY_URL = "https://github.com/trending?since=daily"
-WEEK_URL = "https://github.com/trending?since=weekly"
-MONTH_URL = "https://github.com/trending?since=monthly"
+TREND_TODAY_URL = "https://github.com/trending?since=daily"
+TREND_WEEK_URL = "https://github.com/trending?since=weekly"
+TREND_MONTH_URL = "https://github.com/trending?since=monthly"
 
-
-def index(request):
-    pass
+DEVELOPER_TODAY_URL = "https://github.com/trending/developers?since=daily"
+DEVELOPER_WEEK_URL = "https://github.com/trending/developers?since=weekly"
+DEVELOPER_MONTH_URL = "https://github.com/trending/developers?since=monthly"
 
 
 def trend(request):
     if "since" in request.GET:
         since = request.GET.get("since")
         if since == 'today':
-            contents = scraping(TODAY_URL)
+            contents = trend_scraping(TREND_TODAY_URL)
         elif since == 'week':
-            contents = scraping(WEEK_URL)
+            contents = trend_scraping(TREND_WEEK_URL)
         elif since == 'month':
-            contents = scraping(MONTH_URL)
+            contents = trend_scraping(TREND_MONTH_URL)
     else:
         since = 'today'
-        contents = scraping(TODAY_URL)
+        contents = trend_scraping(TREND_TODAY_URL)
 
     result = {
+        'title': 'repositories',
         'since': since,
         'result_contents': contents,
     }
 
-    return render(request, 'show.html', result)
+    return render(request, 'trend.html', result)
+
+
+def trend_developers(request):
+    if "since" in request.GET:
+        since = request.GET.get("since")
+        if since == 'today':
+            contents = developer_scraping(DEVELOPER_TODAY_URL)
+        elif since == 'week':
+            contents = developer_scraping(DEVELOPER_WEEK_URL)
+        elif since == 'month':
+            contents = developer_scraping(DEVELOPER_MONTH_URL)
+    else:
+        since = 'today'
+        contents = developer_scraping(DEVELOPER_TODAY_URL)
+
+    result = {
+        'title': 'developers',
+        'since': since,
+        'result_contents': contents,
+    }
+
+    return render(request, 'developers.html', result)
 
 
 def detail(request):
@@ -42,13 +65,14 @@ def detail(request):
     repo_detail = html_text.find(class_='markdown-body entry-content')
 
     result = {
+        'url': url,
         'detail': repo_detail.prettify(),
     }
 
     return render(request, 'detail.html', result)
 
 
-def scraping(url):
+def trend_scraping(url):
     request_url = requests.get(url)
     html_text = BeautifulSoup(request_url.text, 'lxml')
     repo_list = html_text.find(class_='repo-list')
@@ -74,6 +98,37 @@ def scraping(url):
             'language': language.strip(),
             'star': star.strip(),
             'fork': fork.strip(),
+        }
+
+        contents.append(content)
+
+    return contents
+
+
+def developer_scraping(url):
+    request_url = requests.get(url)
+    html_text = BeautifulSoup(request_url.text, 'lxml')
+    developer_list = html_text.find(class_='explore-content')
+    developers = developer_list.find_all(class_='d-sm-flex flex-justify-between border-bottom border-gray-light py-3')
+
+    contents = []
+
+    for developer in developers:
+        name = ''.join(developer.find(class_='f3 text-normal').text.split())
+        link_and_img = developer.find(class_='d-inline-block')
+        url = 'https://github.com' + link_and_img.get('href')
+        image = link_and_img.find('img')['src']
+        repo_name = developer.find(class_='repo').text.strip()
+        repo_url = url + '/' + developer.find(class_='repo').text.strip()
+        description = developer.find(class_='repo-snipit-description css-truncate-target').text
+
+        content = {
+            'name': name,
+            'url': url,
+            'image': image,
+            'repo_name': repo_name,
+            'repo_url': repo_url,
+            'description': description,
         }
 
         contents.append(content)

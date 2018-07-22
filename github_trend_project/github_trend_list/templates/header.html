@@ -1,12 +1,20 @@
 <ul id="dropdown" class="dropdown-content">
-    <li><a href="{% url 'trend' %}?since=today">today</a></li>
-    <li><a href="{% url 'trend' %}?since=week">week</a></li>
-    <li><a href="{% url 'trend' %}?since=month">month</a></li>
+    {% if title == 'repositories' %}
+        <li><a href="{% url 'trend' %}?since=today">today</a></li>
+        <li><a href="{% url 'trend' %}?since=week">week</a></li>
+        <li><a href="{% url 'trend' %}?since=month">month</a></li>
+    {% elif title == 'developers' %}
+        <li><a href="{% url 'trend_developers' %}?since=today">today</a></li>
+        <li><a href="{% url 'trend_developers' %}?since=week">week</a></li>
+        <li><a href="{% url 'trend_developers' %}?since=month">month</a></li>
+    {% endif %}
 </ul>
 <nav>
     <div class="nav-wrapper orange">
         <a href="{% url 'trend' %}" class="brand-logo">GiTrend</a>
         <ul class="right hide-on-med-and-down">
+            <li><a href="{% url 'trend' %}">Repositories</a></li>
+            <li><a href="{% url 'trend_developers' %}">Developers</a></li>
             <li><a class="dropdown-trigger" data-target="dropdown" data-activates="dropdownTop">Select Date
                 <i class="material-icons right">arrow_drop_down</i></a>
             </li>

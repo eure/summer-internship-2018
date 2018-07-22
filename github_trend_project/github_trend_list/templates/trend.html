@@ -5,11 +5,11 @@
 <br>
 <br>
 {% if since == 'today' %}
- <h1 class="collection-header center">Today Trending</h1>
+<h3 class="collection-header center">Today Trending</h3>
 {% elif since == 'week' %}
- <h1 class="collection-header center">Week Trending</h1>
+<h3 class="collection-header center">Week Trending</h3>
 {% elif since == 'month' %}
-<h1 class="collection-header center">Month Trending</h1>
+<h3 class="collection-header center">Month Trending</h3>
 {% endif %}
 <br>
 
@@ -17,10 +17,11 @@
 <ul class="collection">
     {% for content in result_contents %}
     <li class="collection-item avatar">
-        <a href="{% url 'detail' %}?title={{ content.title }}"><span class="title"><h5 >{{ content.title }}</h5></span></a>
-        <p>
-            {{content.description}}
-        </p>
+        <a href="{% url 'detail' %}?title={{ content.title }}"><span
+                class="title"><h5>{{ content.title }}</h5></span></a>
+            <blockquote>
+                {{content.description}}
+            </blockquote>
 
         <div class="secondary-content">
             {% if content.language != '' %}
@@ -34,6 +35,6 @@
     </li>
     {% endfor %}
 </ul>
-
+    <br>
 
 {% endblock %}
