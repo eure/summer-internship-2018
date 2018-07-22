@@ -2,3 +2,4 @@
 .perl-version
 etc/
 local/
+cpanfile.snapshot
