@@ -31,7 +31,7 @@ class TopPage extends React.Component {
         <Typography variant="display1" color="primary">airbnb/javascript issues events</Typography>
         {eventsData &&
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', margin: '0 auto', maxWidth: '1024px' }}>
-            {eventsData.map(event => <EventListItem key={event.id} event={event} />)}
+            {eventsData.map((event, index) => <EventListItem key={event.id} event={event} num={index + 1} />)}
           </div>
         }
       </div>

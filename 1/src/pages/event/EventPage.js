@@ -1,8 +1,9 @@
 import React from 'react';
+import styled from 'react-emotion';
 import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
+import Avatar from '@material-ui/core/Avatar';
 
 /**
  * {
@@ -111,20 +112,52 @@ class EventPage extends React.Component {
     return (
       <div>
         {eventData &&
-          <Card style={{ margin: '0 auto 14px', textAlign: 'left', width: '300px' }}>
-            <CardMedia image={eventData.actor.avatar_url} style={{ height: 0, paddingTop: '56.25%' }} />
+          <StyledCard>
             <CardContent>
               <Typography variant="title">{eventData.issue.title}</Typography>
-              <Typography variant="display2" color="primary">{eventData.type}</Typography>
-              <Typography>{eventData.created_at}</Typography>
-              <Typography>ID: {eventData.id}</Typography>
-              <Typography>Name: {eventData.actor.login}</Typography>
+
+              <UserCaptionWrapper>
+                <AvatarWrapper>
+                  <Avatar alt={eventData.actor.login} src={eventData.actor.avatar_url} />
+                </AvatarWrapper>
+                <Typography variant="body2" color="secondary">{eventData.actor.login}</Typography>
+              </UserCaptionWrapper>
+
+              <CreatedAtWrapper>
+                <Typography variant="caption">{eventData.created_at}</Typography>
+              </CreatedAtWrapper>
             </CardContent>
-          </Card>
+
+          </StyledCard>
         }
       </div>
     );
   }
 }
+
+const StyledCard = styled(Card)`
+  width: 100%;
+  margin: 0 auto 12px;
+  text-align: left;
+`;
+
+const AvatarWrapper = styled('div')`
+  margin-right: 12px;
+
+`;
+
+const UserCaptionWrapper = styled('div')`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  max-width: 375px;
+  margin: 0 0 12px auto;
+`;
+
+const CreatedAtWrapper = styled('div')`
+  text-align: right;
+`;
+
+
 
 export default EventPage;

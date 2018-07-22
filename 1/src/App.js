@@ -1,19 +1,23 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import TopPage from "./pages/top/TopPage";
-import EventPage from "./pages/event/EventPage";
+import TopPage from './pages/top/TopPage';
+import EventPage from './pages/event/EventPage';
+import Header from './components/Header';
 
 class App extends React.Component {
   render() {
     return (
-      <Router>
-        <Switch>
-          <Route exact path="/events" component={TopPage} />
-          <Route exact path="/events/:id" component={EventPage} />
-          <Route component={NotFound} />
-        </Switch>
-      </Router>
+      <div>
+        <Header />
+        <Router>
+          <Switch>
+            <Route exact path="/events" component={TopPage} />
+            <Route exact path="/events/:id" component={EventPage} />
+            <Route component={NotFound} />
+          </Switch>
+        </Router>
+      </div>
     );
   }
 }

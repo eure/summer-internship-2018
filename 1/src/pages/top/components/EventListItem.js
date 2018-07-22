@@ -1,9 +1,10 @@
 import React from 'react';
+import styled from 'react-emotion';
 import { Link } from 'react-router-dom';
 import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import { CardMedia } from '@material-ui/core';
+import Avatar from '@material-ui/core/Avatar';
 
 /**
  * Sample event data.
@@ -39,19 +40,49 @@ import { CardMedia } from '@material-ui/core';
  * },
  */
 
-const EventListItem = ({ event }) => (
-  <Card style={{ margin: '0 auto 14px', textAlign: 'left', width: '300px' }}>
+const EventListItem = ({ event, num }) => (
+  <StyledCard>
     <Link to={`/events/${event.id}`}>
-      <CardMedia image={event.actor.avatar_url} style={{ height: 0, paddingTop: '56.25%' }} />
       <CardContent>
+        <Typography variant="display1">{`#${num}`}</Typography>
         <Typography variant="title">{event.issue.title}</Typography>
-        <Typography variant="display2" color="primary">{event.type}</Typography>
-        <Typography>{event.created_at}</Typography>
-        <Typography>ID: {event.id}</Typography>
-        <Typography>Name: {event.actor.login}</Typography>
+
+        <UserCaptionWrapper>
+          <AvatarWrapper>
+            <Avatar alt={event.actor.login} src={event.actor.avatar_url} />
+          </AvatarWrapper>
+          <Typography variant="body2" color="secondary">{event.actor.login}</Typography>
+        </UserCaptionWrapper>
+
+        <CreatedAtWrapper>
+          <Typography variant="caption">{event.created_at}</Typography>
+        </CreatedAtWrapper>
       </CardContent>
     </Link>
-  </Card>
+  </StyledCard>
 );
+
+const StyledCard = styled(Card)`
+  width: 100%;
+  margin: 0 auto 12px;
+  text-align: left;
+`;
+
+const AvatarWrapper = styled('div')`
+  margin-right: 12px;
+
+`;
+
+const UserCaptionWrapper = styled('div')`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  max-width: 375px;
+  margin: 0 0 12px auto;
+`;
+
+const CreatedAtWrapper = styled('div')`
+  text-align: right;
+`;
 
 export default EventListItem;
