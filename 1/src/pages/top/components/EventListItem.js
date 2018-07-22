@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import { CardMedia } from '../node_modules/@material-ui/core';
+import { CardMedia } from '@material-ui/core';
 
 /**
  * Sample event data.

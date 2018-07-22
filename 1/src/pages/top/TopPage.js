@@ -1,12 +1,12 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 
-import EventListItem from './EventListItem';
+import EventListItem from './components/EventListItem';
 
 const API_CALL_URL =
   `${process.env.REACT_APP_API_BASE_URL}/repos/airbnb/javascript/issues/events?access_token=${process.env.REACT_APP_ACCESS_TOKEN}`;
 
-class Home extends React.Component {
+class TopPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -29,8 +29,8 @@ class Home extends React.Component {
     return (
       <div style={{ textAlign: 'center' }}>
         <Typography variant="display1" color="primary">airbnb/javascript issues events</Typography>
-        {eventsData && 
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', margin: '0 auto', maxWidth: '1024px'}}>
+        {eventsData &&
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', margin: '0 auto', maxWidth: '1024px' }}>
             {eventsData.map(event => <EventListItem key={event.id} event={event} />)}
           </div>
         }
@@ -39,4 +39,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default TopPage;
