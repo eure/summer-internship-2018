@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+
+<br>
+<br>
+{% if since == 'today' %}
+<h3 class="collection-header center">Today Trending Developers</h3>
+{% elif since == 'week' %}
+<h3 class="collection-header center">Week Trending Developers</h3>
+{% elif since == 'month' %}
+<h3 class="collection-header center">Month Trending Developers</h3>
+{% endif %}
+<br>
+
+<ul class="collection">
+    {% for content in result_contents %}
+    <li class="collection-item avatar">
+    <img src="{{ content.image }}" alt="" class="circle">
+        <a href="{{ content.url }}">
+        <span class="title"><h6>{{ content.name }}</h6></span>
+        </a>
+    <a href="{{ content.repo_url }}">
+    <p class="badge"><i class="tiny material-icons">bookmark_border</i>{{ content.repo_name }}</p>
+    </a>
+    <p class="badge">{{ content.description }}</p>
+    </li>
+    {% endfor %}
+</ul>
+    <br>
+
+{% endblock %}
