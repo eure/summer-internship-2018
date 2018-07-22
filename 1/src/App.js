@@ -1,17 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import Home from "./Home";
-import './App.css';
+import TopPage from "./TopPage";
+import EventPage from "./EventPage";
 
 class App extends React.Component {
   render() {
     return (
       <Router>
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/topics" component={Topics} />
+          <Route exact path="/events" component={TopPage} />
+          <Route exact path="/events/:id" component={EventPage} />
           <Route component={NotFound} />
         </Switch>
       </Router>
@@ -19,16 +18,8 @@ class App extends React.Component {
   }
 }
 
-const About = () => (
-  <div>About</div>
-);
-
-const Topics = () => (
-  <div>Topics</div>
-);
-
 const NotFound = () => (
-  <div>NotFound</div>
+  <div>Sorry, Not found.</div>
 );
 
 export default App;
