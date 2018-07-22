@@ -1,5 +1,10 @@
 package TrendView::Controller::Extract::Developers;
 
+=pod
+	TrendView/Controller/Extract/Developers.pm
+	- Github Trend に載っているデベロッパー一覧を取得するモジュール
+=cut
+
 use Moose;
 use Furl;
 use HTML::TreeBuilder;

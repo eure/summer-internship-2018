@@ -1,5 +1,10 @@
 package TrendView::Controller::Extract::Repository;
 
+=pod
+	TrendView/Controller/Extract/Repository.pm
+	- Github Trend に載っているリポジトリ一覧を取得するモジュール
+=cut
+
 use Moose;
 use Furl;
 use HTML::TreeBuilder;
