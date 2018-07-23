@@ -1,12 +1,11 @@
 package com.ayumitani.eureka_summer_internship_2018;
 
-import android.app.Fragment;
 import android.app.ListFragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
+
 
 public class RepositoryListFragment extends ListFragment {
 
@@ -26,6 +25,9 @@ public class RepositoryListFragment extends ListFragment {
         adapter.add("name1", "userName", "language", "url", 2344445);
         adapter.add("name2", "userName", "language", "url", 2344445);
         adapter.add("name3", "userName", "language", "url", 2344445);
+
+
+        String url = "https://api.github.com/search/repositories?q=languages:Java";
 
     }
 

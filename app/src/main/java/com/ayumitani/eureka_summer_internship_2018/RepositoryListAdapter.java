@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 
 public class RepositoryListAdapter extends ArrayAdapter<Repository> {
 
@@ -44,5 +43,6 @@ public class RepositoryListAdapter extends ArrayAdapter<Repository> {
         Repository repository = new Repository(name, userName, language, url, id);
         super.add(repository);
     }
+
 }
 
