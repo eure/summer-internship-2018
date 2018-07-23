@@ -13,3 +13,25 @@
  *= require_tree .
  *= require_self
  */
+ /* line 2, ../sass/main.scss */
+.title div {
+  margin-top: 40px;
+}
+/* line 5, ../sass/main.scss */
+.title a {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* line 13, ../sass/main.scss */
+.content h1 {
+  border-bottom: 1px solid;
+  padding-bottom: 20px;
+}
+/* line 17, ../sass/main.scss */
+.content p {
+  font-size: 30px;
+  border: 2px solid;
+  padding: 60px;
+  margin-top: 70px;
+}
