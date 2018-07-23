@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
 
 public class RepositoryListFragment extends ListFragment {
 
@@ -21,6 +22,11 @@ public class RepositoryListFragment extends ListFragment {
 
         adapter = new RepositoryListAdapter(getActivity());
         setListAdapter(adapter);
+
+        adapter.add("name1", "userName", "language", "url", 2344445);
+        adapter.add("name2", "userName", "language", "url", 2344445);
+        adapter.add("name3", "userName", "language", "url", 2344445);
+
     }
 
     @Override

@@ -10,11 +10,14 @@ public class Repository implements Parcelable {
     public String language;
     public String url;
 
-    public Repository(String name, String userName, String language, String url) {
+    public int id;
+
+    public Repository(String name, String userName, String language, String url, int id) {
         this.name = name;
         this.userName = userName;
         this.language = language;
         this.url = url;
+        this.id = id;
     }
 
     public Repository(Parcel in) {
@@ -22,6 +25,7 @@ public class Repository implements Parcelable {
         this.userName = in.readString();
         this.language = in.readString();
         this.url = in.readString();
+        this.id = in.readInt();
     }
 
 
@@ -36,6 +40,7 @@ public class Repository implements Parcelable {
         dest.writeString(userName);
         dest.writeString(language);
         dest.writeString(url);
+        dest.writeInt(id);
     }
 
     public static final Creator<Repository> CREATOR = new Creator<Repository>() {

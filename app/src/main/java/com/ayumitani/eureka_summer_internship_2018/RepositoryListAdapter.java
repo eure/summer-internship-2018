@@ -40,5 +40,9 @@ public class RepositoryListAdapter extends ArrayAdapter<Repository> {
         return view;
     }
 
+    public void add(String name, String userName, String language, String url, int id) {
+        Repository repository = new Repository(name, userName, language, url, id);
+        super.add(repository);
+    }
 }
 
