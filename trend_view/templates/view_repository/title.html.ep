@@ -30,7 +30,7 @@
   					<div class="dropdown-menu" id="dropdown-menu" role="menu">
     					<div class="dropdown-content">
       						<a href="/trending?since=daily" class="dropdown-item">
-        						Repository
+        						Repositories
       						</a>
       						<a href="/trending/developers?since=daily" class="dropdown-item">
       							Developers
