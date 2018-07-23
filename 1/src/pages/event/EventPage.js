@@ -6,6 +6,8 @@ import CardContent from '@material-ui/core/CardContent';
 import Avatar from '@material-ui/core/Avatar';
 
 /**
+ * Sample issue events data.
+ *
  * {
  *   "id": 1745984857,
  *   "node_id": "MDExOkNsb3NlZEV2ZW50MTc0NTk4NDg1Nw==",
@@ -90,9 +92,9 @@ class EventPage extends React.Component {
   }
 
   componentDidMount() {
-    const { id } = this.props.match.params;
+    const { owner, repo, id } = this.props.match.params;
 
-    fetch(`${process.env.REACT_APP_API_BASE_URL}/repos/airbnb/javascript/issues/events/${id}?access_token=${process.env.REACT_APP_ACCESS_TOKEN}`)
+    fetch(`${process.env.REACT_APP_API_BASE_URL}/repos/${owner}/${repo}/issues/events/${id}?access_token=${process.env.REACT_APP_ACCESS_TOKEN}`)
       .then(response => {
         if (response.ok) {
           return response.json();

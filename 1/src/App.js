@@ -13,7 +13,7 @@ class App extends React.Component {
         <Router>
           <Switch>
             <Route exact path="/events" component={TopPage} />
-            <Route exact path="/events/:id" component={EventPage} />
+            <Route exact path="/events/:owner/:repo/:id" component={EventPage} />
             <Route component={NotFound} />
           </Switch>
         </Router>

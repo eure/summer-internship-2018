@@ -40,9 +40,9 @@ import Avatar from '@material-ui/core/Avatar';
  * },
  */
 
-const EventListItem = ({ event, num }) => (
+const EventListItem = ({ owner, repo, event, num }) => (
   <StyledCard>
-    <Link to={`/events/${event.id}`}>
+    <Link to={`/events/${owner}/${repo}/${event.id}`}>
       <CardContent>
         <Typography variant="display1">{`#${num}`}</Typography>
         <Typography variant="title">{event.issue.title}</Typography>
