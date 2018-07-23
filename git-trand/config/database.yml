@@ -48,7 +48,9 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: git-trand_production
   username: git-trand
-  password: <%= ENV['GIT-TRAND_DATABASE_PASSWORD'] %>
+  password: <%= ENV['MESSAGE-BOARD_DATABASE_PASSWORD'] %>
