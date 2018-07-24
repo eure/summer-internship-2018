@@ -1,11 +1,11 @@
 # dependencies
-node_modules
+front/node_modules
 
 # logs
-npm-debug.log
+front/npm-debug.log
 
 # Nuxt build
-.nuxt
+front/.nuxt
 
 # Nuxt generate
-dist
+front/dist
