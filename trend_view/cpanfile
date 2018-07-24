@@ -3,4 +3,4 @@ requires 'HTTP::Response';
 requires 'IO::Socket::SSL';
 requires 'HTML::TreeBuilder';
 requires 'Mojolicious::Plugin::CSRFDefender';
-requires 'Moose';
+requires 'Mouse';
