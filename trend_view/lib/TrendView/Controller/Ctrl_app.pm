@@ -1,6 +1,8 @@
 package TrendView::Controller::Ctrl_app;
 
 use Mojo::Base 'Mojolicious::Controller';
+
+use TrendView::Controller::Extract;
 use TrendView::Controller::Extract::Repository;
 use TrendView::Controller::Extract::Developers;
 

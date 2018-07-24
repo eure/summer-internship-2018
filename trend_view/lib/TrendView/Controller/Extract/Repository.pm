@@ -5,24 +5,9 @@ package TrendView::Controller::Extract::Repository;
 	- Github Trend に載っているリポジトリ一覧を取得するモジュール
 =cut
 
-use Moose;
-use Furl;
+use Mouse;
+with 'TrendView::Controller::Extract';
 use HTML::TreeBuilder;
-
-has furl => (
-	is      => 'ro',
-	default => sub {
-		Furl->new(
-			agent 	=> 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/525.19 (KHTML, like Gecko) Chrome/1.0.154.53 Safari/525.19',
-			timeout => 10,
-		)
-	}
-);
-
-has tree => (
-	is      => 'ro',
-	default => sub { HTML::TreeBuilder->new() }
-);
 
 sub daily {
 	my $self = shift;
@@ -47,18 +32,6 @@ sub monthly {
 	my $daily_trend = $self->extract_trend($url);
 	return $daily_trend;
 }
-sub get_content {
-	my $self = shift;
-	my $url = shift;
-
-	my $res = $self->furl->get($url);
-	unless ($res->is_success) {
-		print "Failed to connect to remote HTTP server\n";
-		return;
-	}
-	return $res->decoded_content;
-}
-
 
 sub extract_trend {
 	my $self = shift;
@@ -68,7 +41,7 @@ sub extract_trend {
 
 	$self->tree->parse_content($content);
 
-	my $trend_list = +[];
+ 	my $trend_list = +[];
 	my @titles = $self->tree->look_down('class',qr/col-12 d-block width-full py-4 border-bottom/);
 	for my $div (@titles) {
 		my $trend_hashref = +{};
@@ -81,9 +54,6 @@ sub extract_trend {
 		$trend_hashref->{language} = $div->look_down('class','d-inline-block mr-3')->{_content}->[3]->{_content}->[0] || 'none';
 		$trend_hashref->{language} =~ s/\A\s*(.*?)\s*\z/$1/;
 
-		$trend_hashref->{today_star} = $div->look_down('class','d-inline-block float-sm-right')->as_text;
-		$trend_hashref->{today_star} =~ s/\A\s*(.*?)\s*\z/$1/;
-
 		my @starfork = $div->look_down('class',qr/muted-link d-inline-block mr-3/);
 		$trend_hashref->{star} = $starfork[0]->{_content}->[0];
 		$trend_hashref->{star} =~ s/\A\s*(.*?)\s*\z/$1/;
@@ -94,6 +64,8 @@ sub extract_trend {
 	}
 	return $trend_list;
 }
+
+__PACKAGE__->meta->make_immutable;
 
 1;
 
