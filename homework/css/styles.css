@@ -40,7 +40,7 @@ label {
   border: 2px solid black;
   border-radius: 5px;
 }
-
+/* 中身を隠す */
 .accshow {
   height: 0;
   padding: 0;
@@ -64,5 +64,4 @@ label {
   margin: auto 20px;
   border: 1px solid black;
   border-radius: 20px;
-  /* background-color: aquamarine; */
 }
