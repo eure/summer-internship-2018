@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Trends</h1>
+<h1>Github Trends</h1>
+
+<p><%= @mes %></p><br>
 
 <table>
   <thead>
@@ -10,26 +12,26 @@
       <th>Description</th>
       <th>Star count</th>
       <th>Url</th>
-      <th colspan="3"></th>
+      <!--<th colspan="3"></th>-->
     </tr>
   </thead>
 
   <tbody>
-    <% @trends.each do |trend| %>
+    <% @repos.each do |r| %>
       <tr>
-        <td><%= trend.name %></td>
-        <td><%= trend.lang %></td>
-        <td><%= trend.description %></td>
-        <td><%= trend.star_count %></td>
-        <td><%= trend.url %></td>
-        <td><%= link_to 'Show', trend %></td>
-        <td><%= link_to 'Edit', edit_trend_path(trend) %></td>
-        <td><%= link_to 'Destroy', trend, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= r.name %></td>
+        <td><%= r.lang %></td>
+        <td><%= r.description %></td>
+        <td><%= r.star_count %></td>
+        <td><%= r.url %></td>
+        <!--<% if false %>-->
+        <!--<td><%= link_to 'Show', trend %></td>-->
+        <!--<td><%= link_to 'Edit', edit_trend_path(trend) %></td>-->
+        <!--<td><%= link_to 'Destroy', trend, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+        <!--<% end %>-->
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Trend', { controller: :trends, action: :get_trends } %>

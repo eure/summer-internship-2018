@@ -4,7 +4,18 @@ class TrendsController < ApplicationController
   # GET /trends
   # GET /trends.json
   def index
-    @trends = Trend.all
+    require 'github-trending'
+    @repos = Github::Trending.get
+    @mes = ""
+    # begin
+    #   @repos = Github::Trending.get
+    #   @mes = ""
+    # rescue
+    #   @repos = []
+    #   @mes = "failed"
+    # end
+    
+    # @trends = Trend.all
   end
 
   # GET /trends/1
@@ -61,19 +72,6 @@ class TrendsController < ApplicationController
     end
   end
   
-  def get_trends
-    require 'github-trending'
-    @repos = Github::Trending.get
-    @mes = ""
-    # begin
-    #   @repos = Github::Trending.get
-    #   @mes = ""
-    # rescue
-    #   @repos = []
-    #   @mes = "failed"
-    # end
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_trend
