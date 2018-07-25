@@ -9,20 +9,25 @@
 
 <body>
     <div id="app">
-        <input type="text" v-model="user" placeholder="ユーザー名(id)を入力して下さい">
-        <input type="button" value="決定" @click="getAPI(), isVisible=true">
-
+        <h1>githubのIDを入力して下さい。レポジトリの詳細を表示します。</h1>
+        <input type="text" v-model="user" placeholder="id" class="search-id">
+        <input type="submit" value="検索" @click="getAPI(), isVisible=true" class="search-id-button">
         <template v-if="isVisible">
-    <div v-for="repo in github.repos">
-        <h2 v-text="repo.name"></h2>
-        <input type="button"  class="btn" value="詳細" @click="change(repo)">
-        
-        <template v-if="repo.open">
-            <span><span v-text="repo.stargazers_count"></span> &star;</span>
-        <p v-text="repo.description"></p>
+            <div v-for="(repo, index) in github.repos" :key="index">
+                <h2 v-text="repo.name"></h2>
+                <label :for="`switch` + index">詳細</label>
+                <input type="checkbox" :id="`switch` + index" class="switch-display">
+                <div class="accshow">
+                    <span>
+                        <span v-text="repo.stargazers_count"></span> &star;</span>
+                    <p v-if="repo.language!=null" v-text=" '言語: ' + repo.language" class="language"></p>
+                    <p v-text="'詳細: ' + repo.description"></p>
+                    <a :href="repo.html_url" target="_blank">レポジトリのURL</a>
+
+                </div>
+
+            </div>
         </template>
-    </div>
-    </template>
 
     </div>
 
@@ -32,20 +37,3 @@
 </body>
 
 </html>
-
-
-<!--
-<input type="button" value="詳細" @click="change(repo)">
-        
-        <template v-if="repo.open">
-            <span><span v-text="repo.stargazers_count"></span> &star;</span>
-        <p v-text="repo.description"></p>
-        </template>
-    </div>
-    </template>
--->
-
-
-
-
-<!--:class="['repo-' + index]"-->
