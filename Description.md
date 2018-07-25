@@ -27,6 +27,8 @@ github-trendingがそのままだと機能しない
 
 めっちゃかかったがgithub-trendingの修正がなんとかできた
 
+commit
+
 
 
 環境メモ
