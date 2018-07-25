@@ -47,7 +47,9 @@ sub extract_trend {
 		my $trend_hashref = +{};
 		$trend_hashref->{title} = $div->look_down('class',qr/d-inline-block col-9 mb-1/)->as_text_trimmed;
 
-		$trend_hashref->{href} = $div->look_down('class',qr/d-inline-block col-9 mb-1/)->extract_links('a', 'href')->[0]->[0];
+		my $repository_url = $div->look_down('class',qr/d-inline-block col-9 mb-1/)->extract_links('a', 'href')->[0]->[0];
+		$trend_hashref->{readme} = $self->get_readme('https://raw.githubusercontent.com'.$repository_url);
+		$trend_hashref->{href} = 'https://github.com'.$repository_url;
 
 		$trend_hashref->{desc} = $div->look_down('class',qr/col-9 d-inline-block text-gray m-0 pr-4/)->as_text_trimmed;
 

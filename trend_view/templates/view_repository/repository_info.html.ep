@@ -35,7 +35,7 @@
 				      		<p>Description</p>
 						</div>
 						<div class="message-body">
-							<%= $item->{desc} %>
+							%== $item->{readme};
 						</div>
 					</article>
 					<div class="level-center">
