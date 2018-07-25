@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Github Trends</h1>
+
+<!--<p><%= @mes %></p><br>-->
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Lang</th>
+      <!--<th>Description</th>-->
+      <th>Star count</th>
+      <!--<th>Url</th>-->
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trends.each do |trend| %>
+      <tr>
+        <td><%= trend.name %></td>
+        <td><%= trend.lang %></td>
+        <!--<td><%= trend.description %></td>-->
+        <td><%= trend.star_count %></td>
+        <!--<td><%= trend.url %></td>-->
+        <td><%= link_to 'Show', trend %></td>
+        <!--<% if false %>-->
+        <!--<td><%= link_to 'Edit', edit_trend_path(trend) %></td>-->
+        <!--<td><%= link_to 'Destroy', trend, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+        <!--<% end %>-->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
