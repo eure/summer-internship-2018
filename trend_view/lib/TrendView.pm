@@ -22,8 +22,12 @@ sub startup {
 	# リポジトリのトレンド一覧へのルーティング
 	$r->get('/trending')->to('Ctrl_app#repository');
 
+	# リポジトリ詳細へのルーティング
+	$r->get('/trending/detail')->to('Ctrl_app#detail');
+
 	# デベロッパーのトレンド一覧へのルーティング
 	$r->get('trending/developers')->to('Ctrl_app#developers');
+
 }
 
 1;
