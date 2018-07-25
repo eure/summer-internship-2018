@@ -40,7 +40,12 @@ indexへのアクセスの際は、日付が今日なtrend_setのうちidが一�
 trendにはtrendset_id列を足す必要あり
 trendsetはidとcreated_atさえあればよい
 
+commit
 
+show画面で全ての情報を見せる
+editはいらないので消去
+
+commit
 
 予定メモ
 （手動リフレッシュもできるようにする）

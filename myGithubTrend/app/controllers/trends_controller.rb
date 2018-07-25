@@ -24,7 +24,6 @@ class TrendsController < ApplicationController
       @mes = "get"
     end
     
-    
     # begin
     #   @repos = Github::Trending.get
     #   @mes = ""
