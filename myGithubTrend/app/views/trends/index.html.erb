@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Trends</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Lang</th>
+      <th>Description</th>
+      <th>Star count</th>
+      <th>Url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trends.each do |trend| %>
+      <tr>
+        <td><%= trend.name %></td>
+        <td><%= trend.lang %></td>
+        <td><%= trend.description %></td>
+        <td><%= trend.star_count %></td>
+        <td><%= trend.url %></td>
+        <td><%= link_to 'Show', trend %></td>
+        <td><%= link_to 'Edit', edit_trend_path(trend) %></td>
+        <td><%= link_to 'Destroy', trend, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Trend', new_trend_path %>
