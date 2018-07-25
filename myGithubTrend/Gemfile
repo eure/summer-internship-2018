@@ -61,4 +61,4 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'github-trending', github: 'sheharyarn/github-trending'
+gem 'github-trending', github: 'iwannatto/github-trending'

@@ -12,10 +12,21 @@ Gemfile + bundle installでgemを入れる
 :name, :lang, :description, :star_count, :url
 でいける。
 
-
 gemfileに追記、
 bin/rails db:migrate RAILS_ENV=development
 bunlde update
+
+commit
+
+newの位置にあるボタンを削除し、代わりにトレンド取ってくるボタン
+get_trendアクションを作り、そこでトレンドを取ってきて登録する動作を
+
+と思ったけどでかめの問題、githubのサイトが改修でもされたのか、
+github-trendingがそのままだと機能しない
+幸い普通に修正できそうなので、自分でforkして直すことにする
+
+めっちゃかかったがgithub-trendingの修正がなんとかできた
+
 
 
 環境メモ

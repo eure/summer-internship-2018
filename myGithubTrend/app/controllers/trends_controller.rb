@@ -60,6 +60,19 @@ class TrendsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def get_trends
+    require 'github-trending'
+    @repos = Github::Trending.get
+    @mes = ""
+    # begin
+    #   @repos = Github::Trending.get
+    #   @mes = ""
+    # rescue
+    #   @repos = []
+    #   @mes = "failed"
+    # end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

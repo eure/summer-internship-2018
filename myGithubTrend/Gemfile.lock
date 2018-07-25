@@ -1,6 +1,6 @@
 GIT
-  remote: https://github.com/sheharyarn/github-trending.git
-  revision: 8bc1f2beffe214dd52c82c0bf3b555d368740029
+  remote: https://github.com/iwannatto/github-trending.git
+  revision: 4d2a60d7b331ea287fe003c62c0f4e910820369c
   specs:
     github-trending (0.2.3)
       addressable (~> 2.3.6)
