@@ -4,9 +4,27 @@ class TrendsController < ApplicationController
   # GET /trends
   # GET /trends.json
   def index
-    require 'github-trending'
-    @repos = Github::Trending.get
-    @mes = ""
+    latest_trendset = Trendset.order(id: :asc).last
+    if latest_trendset &&
+       (Time.now - latest_trendset.created_at)/60/60/24 != 0
+      @trends = latest_trendset.trends
+      @mes = "database"
+    else
+      require 'github-trending'
+      new_trendset = Trendset.new
+      new_trendset.save
+      repos = Github::Trending.get
+      @trends = []
+      repos.each do |r|
+        trend = Trend.create(name: r.name, lang: r.lang,
+          description: r.description, star_count: r.star_count, url: r.url,
+          trendset_id: new_trendset.id)
+        @trends << trend
+      end
+      @mes = "get"
+    end
+    
+    
     # begin
     #   @repos = Github::Trending.get
     #   @mes = ""
@@ -14,8 +32,6 @@ class TrendsController < ApplicationController
     #   @repos = []
     #   @mes = "failed"
     # end
-    
-    # @trends = Trend.all
   end
 
   # GET /trends/1

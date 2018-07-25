@@ -17,13 +17,13 @@
   </thead>
 
   <tbody>
-    <% @repos.each do |r| %>
+    <% @trends.each do |trend| %>
       <tr>
-        <td><%= r.name %></td>
-        <td><%= r.lang %></td>
-        <!--<td><%= r.description %></td>-->
-        <td><%= r.star_count %></td>
-        <!--<td><%= r.url %></td>-->
+        <td><%= trend.name %></td>
+        <td><%= trend.lang %></td>
+        <!--<td><%= trend.description %></td>-->
+        <td><%= trend.star_count %></td>
+        <!--<td><%= trend.url %></td>-->
         <!--<% if false %>-->
         <!--<td><%= link_to 'Show', trend %></td>-->
         <!--<td><%= link_to 'Edit', edit_trend_path(trend) %></td>-->
