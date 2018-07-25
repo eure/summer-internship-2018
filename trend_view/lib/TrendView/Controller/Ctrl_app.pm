@@ -21,25 +21,10 @@ sub title {
 sub repository {
 	my $self = shift;
 	my $since = $self->param('since');
-	my $detail = $self->param('repository');
-	my $repository_num = 0;
-	if ( $detail > 0 ) {
-		$repository_num = $detail-1;
-	}
 
 	my $extract = TrendView::Controller::Extract::Repository->new();
 	my $trends = $extract->$since();
-	my $repository_info = $trends->[$repository_num];
 
-	if ( defined $detail ) {
-		$self->stash(
-			trend_info => $repository_info,
-		);
-		$self->render(
-			controller => 'view_repository',
-			action     => 'repository_info'
-		);
-	} else {
 		$self->stash(
 			extracted  => $trends,
 			since      => $since
@@ -49,7 +34,6 @@ sub repository {
 			controller => 'view_repository',
 			action     => "t_$since",
 		);
-	}
 }
 
 # GET '/trending/developers?since=daily,weekly,monthly
@@ -67,6 +51,26 @@ sub developers {
 		$self->render(
 			controller => 'view_developer',
 			action     => "t_$since"
+		);
+}
+
+sub detail {
+	my $self = shift;
+	my $trend_info = +{};
+	$trend_info->{developer} = $self->param('developer');
+	$trend_info->{repository_name} = $self->param('repository_name');
+
+	my $readme_url = 'https://raw.githubusercontent.com/'.$trend_info->{developer}.'/'.$trend_info->{repository_name}.'/master/README.md';
+	my $extract = TrendView::Controller::Extract::Repository->new();
+	$trend_info->{readme_html} = $extract->extract_readme($readme_url);
+
+
+		$self->stash(
+			trend_info 		=> $trend_info
+		);
+		$self->render(
+			controller => 'view_repository',
+			action     => 'repository_info'
 		);
 }
 

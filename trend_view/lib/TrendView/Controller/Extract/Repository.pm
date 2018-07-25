@@ -8,6 +8,7 @@ package TrendView::Controller::Extract::Repository;
 use Mouse;
 with 'TrendView::Controller::Extract';
 use HTML::TreeBuilder;
+use Text::Markdown qw/markdown/;
 
 sub daily {
 	my $self = shift;
@@ -33,6 +34,18 @@ sub monthly {
 	return $daily_trend;
 }
 
+sub extract_readme {
+	my $self = shift;
+	my $url = shift;
+	use Data::Printer;
+
+	my $md = $self->get_content($url);
+	p $url;
+	my $html = markdown $md;
+	return $html;
+}
+
+
 sub extract_trend {
 	my $self = shift;
 	my $url = shift;
@@ -45,11 +58,14 @@ sub extract_trend {
 	my @titles = $self->tree->look_down('class',qr/col-12 d-block width-full py-4 border-bottom/);
 	for my $div (@titles) {
 		my $trend_hashref = +{};
+
 		$trend_hashref->{title} = $div->look_down('class',qr/d-inline-block col-9 mb-1/)->as_text_trimmed;
 
-		my $repository_url = $div->look_down('class',qr/d-inline-block col-9 mb-1/)->extract_links('a', 'href')->[0]->[0];
-		$trend_hashref->{readme} = $self->get_readme('https://raw.githubusercontent.com'.$repository_url);
-		$trend_hashref->{href} = 'https://github.com'.$repository_url;
+		($trend_hashref->{developer},$trend_hashref->{repository_name}) = split '/',$trend_hashref->{title};
+		$trend_hashref->{developer} =~ s/\A\s*(.*?)\s*\z/$1/;
+		$trend_hashref->{repository_name} =~ s/\A\s*(.*?)\s*\z/$1/;
+
+		$trend_hashref->{href} = $div->look_down('class',qr/d-inline-block col-9 mb-1/)->extract_links('a', 'href')->[0]->[0];
 
 		$trend_hashref->{desc} = $div->look_down('class',qr/col-9 d-inline-block text-gray m-0 pr-4/)->as_text_trimmed;
 
@@ -66,6 +82,8 @@ sub extract_trend {
 	}
 	return $trend_list;
 }
+
+
 
 __PACKAGE__->meta->make_immutable;
 
