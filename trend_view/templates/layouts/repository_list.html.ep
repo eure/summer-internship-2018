@@ -63,7 +63,7 @@
         			</div> <!-- level-left -->
 					<div class="level-right">
 	          				<span class="level-item" aria-label="info">
-								<a class="icon" href="/trending?since=<%= $date  %>&repository=<%= $tr_count %>">
+									<a class="icon" href="/trending/detail?developer=<%= $item->{developer} %>&repository_name=<%= $item->{repository_name} %>">
              					<i class="fas fa-info-circle" aria-hidden="true"></i>
             				</a>
           				</span>

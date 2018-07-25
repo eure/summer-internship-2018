@@ -28,20 +28,20 @@
 			<div class="media-content is-centered">
       			<div class="content" style="text-align: center">
         			<p>
-					<strong> <%= $item->{title} %>  </strong> <small> <%= $item->{today_star}  %> </small>
+					<strong> <%= $item->{developer}.'/'.$item->{repository_name} %> </strong>
 					<br>
 					<article class="message is-dark">
 		  				<div class="message-header">
-				      		<p>Description</p>
+							README.md
 						</div>
 						<div class="message-body">
-							%== $item->{readme};
+							%== $item->{readme_html}
 						</div>
 					</article>
 					<div class="level-center">
 	          			<span class="level-item" aria-label="info">
 							( Link for github.com of this repository. )
-							<a class="icon" href="https://github.com<%= $item->{href} %>">
+							<a class="icon" href="https://github.com/<%= $item->{developer} %>/<%= $item->{repository_name}%>">
              					<i class="fas fa-link" aria-hidden="true"></i>
 							</a>
           				</span>
