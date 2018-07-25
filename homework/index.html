@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>課題</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div id="app">
+        <h1>githubのIDを入力して下さい。レポジトリの詳細を表示します。</h1>
+        <input type="text" v-model="user" placeholder="id" class="search-id">
+        <input type="submit" value="検索" @click="getAPI(), isVisible=true" class="search-id-button">
+        <template v-if="isVisible">
+            <div v-for="(repo, index) in github.repos" :key="index">
+                <h2 v-text="repo.name"></h2>
+                <label :for="`switch` + index">詳細</label>
+                <input type="checkbox" :id="`switch` + index" class="switch-display">
+                <div class="accshow">
+                    <span>
+                        <span v-text="repo.stargazers_count"></span> &star;</span>
+                    <p v-if="repo.language!=null" v-text=" '言語: ' + repo.language" class="language"></p>
+                    <p v-text="'詳細: ' + repo.description"></p>
+                    <a :href="repo.html_url" target="_blank">レポジトリのURL</a>
+
+                </div>
+
+            </div>
+        </template>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
