@@ -37,7 +37,8 @@
 			<div class="media-content is-centered">
       			<div class="content" style="text-align: center">
         			<p>
-					<strong> <%= $tr_count .".". $item->{title} %>  </strong>
+					<strong> <%= $tr_count .".". $item->{title} %>  </strong><br>
+					<%= $item->{desc} %>
        				</p>
       			</div> <!-- content -->
 	  			<nav class="level">
