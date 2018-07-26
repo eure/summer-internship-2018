@@ -4,4 +4,3 @@ requires 'IO::Socket::SSL';
 requires 'HTML::TreeBuilder';
 requires 'Mojolicious::Plugin::CSRFDefender';
 requires 'Mouse';
-requires 'Text::Markdown';
