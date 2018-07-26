@@ -41,13 +41,18 @@
         {{repo.language}}
         {{repo.stargazers_count}}
       </div>
+      <repo-card class="card"/>
     </div>
   </div>
 </template>
 <script>
-import Axios from "Axios";
+import Axios from "axios";
+import repoCard from "./repoCard";
 export default {
   props: ["name"],
+  components:{
+    repoCard
+  },
   created() {
     const self = this;
     Axios.get(`https://api.github.com/users/${this.name}`).then(res => {
