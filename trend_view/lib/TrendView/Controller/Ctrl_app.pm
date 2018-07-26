@@ -54,16 +54,16 @@ sub developers {
 		);
 }
 
+# GET '/trending/detail?developer=google&repository_name=go-cloud
 sub detail {
 	my $self = shift;
 	my $trend_info = +{};
 	$trend_info->{developer} = $self->param('developer');
 	$trend_info->{repository_name} = $self->param('repository_name');
 
-	my $readme_url = 'https://raw.githubusercontent.com/'.$trend_info->{developer}.'/'.$trend_info->{repository_name}.'/master/README.md';
+	my $readme_url = 'https://github.com/'.$trend_info->{developer}.'/'.$trend_info->{repository_name};
 	my $extract = TrendView::Controller::Extract::Repository->new();
 	$trend_info->{readme_html} = $extract->extract_readme($readme_url);
-
 
 		$self->stash(
 			trend_info 		=> $trend_info

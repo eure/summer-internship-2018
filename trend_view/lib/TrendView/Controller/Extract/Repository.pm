@@ -8,7 +8,6 @@ package TrendView::Controller::Extract::Repository;
 use Mouse;
 with 'TrendView::Controller::Extract';
 use HTML::TreeBuilder;
-use Text::Markdown qw/markdown/;
 
 sub daily {
 	my $self = shift;
@@ -37,11 +36,14 @@ sub monthly {
 sub extract_readme {
 	my $self = shift;
 	my $url = shift;
-	use Data::Printer;
 
-	my $md = $self->get_content($url);
-	p $url;
-	my $html = markdown $md;
+	my $content = $self->get_content($url);
+	my $parsed_content = $self->tree->parse_content($content);
+	my $html = $parsed_content->look_down('class','Box-body p-6')->as_HTML;
+
+	# 取得したREADME内の'/'から始まるパスを置換
+	$html =~ s/="\/(.*?)"/="https:\/\/github.com\/$1"/g;
+
 	return $html;
 }
 
