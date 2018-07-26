@@ -1,0 +1,24 @@
+% layout 'repository_list';
+<div class="tabs is-centered is-large"><ul>
+		<li class="is-active">
+			<a> Repositories </a>
+		</li>
+		<li>
+			<a href="/trending?since=weekly"> Developers </a>
+		</li>
+	</ul>
+</div>
+<div class="tabs is-centered is-large">
+	<ul>
+		<li>
+			<a href="/trending?since=daily"> Daily </a>
+		</li>
+		<li class="is-active">
+			<a href="/trending?since=weekly"> Weekly </a>
+		</li>
+		<li>
+			<a href="/trending?since=monthly"> Monthly </a>
+		</li>
+	</ul>
+</div>
+

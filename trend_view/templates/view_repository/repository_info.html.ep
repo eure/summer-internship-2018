@@ -1,0 +1,58 @@
+<! DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+<link rel="stylesheet" href="/css/github-markdown-css.css">
+<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+<title> TrendView </title>
+</head>
+<body>
+	<section class="hero is-dark is-small">
+		<div class="hero-body">
+	    	<div class="container">
+		  		<a href="/">
+	     			<div class="title is-1">
+	       				TrendView
+	    			</div>
+		  		</a>
+	      		<div class="subtitle is-5">
+	        		TrendView is you can see what the GitHub community is most excited repository on today or this week or this month.
+	     		</div>
+			</div>
+		</div>
+	</section>
+
+	% my $item = stash->{trend_info};
+	<div class="box" style="width: 90%; margin: 50px auto; max-width: 1500px">
+		<div class="readme">
+			<a href="<%= 'https://github.com/'.$item->{developer}.'/'.$item->{repository_name} %>" target="_blank">
+				<strong> <%= $item->{developer}.'/'.$item->{repository_name}.'/' %>README.md </strong>
+			</a>
+			<hr>
+			%== $item->{readme_html};
+		</div>
+	</div>
+
+	<center>
+		<a class="button is-dark is-large" onclick="history.back()"> Back </a>
+	</center>
+	<br>
+
+	<footer class="footer">
+		<div class="content has-text-centered">
+			<p>
+			<strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+			<a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+			is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+			</p>
+		</div>
+		<center>
+			<a href="https://bulma.io">
+				<img src="https://bulma.io/images/made-with-bulma--dark.png" alt="Made with Bulma" width="128" height="24">
+			</a>
+		</center>
+	</footer>
+</body>
+
+</html>
