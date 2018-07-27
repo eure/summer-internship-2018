@@ -12,6 +12,10 @@
 		2D6E67FB20FCA7DB00471D46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D6E67F920FCA7DB00471D46 /* Main.storyboard */; };
 		2D6E67FD20FCA7DE00471D46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D6E67FC20FCA7DE00471D46 /* Assets.xcassets */; };
 		2D6E680020FCA7DE00471D46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D6E67FE20FCA7DE00471D46 /* LaunchScreen.storyboard */; };
+		2D6E681021034F9600471D46 /* Error_Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6E680F21034F9500471D46 /* Error_Description.swift */; };
+		2D6E68132103684200471D46 /* Search_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6E68122103684200471D46 /* Search_ViewController.swift */; };
+		2DAC88F221038D2700989D4E /* api_data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAC88F121038D2700989D4E /* api_data.swift */; };
+		2DAC88F42108130600989D4E /* activityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAC88F32108130600989D4E /* activityIndicator.swift */; };
 		8F95A7E42EF502DD24D29A35 /* Pods_eureka_githubapi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A79603F83175BC87D0C599D0 /* Pods_eureka_githubapi.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +27,10 @@
 		2D6E67FC20FCA7DE00471D46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D6E67FF20FCA7DE00471D46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D6E680120FCA7DE00471D46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D6E680F21034F9500471D46 /* Error_Description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error_Description.swift; sourceTree = "<group>"; };
+		2D6E68122103684200471D46 /* Search_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search_ViewController.swift; sourceTree = "<group>"; };
+		2DAC88F121038D2700989D4E /* api_data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = api_data.swift; sourceTree = "<group>"; };
+		2DAC88F32108130600989D4E /* activityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = activityIndicator.swift; sourceTree = "<group>"; };
 		36DB6EBBDA4546370D2519EB /* Pods-eureka_githubapi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eureka_githubapi.release.xcconfig"; path = "Pods/Target Support Files/Pods-eureka_githubapi/Pods-eureka_githubapi.release.xcconfig"; sourceTree = "<group>"; };
 		708A18BF0DFA76546B4FF904 /* Pods-eureka_githubapi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eureka_githubapi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-eureka_githubapi/Pods-eureka_githubapi.debug.xcconfig"; sourceTree = "<group>"; };
 		A79603F83175BC87D0C599D0 /* Pods_eureka_githubapi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eureka_githubapi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +77,7 @@
 		2D6E67F420FCA7DB00471D46 /* eureka_githubapi */ = {
 			isa = PBXGroup;
 			children = (
+				2D6E68112103680400471D46 /* Search_repositories */,
 				2D6E67F520FCA7DB00471D46 /* AppDelegate.swift */,
 				2D6E67F720FCA7DB00471D46 /* ViewController.swift */,
 				2D6E67F920FCA7DB00471D46 /* Main.storyboard */,
@@ -77,6 +86,17 @@
 				2D6E680120FCA7DE00471D46 /* Info.plist */,
 			);
 			path = eureka_githubapi;
+			sourceTree = "<group>";
+		};
+		2D6E68112103680400471D46 /* Search_repositories */ = {
+			isa = PBXGroup;
+			children = (
+				2D6E68122103684200471D46 /* Search_ViewController.swift */,
+				2DAC88F121038D2700989D4E /* api_data.swift */,
+				2DAC88F32108130600989D4E /* activityIndicator.swift */,
+				2D6E680F21034F9500471D46 /* Error_Description.swift */,
+			);
+			path = Search_repositories;
 			sourceTree = "<group>";
 		};
 		5F388A64EFC831941FB88333 /* Pods */ = {
@@ -202,6 +222,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DAC88F42108130600989D4E /* activityIndicator.swift in Sources */,
+				2D6E68132103684200471D46 /* Search_ViewController.swift in Sources */,
+				2DAC88F221038D2700989D4E /* api_data.swift in Sources */,
+				2D6E681021034F9600471D46 /* Error_Description.swift in Sources */,
 				2D6E67F820FCA7DB00471D46 /* ViewController.swift in Sources */,
 				2D6E67F620FCA7DB00471D46 /* AppDelegate.swift in Sources */,
 			);
@@ -351,7 +375,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2MFF7GBV57;
 				INFOPLIST_FILE = eureka_githubapi/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.eureka-githubapi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -367,7 +395,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2MFF7GBV57;
 				INFOPLIST_FILE = eureka_githubapi/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.eureka-githubapi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
