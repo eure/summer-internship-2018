@@ -9,11 +9,8 @@
     <label class="close-menu" for="checked"></label>
     <nav class="drawer-menu">
         <ul>
-            <li><a href="#">Side Menu Name</a></li>
-            <li><a href="#">Side Menu Name</a></li>
-            <li><a href="#">Side Menu Name</a></li>
-            <li><a href="#">Side Menu Name</a></li>
-            <li><a href="#">Side Menu Name</a></li>
+            <li><a @click="$router.push({path:`/`})">ユーザ検索</a></li>
+            <li><a @click="$router.push({path:`/user/unotovive`})">マイページ</a></li>
         </ul>
     </nav>
     <div class="contents">
