@@ -1,5 +1,6 @@
-/*all*/
-
+/*all
+すべてのbodyにたいして適用
+*/
 body{
 	
 	margin-left:10px;
@@ -8,6 +9,7 @@ body{
 	width:1200px;
 	font-family:sans-serif;
 }
+/*リストになっているリンク、すなわちトレンドの一覧*/
 li a{
 		text-decoration:none;
 		/*
@@ -37,6 +39,9 @@ h1{
 	font-family:serif;
 
 }
+/*詳細を表示する部分のスタイル
+コンテンツがサイドバーの隣に来るように調整
+*/
 #contents{
 	display:inline-block;
 	width:600px;
@@ -105,7 +110,11 @@ font.contents{
 }
 
 
-/*スマートフォン以外の場合は二段組の構成に*/
+/*スマートフォン以外の場合は二段組の構成に
+レスポンシブデザインを意識
+
+すべてのスタイルを同一ソースに書き込んでいるせいかメインコンテンツにはうまく反映されず...
+*/
 @media all and (min-width: 920px) {
 body{
 	width:920px;
