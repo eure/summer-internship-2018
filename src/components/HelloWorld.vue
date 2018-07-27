@@ -1,6 +1,6 @@
 <template>
   <div id="content">
-    <h1 class="title"><i class="fab fa-github" /> Gitviewer</h1>
+    <h1 class="title" @click="$router.push({path:`/user`})"><i class="fab fa-github" /> Gitviewer</h1>
     <div class="container">
       <h2>ユーザーを表示</h2>
       <input placeholder="ex:unotovive" v-model="name">
@@ -48,8 +48,9 @@ h1.title{
   color: azure;
   position: absolute;
   top: 20px;
-  left: 20px;;
+  left: 20px;
   margin: 0;
+  cursor: pointer;
 }
 h2{
   font-weight: 400;
@@ -111,6 +112,7 @@ button {
   border-radius: 5px;
   height: 50px;
   margin: 25px;
+  cursor: pointer;
 }
 button span{
   position: relative;

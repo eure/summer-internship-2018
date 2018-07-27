@@ -1,6 +1,6 @@
 <template>
   <div id="content">
-    <h1 class="title"><i class="fab fa-github" /> Gitviewer</h1>
+    <h1 class="title" @click="$router.push({path:`/user`})"><i class="fab fa-github" /> Gitviewer</h1>
     <div v-if="!(selected==null)" id="dialog">
       <div id="dialogCard">
           <p class="img01 waku01"><img :src="avatar" alt="GithubAvatar"/></p>
@@ -11,7 +11,7 @@
         <p>update:{{selected.updated_at}}</p>
         <p>star  :{{selected.stargazers_count}}</p>
         <p>fork  :{{selected.forks_count}}</p>
-        <p>owner :{{selected.owner.id}}</p>
+        <p>owner :{{selected.owner.login}}</p>
         <button @click="selected=null">close</button>
       </div>
     </div>
@@ -144,6 +144,7 @@ export default {
   flex: 0 1 45%;
   height: 10vh;
   margin-top: 20px;
+  cursor: pointer;
 }
 .card:hover {
   opacity: 0.8;
@@ -192,6 +193,7 @@ h1.title {
   top: 20px;
   left: 20px;
   margin: 0;
+  cursor: pointer;
 }
 h2 {
   font-weight: 500;
