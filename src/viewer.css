@@ -1,0 +1,172 @@
+/*all
+すべてのbodyにたいして適用
+*/
+body{
+	
+	margin-left:10px;
+	margin-right:10px;
+	/*background-image:url(./img/background.jpg);*/
+	width:1200px;
+	font-family:sans-serif;
+}
+/*リストになっているリンク、すなわちトレンドの一覧*/
+li a{
+		text-decoration:none;
+		color:black;
+		display:block;
+		line-height:24px;
+		margin:10px;
+		border-bottom:solid 1px black;
+		}
+li a:hover{
+	font-style:italic;
+}
+li{
+	list-style-type:none;
+	line-height:30px;
+}
+
+
+/*maincontents*/
+
+#main{
+	color:black;
+	/*text-align:left;*/
+	
+}
+h1{
+	color:#cc3300;
+	font-family:serif;
+
+}
+/*詳細を表示する部分のスタイル
+コンテンツがサイドバーの隣に来るように調整
+*/
+#contents{
+	display:inline-block;
+	width:600px;
+	position:absolute;
+	float:right;
+	margin-left:50px;
+	/*left:300px;
+	top:0px;*/
+	
+}
+
+
+
+/*sidebar.php*/
+
+#sidebar{
+	padding:5px;
+	font-size:15px;
+	/*
+	position:relative;
+	*/
+	margin-left:10px;
+	margin-right:50px;
+	/*color:orange;*/
+	width:300px;
+	float:left;
+	border:ridge 3px gray;
+}
+
+
+
+
+
+/*header.php*/
+div.header{
+
+	margin-right:auto;
+	margin-left:20px;
+
+}
+
+span.header a{
+
+	font-size:200%;
+	color:orange;
+	text-decoration:none;
+
+}
+
+div.contents{
+
+	margin-left:-45px;
+	margin-right:auto;
+
+}
+
+
+
+font.contents{
+
+	font-size:20px;
+
+	position:relative;
+
+
+	top:4px;
+
+}
+
+
+/*スマートフォン以外の場合は二段組の構成に
+レスポンシブデザインを意識
+
+すべてのスタイルを同一ソースに書き込んでいるせいかメインコンテンツにはうまく反映されず...
+*/
+@media all and (min-width: 920px) {
+body{
+	width:920px;
+}
+
+#main{
+
+	width:600px;
+	float:right;
+	margin-right:auto;
+	margin-left:auto;
+
+}
+
+#sidebar{
+	float:left;
+	width:270px;
+	margin-right:auto;
+	margin-left:10px;
+}
+
+
+}
+
+@media all and (min-width: 590px) {
+body{
+	width:590px;
+}
+table.discription{
+	width:500px;
+}
+
+iframe{
+
+	width:560;
+	height:315;
+
+}
+
+#main{
+margin-top:auto;
+margin-right:auto;
+}
+
+
+div.contents{
+	margin-top:auto;
+}
+div.contents ul li{
+	margin-top:auto;
+	margin-right:auto;
+}
+}
