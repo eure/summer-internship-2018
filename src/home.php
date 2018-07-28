@@ -10,7 +10,8 @@
 -->
 <div id="readme">
 This is a page that shows github trend.
-</br>
+<div>
+</div>
 You can read detail of github trend if you click link of sidebar.
 </div>
 

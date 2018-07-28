@@ -12,11 +12,11 @@ body{
 /*リストになっているリンク、すなわちトレンドの一覧*/
 li a{
 		text-decoration:none;
-		/*
 		color:black;
-		background-color:blue;
-		*/
 		display:block;
+		line-height:24px;
+		margin:10px;
+		border-bottom:solid 1px black;
 		}
 li a:hover{
 	font-style:italic;
@@ -58,6 +58,7 @@ h1{
 /*sidebar.php*/
 
 #sidebar{
+	padding:5px;
 	font-size:15px;
 	/*
 	position:relative;
@@ -67,6 +68,7 @@ h1{
 	/*color:orange;*/
 	width:300px;
 	float:left;
+	border:ridge 3px gray;
 }
 
 
