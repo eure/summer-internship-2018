@@ -62,7 +62,7 @@ summer-internship-2018ディレクトリに移動後以下のコマンドでロ�
 > $php -S localhost:8000
 
 ローカルサーバ起動後にブラウザ上で  
-> localhost:8000/GitHubTrend.php  
+> localhost:8000/src/GitHubTrend.php  
 
 を開くことで実装したwebアプリケーションを確認可能
 
