@@ -1,0 +1,172 @@
+AllCops:
+  Include:
+    - '**/Rakefile'
+    - '**/config.ru'
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'bin/**/*'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+  TargetRubyVersion: 2.3
+  DisplayCopNames: true
+Rails:
+  Enabled: true
+Rails/ApplicationJob:
+  Enabled: false
+Rails/Date:
+  EnforcedStyle: flexible
+Rails/DynamicFindBy:
+  Whitelist:
+    - find_by_encrypted_columns
+    - find_by_credentials
+    - find_by_tel
+Rails/Delegate:
+  Enabled: false
+Rails/SkipsModelValidations:
+  Enabled: false
+Rails/HttpPositionalArguments:
+  # TODO: Rails5以上でオンにする
+  # @see http://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Rails/HttpPositionalArguments
+  Enabled: false
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
+##################### Style ##################################
+
+Naming/AccessorMethodName:
+  Enabled: false
+Style/Alias:
+  Enabled: false
+Layout/AlignParameters:
+  EnforcedStyle: with_first_parameter
+Style/AsciiComments:
+  Enabled: false
+Style/BlockDelimiters:
+  Enabled: false
+Style/BracesAroundHashParameters:
+  Enabled: false
+Style/CaseEquality:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
+Style/ClassVars:
+  Enabled: false
+Style/ConditionalAssignment:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/DoubleNegation:
+  Enabled: false
+Style/EmptyElse:
+  EnforcedStyle: empty
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+Naming/FileName:
+  Exclude:
+    - '**/Rakefile'
+    - '**/Gemfile'
+    - '**/Capfile'
+# 全てのファイルで Style/FrozenStringLiteralComment: Missing frozen string literal comment. がでるので、falseにする
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/GuardClause:
+  Enabled: false
+Style/IfInsideElse:
+  Enabled: false
+Style/IfUnlessModifier:
+  Enabled: false
+Layout/IndentHash:
+  Enabled: false
+Style/Lambda:
+  Enabled: false
+Style/LambdaCall:
+  Enabled: false
+Layout/MultilineMethodCallIndentation:
+  Enabled: false
+Layout/MultilineOperationIndentation:
+  Enabled: false
+Style/MutableConstant:
+  Enabled: false
+Style/NegatedIf:
+  Enabled: false
+Naming/PredicateName:
+  Enabled: false
+Style/RaiseArgs:
+  EnforcedStyle: compact
+Style/RescueModifier:
+  Enabled: false
+Style/SignalException:
+  Enabled: false
+Style/SingleLineBlockParams:
+  Enabled: false
+Style/StringLiterals:
+  Enabled: false
+Style/SymbolProc:
+  Exclude:
+    - 'spec/factories/**/*'
+Style/UnneededInterpolation:
+  Enabled: false
+Style/WordArray:
+  Enabled: false
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    "%i": ()
+    "%w": ()
+    "%r": ()
+Style/YodaCondition:
+   Enabled: false
+
+##################### Lint ##################################
+
+Lint/AmbiguousOperator:
+  Enabled: false
+Lint/HandleExceptions:
+  Exclude:
+    - 'app/controllers/application_controller.rb'
+Lint/ParenthesesAsGroupedExpression:
+  Exclude:
+    - spec/**/*
+Lint/RescueException:
+  Exclude:
+    - 'lib/yahoo_local_search.rb'
+Lint/UnneededSplatExpansion:
+  Enabled: false
+Lint/AmbiguousBlockAssociation:
+  Enabled: false
+Lint/InterpolationCheck:
+  Enabled: false
+
+##################### Metrics ##################################
+
+Metrics/AbcSize:
+  Enabled: false
+Metrics/BlockLength:
+  Enabled: false
+Metrics/ClassLength:
+  Enabled: false
+Metrics/CyclomaticComplexity:
+  Enabled: false
+Metrics/LineLength:
+  Enabled: false
+Metrics/MethodLength:
+  Enabled: false
+Metrics/ModuleLength:
+  Enabled: false
+Metrics/ParameterLists:
+  Enabled: false
+Metrics/PerceivedComplexity:
+  Enabled: false
+
+##################### Performance ##################################
+
+Performance/RedundantMerge:
+  Enabled: false
+
+##################### Bundler ##################################
+Bundler/OrderedGems:
+  Enabled: false
+
+##################### Security ##################################
+Security/Eval:
+  Enabled: false
