@@ -1,0 +1,2 @@
+class WeekTrendRepositorie < Repositorie
+end

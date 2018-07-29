@@ -1,0 +1,2 @@
+class MonthTrendRepositorie < Repositorie
+end
