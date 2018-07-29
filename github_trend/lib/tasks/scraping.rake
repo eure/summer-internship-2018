@@ -17,7 +17,7 @@ namespace :scraping do
 
     doc = Nokogiri::HTML.parse(html)
     doc.css('div.explore-content > ol > li').each do |node|
-      p name = node.css('div.d-inline-block.col-9.mb-1').inner_text.strip
+      p name = node.css('div.d-inline-block.col-9.mb-1').inner_text.delete(' ').strip
       discription = node.css('div.py-1').inner_text.strip
 
       Repositorie.create(type: type, name: name, discription: discription)
