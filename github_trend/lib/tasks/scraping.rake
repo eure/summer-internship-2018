@@ -1,9 +1,15 @@
 namespace :scraping do
   desc 'GuthubTrendの内容をスクレイピングしてdbに保存する'
   task fetch_github_trend: :environment do
+    data_reset
+
     fetch_github_trend('https://github.com/trending', 'TodayTrendRepositorie')
     fetch_github_trend('https://github.com/trending?since=weekly', 'WeekTrendRepositorie')
     fetch_github_trend('https://github.com/trending?since=monthly', 'MonthTrendRepositorie')
+  end
+
+  def data_reset
+    Repositorie.all.each(&:destroy)
   end
 
   def fetch_github_trend(url, type)
