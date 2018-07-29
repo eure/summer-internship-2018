@@ -1,0 +1,8 @@
+= render 'shared/header'
+
+ul
+  - @repos.each do |repo|
+    li
+      = link_to repo.name, repository_path(repo)
+    li
+      = repo.discription
