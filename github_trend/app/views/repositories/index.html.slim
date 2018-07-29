@@ -1,8 +1,8 @@
 = render 'shared/header'
 
-ul
+ul.collection
   - @repos.each do |repo|
-    li
+    li.collection-header
       = link_to repo.name, repository_path(repo)
-    li
+    li.collection-item
       = repo.discription

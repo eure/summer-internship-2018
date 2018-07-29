@@ -1,0 +1,10 @@
+nav
+  .nav-wrapper
+    = link_to 'GitHubTrend', root_path, class: 'brand-logo'
+    ul.hide-on-med-and-down.right
+      li
+        = link_to 'today', '/repos/today'
+      li
+        = link_to 'weekly', '/repos/weekly'
+      li
+        = link_to 'month', '/repos/month'
