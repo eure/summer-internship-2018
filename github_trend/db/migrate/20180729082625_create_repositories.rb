@@ -5,6 +5,7 @@ class CreateRepositories < ActiveRecord::Migration[5.2]
       t.string :name, null: false
       t.text :discription
       t.integer :stars
+      t.text :readme
 
       t.timestamps
     end

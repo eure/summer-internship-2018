@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2018_07_29_082625) do
     t.string "name", null: false
     t.text "discription"
     t.integer "stars"
+    t.text "readme"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["type"], name: "index_repositories_on_type"
