@@ -38,21 +38,21 @@ extension TemplateSourceViewController: GitignoreTemplateModelDelegate {
     }
 
     func gitignoreTemplateModel(_ model: GitignoreTemplateModelProtocol, didFetch templateSource: String) {
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [unowned self] in
             self.indicator.stopAnimating()
             self.textView.text = templateSource
         }
     }
 
     func gitignoreTemplateModel(_ model: GitignoreTemplateModelProtocol, didNotFetch error: GitignoreTemplateModelError) {
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [unowned self] in
             self.presentSingleDefaultActionAlert(title: "Error",
                                                  message: "Failed to get data\nPlease try again",
                                                  actionTitle: "OK",
-                                                 actionHandler: { _ in
+                                                 actionHandler: { [unowned self] _ in
                                                     self.navigationController?.popViewController(animated: true)
             },
-                                                 completion: {
+                                                 completion: { [unowned self] in
                                                     self.indicator.stopAnimating()
             })
         }

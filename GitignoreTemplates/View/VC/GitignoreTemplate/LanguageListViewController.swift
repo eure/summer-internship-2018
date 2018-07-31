@@ -81,7 +81,7 @@ extension LanguageListViewController: GitignoreTemplateModelDelegate {
     func gitignoreTemplateModel(_ model: GitignoreTemplateModelProtocol, didFetch templateList: [String]) {
         languages = templateList
 
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [unowned self] in
             self.tableView.refreshControl?.endRefreshing()
 
             self.tableView.beginUpdates()
@@ -94,9 +94,12 @@ extension LanguageListViewController: GitignoreTemplateModelDelegate {
     }
 
     func gitignoreTemplateModel(_ model: GitignoreTemplateModelProtocol, didNotFetch error: GitignoreTemplateModelError) {
-        DispatchQueue.main.async {
-            self.presentSingleDefaultActionAlert(title: "Error", message: "Failed to get data\nPlease try again", actionTitle: "OK", completion: {
-                self.tableView.refreshControl?.endRefreshing()
+        DispatchQueue.main.async { [unowned self] in
+            self.presentSingleDefaultActionAlert(title: "Error",
+                                                 message: "Failed to get data\nPlease try again",
+                                                 actionTitle: "OK",
+                                                 completion: { [unowned self] in
+                                                    self.tableView.refreshControl?.endRefreshing()
             })
         }
     }

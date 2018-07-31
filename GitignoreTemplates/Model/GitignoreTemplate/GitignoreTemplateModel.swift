@@ -23,7 +23,7 @@ final class GitignoreTemplateModel {
 extension GitignoreTemplateModel: GitignoreTemplateModelProtocol {
 
     func fetchAvailableTemplateList() {
-        apiClient.fetchAvailableTemplateList { data, response, error in
+        apiClient.fetchAvailableTemplateList { [unowned self]  data, response, error in
             guard error == nil,
                 let httpResponse = response as? HTTPURLResponse,
                 httpResponse.statusCode == 200,
@@ -39,7 +39,7 @@ extension GitignoreTemplateModel: GitignoreTemplateModelProtocol {
     }
 
     func fetchTemplateSource(of name: String) {
-        apiClient.fetchTemplateSource(of: name) { data, response, error in
+        apiClient.fetchTemplateSource(of: name) { [unowned self] data, response, error in
             guard error == nil,
                 let httpResponse = response as? HTTPURLResponse,
                 httpResponse.statusCode == 200,

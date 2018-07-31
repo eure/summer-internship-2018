@@ -78,6 +78,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		964EA37F2110CA9400159730 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				96B415122110BA1D00142302 /* UITableViewExt.swift */,
+				96B415162110BD3800142302 /* UIStoryboardExt.swift */,
+				96B415142110BBC000142302 /* UIViewControllerExt.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		964EA3822110CC9200159730 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				964EA37F2110CA9400159730 /* Extensions */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		964EA3832110CDF700159730 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				964EA3842110CE0300159730 /* VC */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		964EA3842110CE0300159730 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				964EA3852110CE1400159730 /* GitignoreTemplate */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		964EA3852110CE1400159730 /* GitignoreTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				96B414DD21109AC000142302 /* LanguageListViewController.swift */,
+				96B414FB2110A1F400142302 /* TemplateSourceViewController.swift */,
+			);
+			path = GitignoreTemplate;
+			sourceTree = "<group>";
+		};
 		96B414CF21109AC000142302 = {
 			isa = PBXGroup;
 			children = (
@@ -100,11 +143,8 @@
 			isa = PBXGroup;
 			children = (
 				96B414DB21109AC000142302 /* AppDelegate.swift */,
-				96B414DD21109AC000142302 /* LanguageListViewController.swift */,
-				96B415122110BA1D00142302 /* UITableViewExt.swift */,
-				96B415162110BD3800142302 /* UIStoryboardExt.swift */,
-				96B415142110BBC000142302 /* UIViewControllerExt.swift */,
-				96B414FB2110A1F400142302 /* TemplateSourceViewController.swift */,
+				964EA3832110CDF700159730 /* View */,
+				964EA3822110CC9200159730 /* Util */,
 				96B4150A2110B66A00142302 /* Model */,
 				96B415012110B5C700142302 /* APIClient */,
 				96B414DF21109AC000142302 /* Main.storyboard */,
