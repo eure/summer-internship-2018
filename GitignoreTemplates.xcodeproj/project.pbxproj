@@ -22,7 +22,7 @@
 		96B415092110B65C00142302 /* GitignoreTemplateModelError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B415082110B65C00142302 /* GitignoreTemplateModelError.swift */; };
 		96B4150E2110B6A800142302 /* GitignoreTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4150D2110B6A800142302 /* GitignoreTemplate.swift */; };
 		96B415132110BA1D00142302 /* UITableViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B415122110BA1D00142302 /* UITableViewExt.swift */; };
-		96B415152110BBC000142302 /* SegueHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B415142110BBC000142302 /* SegueHandler.swift */; };
+		96B415152110BBC000142302 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B415142110BBC000142302 /* UIViewControllerExt.swift */; };
 		96B415172110BD3800142302 /* UIStoryboardExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B415162110BD3800142302 /* UIStoryboardExt.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,7 +56,7 @@
 		96B415082110B65C00142302 /* GitignoreTemplateModelError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitignoreTemplateModelError.swift; sourceTree = "<group>"; };
 		96B4150D2110B6A800142302 /* GitignoreTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitignoreTemplate.swift; sourceTree = "<group>"; };
 		96B415122110BA1D00142302 /* UITableViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExt.swift; sourceTree = "<group>"; };
-		96B415142110BBC000142302 /* SegueHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueHandler.swift; sourceTree = "<group>"; };
+		96B415142110BBC000142302 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		96B415162110BD3800142302 /* UIStoryboardExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,7 +103,7 @@
 				96B414DD21109AC000142302 /* LanguageListViewController.swift */,
 				96B415122110BA1D00142302 /* UITableViewExt.swift */,
 				96B415162110BD3800142302 /* UIStoryboardExt.swift */,
-				96B415142110BBC000142302 /* SegueHandler.swift */,
+				96B415142110BBC000142302 /* UIViewControllerExt.swift */,
 				96B414FB2110A1F400142302 /* TemplateSourceViewController.swift */,
 				96B4150A2110B66A00142302 /* Model */,
 				96B415012110B5C700142302 /* APIClient */,
@@ -297,7 +297,7 @@
 				96B415002110B4F600142302 /* GitignoreTemplateAPIClientImpl.swift in Sources */,
 				96B414FE2110B4E500142302 /* GitignoreTemplateAPIClient.swift in Sources */,
 				96B415172110BD3800142302 /* UIStoryboardExt.swift in Sources */,
-				96B415152110BBC000142302 /* SegueHandler.swift in Sources */,
+				96B415152110BBC000142302 /* UIViewControllerExt.swift in Sources */,
 				96B415052110B60C00142302 /* GitignoreTemplateModelDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

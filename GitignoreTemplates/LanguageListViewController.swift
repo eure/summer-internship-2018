@@ -22,6 +22,13 @@ final class LanguageListViewController: UIViewController {
         model.fetchAvailableTemplateList()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        // modelのdelegateを自身にセットし直す
+        model.delegate = self
+    }
+
     func configure() {
         let apiClient = GitignoreTemplateAPIClientImpl.shared
         let model = GitignoreTemplateModel(apiClient: apiClient)
@@ -35,22 +42,6 @@ final class LanguageListViewController: UIViewController {
 
     @objc func refresh() {
         model.fetchAvailableTemplateList()
-    }
-}
-
-// MARK: - SegueHandler
-extension LanguageListViewController: SegueHandler {
-
-    enum SegueIdentifier: String {
-        case templateSource = "ToTemplateSource"
-    }
-
-    func performSegueWithIdentifier(segueIdentifier: LanguageListViewController.SegueIdentifier, sender: AnyObject?) {
-        switch segueIdentifier {
-        case .templateSource:
-            guard let sourceVC = storyboard?.instantiateViewController(withType: .templateSourceVC) as? TemplateSourceViewController else { return }
-
-        }
     }
 }
 
@@ -74,6 +65,13 @@ extension LanguageListViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+
+        guard let sourceVC = storyboard?.instantiateViewController(withType: .templateSourceVC) as? TemplateSourceViewController else { return }
+        sourceVC.templateName = languages[indexPath.row]
+        // 共通のmodelを渡す
+        sourceVC.model = model
+
+        navigationController?.pushViewController(sourceVC, animated: true)
     }
 }
 
@@ -96,6 +94,10 @@ extension LanguageListViewController: GitignoreTemplateModelDelegate {
     }
 
     func gitignoreTemplateModel(_ model: GitignoreTemplateModelProtocol, didNotFetch error: GitignoreTemplateModelError) {
-        // TODO: Error Handling
+        DispatchQueue.main.async {
+            self.presentSingleDefaultActionAlert(title: "Error", message: "Failed to get data\nPlease try again", actionTitle: "OK", completion: {
+                self.tableView.refreshControl?.endRefreshing()
+            })
+        }
     }
 }

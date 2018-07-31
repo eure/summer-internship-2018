@@ -13,8 +13,48 @@ final class TemplateSourceViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
 
+    var model: GitignoreTemplateModelProtocol!
+    var templateName = ""
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        configure()
+        model.fetchTemplateSource(of: templateName)
+    }
+
+    func configure() {
+        let apiClient = GitignoreTemplateAPIClientImpl.shared
+        let model = GitignoreTemplateModel(apiClient: apiClient)
+        self.model = model
+        model.delegate = self
+    }
+}
+
+// MARK: - GitignoreTemplateModelDelegate
+extension TemplateSourceViewController: GitignoreTemplateModelDelegate {
+
+    func gitignoreTemplateModel(_ model: GitignoreTemplateModelProtocol, didFetch templateList: [String]) {
+    }
+
+    func gitignoreTemplateModel(_ model: GitignoreTemplateModelProtocol, didFetch templateSource: String) {
+        DispatchQueue.main.async {
+            self.indicator.stopAnimating()
+            self.textView.text = templateSource
+        }
+    }
+
+    func gitignoreTemplateModel(_ model: GitignoreTemplateModelProtocol, didNotFetch error: GitignoreTemplateModelError) {
+        DispatchQueue.main.async {
+            self.presentSingleDefaultActionAlert(title: "Error",
+                                                 message: "Failed to get data\nPlease try again",
+                                                 actionTitle: "OK",
+                                                 actionHandler: { _ in
+                                                    self.navigationController?.popViewController(animated: true)
+            },
+                                                 completion: {
+                                                    self.indicator.stopAnimating()
+            })
+        }
     }
 }
