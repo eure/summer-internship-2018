@@ -10,11 +10,11 @@ import Foundation
 
 final class GitignoreTemplateModel {
 
-    let apiClient: GitignoreAPIClient
+    let apiClient: GitignoreTemplateAPIClient
 
     weak var delegate: GitignoreTemplateModelProtocolDelegate?
 
-    init(apiClient: GitignoreAPIClient) {
+    init(apiClient: GitignoreTemplateAPIClient) {
         self.apiClient = apiClient
     }
 }

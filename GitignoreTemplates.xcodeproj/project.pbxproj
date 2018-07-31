@@ -14,8 +14,8 @@
 		96B414E621109AC100142302 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96B414E421109AC100142302 /* LaunchScreen.storyboard */; };
 		96B414F121109AC100142302 /* GitignoreTemplatesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B414F021109AC100142302 /* GitignoreTemplatesTests.swift */; };
 		96B414FC2110A1F400142302 /* TemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B414FB2110A1F400142302 /* TemplateViewController.swift */; };
-		96B414FE2110B4E500142302 /* GitignoreAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B414FD2110B4E500142302 /* GitignoreAPIClient.swift */; };
-		96B415002110B4F600142302 /* GitignoreAPIClientImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B414FF2110B4F600142302 /* GitignoreAPIClientImpl.swift */; };
+		96B414FE2110B4E500142302 /* GitignoreTemplateAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B414FD2110B4E500142302 /* GitignoreTemplateAPIClient.swift */; };
+		96B415002110B4F600142302 /* GitignoreTemplateAPIClientImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B414FF2110B4F600142302 /* GitignoreTemplateAPIClientImpl.swift */; };
 		96B415032110B5EF00142302 /* GitignoreTemplateModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B415022110B5EF00142302 /* GitignoreTemplateModelProtocol.swift */; };
 		96B415052110B60C00142302 /* GitignoreTemplateModelProtocolDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B415042110B60C00142302 /* GitignoreTemplateModelProtocolDelegate.swift */; };
 		96B415072110B62B00142302 /* GitignoreTemplateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B415062110B62B00142302 /* GitignoreTemplateModel.swift */; };
@@ -45,8 +45,8 @@
 		96B414F021109AC100142302 /* GitignoreTemplatesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitignoreTemplatesTests.swift; sourceTree = "<group>"; };
 		96B414F221109AC100142302 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96B414FB2110A1F400142302 /* TemplateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateViewController.swift; sourceTree = "<group>"; };
-		96B414FD2110B4E500142302 /* GitignoreAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitignoreAPIClient.swift; sourceTree = "<group>"; };
-		96B414FF2110B4F600142302 /* GitignoreAPIClientImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitignoreAPIClientImpl.swift; sourceTree = "<group>"; };
+		96B414FD2110B4E500142302 /* GitignoreTemplateAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitignoreTemplateAPIClient.swift; sourceTree = "<group>"; };
+		96B414FF2110B4F600142302 /* GitignoreTemplateAPIClientImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitignoreTemplateAPIClientImpl.swift; sourceTree = "<group>"; };
 		96B415022110B5EF00142302 /* GitignoreTemplateModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitignoreTemplateModelProtocol.swift; sourceTree = "<group>"; };
 		96B415042110B60C00142302 /* GitignoreTemplateModelProtocolDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitignoreTemplateModelProtocolDelegate.swift; sourceTree = "<group>"; };
 		96B415062110B62B00142302 /* GitignoreTemplateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitignoreTemplateModel.swift; sourceTree = "<group>"; };
@@ -118,9 +118,7 @@
 		96B415012110B5C700142302 /* APIClient */ = {
 			isa = PBXGroup;
 			children = (
-				96B414FD2110B4E500142302 /* GitignoreAPIClient.swift */,
-				96B414FF2110B4F600142302 /* GitignoreAPIClientImpl.swift */,
-				96B4150F2110B6B400142302 /* Response */,
+				96B415112110B79B00142302 /* GitignoreTemplate */,
 			);
 			path = APIClient;
 			sourceTree = "<group>";
@@ -164,6 +162,16 @@
 				96B4150C2110B67F00142302 /* Error */,
 				96B4150B2110B67700142302 /* Protocol */,
 				96B415062110B62B00142302 /* GitignoreTemplateModel.swift */,
+			);
+			path = GitignoreTemplate;
+			sourceTree = "<group>";
+		};
+		96B415112110B79B00142302 /* GitignoreTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				96B414FD2110B4E500142302 /* GitignoreTemplateAPIClient.swift */,
+				96B414FF2110B4F600142302 /* GitignoreTemplateAPIClientImpl.swift */,
+				96B4150F2110B6B400142302 /* Response */,
 			);
 			path = GitignoreTemplate;
 			sourceTree = "<group>";
@@ -276,8 +284,8 @@
 				96B414FC2110A1F400142302 /* TemplateViewController.swift in Sources */,
 				96B415072110B62B00142302 /* GitignoreTemplateModel.swift in Sources */,
 				96B4150E2110B6A800142302 /* GitignoreTemplate.swift in Sources */,
-				96B415002110B4F600142302 /* GitignoreAPIClientImpl.swift in Sources */,
-				96B414FE2110B4E500142302 /* GitignoreAPIClient.swift in Sources */,
+				96B415002110B4F600142302 /* GitignoreTemplateAPIClientImpl.swift in Sources */,
+				96B414FE2110B4E500142302 /* GitignoreTemplateAPIClient.swift in Sources */,
 				96B415052110B60C00142302 /* GitignoreTemplateModelProtocolDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
