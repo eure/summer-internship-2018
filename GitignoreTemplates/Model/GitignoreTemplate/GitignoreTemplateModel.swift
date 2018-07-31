@@ -12,7 +12,7 @@ final class GitignoreTemplateModel {
 
     let apiClient: GitignoreTemplateAPIClient
 
-    weak var delegate: GitignoreTemplateModelProtocolDelegate?
+    weak var delegate: GitignoreTemplateModelDelegate?
 
     init(apiClient: GitignoreTemplateAPIClient) {
         self.apiClient = apiClient

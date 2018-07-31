@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol GitignoreTemplateModelProtocolDelegate: class {
+protocol GitignoreTemplateModelDelegate: class {
     func gitignoreTemplateModel(_ model: GitignoreTemplateModelProtocol,
                                 didFetch templateList: [String])
     func gitignoreTemplateModel(_ model: GitignoreTemplateModelProtocol,

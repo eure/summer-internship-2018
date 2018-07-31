@@ -11,23 +11,30 @@ import UIKit
 final class LanguageListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+
+    var model: GitignoreTemplateModelProtocol!
     var languages = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configure()
-        languages = ["a", "b", "c"]
+        model.fetchAvailableTemplateList()
     }
 
     func configure() {
+        let apiClient = GitignoreTemplateAPIClientImpl.shared
+        let model = GitignoreTemplateModel(apiClient: apiClient)
+        self.model = model
+        model.delegate = self
+
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         tableView.refreshControl = refreshControl
     }
 
     @objc func refresh() {
-        tableView.refreshControl?.endRefreshing()
+        model.fetchAvailableTemplateList()
     }
 }
 
@@ -52,7 +59,28 @@ extension LanguageListViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
 
+// MARK: - GitignoreTemplateModelDelegate
+extension LanguageListViewController: GitignoreTemplateModelDelegate {
 
+    func gitignoreTemplateModel(_ model: GitignoreTemplateModelProtocol, didFetch templateList: [String]) {
+        languages = templateList
+
+        DispatchQueue.main.async {
+            self.tableView.refreshControl?.endRefreshing()
+
+            self.tableView.beginUpdates()
+            self.tableView.reloadSections([0], with: .automatic)
+            self.tableView.endUpdates()
+        }
+    }
+
+    func gitignoreTemplateModel(_ model: GitignoreTemplateModelProtocol, didFetch templateSource: String) {
+    }
+
+    func gitignoreTemplateModel(_ model: GitignoreTemplateModelProtocol, didNotFetch error: GitignoreTemplateModelError) {
+        // TODO: Error Handling
     }
 }

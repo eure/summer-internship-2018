@@ -10,7 +10,7 @@ import Foundation
 
 protocol GitignoreTemplateModelProtocol: class {
 
-    var delegate: GitignoreTemplateModelProtocolDelegate? { get set }
+    var delegate: GitignoreTemplateModelDelegate? { get set }
 
     func fetchAvailableTemplateList()
     func fetchTemplateSource(of name: String)
