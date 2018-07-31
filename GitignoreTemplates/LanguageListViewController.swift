@@ -17,6 +17,7 @@ final class LanguageListViewController: UIViewController {
         super.viewDidLoad()
 
         configure()
+        languages = ["a", "b", "c"]
     }
 
     func configure() {
