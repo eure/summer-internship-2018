@@ -14,6 +14,8 @@
 		96B414E621109AC100142302 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96B414E421109AC100142302 /* LaunchScreen.storyboard */; };
 		96B414F121109AC100142302 /* GitignoreTemplatesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B414F021109AC100142302 /* GitignoreTemplatesTests.swift */; };
 		96B414FC2110A1F400142302 /* TemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B414FB2110A1F400142302 /* TemplateViewController.swift */; };
+		96B414FE2110B4E500142302 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B414FD2110B4E500142302 /* APIClient.swift */; };
+		96B415002110B4F600142302 /* APIClientImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B414FF2110B4F600142302 /* APIClientImpl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		96B414F021109AC100142302 /* GitignoreTemplatesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitignoreTemplatesTests.swift; sourceTree = "<group>"; };
 		96B414F221109AC100142302 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96B414FB2110A1F400142302 /* TemplateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateViewController.swift; sourceTree = "<group>"; };
+		96B414FD2110B4E500142302 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		96B414FF2110B4F600142302 /* APIClientImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientImpl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,8 @@
 				96B414DB21109AC000142302 /* AppDelegate.swift */,
 				96B414DD21109AC000142302 /* LanguageListViewController.swift */,
 				96B414FB2110A1F400142302 /* TemplateViewController.swift */,
+				96B414FD2110B4E500142302 /* APIClient.swift */,
+				96B414FF2110B4F600142302 /* APIClientImpl.swift */,
 				96B414DF21109AC000142302 /* Main.storyboard */,
 				96B414E221109AC100142302 /* Assets.xcassets */,
 				96B414E421109AC100142302 /* LaunchScreen.storyboard */,
@@ -203,6 +209,8 @@
 				96B414DE21109AC000142302 /* LanguageListViewController.swift in Sources */,
 				96B414DC21109AC000142302 /* AppDelegate.swift in Sources */,
 				96B414FC2110A1F400142302 /* TemplateViewController.swift in Sources */,
+				96B415002110B4F600142302 /* APIClientImpl.swift in Sources */,
+				96B414FE2110B4E500142302 /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
