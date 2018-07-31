@@ -13,7 +13,7 @@
         <!--Languages-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LanguageListViewController" customModule="GitignoreTemplates" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LanguageListViewController" id="BYZ-38-t0r" customClass="LanguageListViewController" customModule="GitignoreTemplates" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,7 +39,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="cjE-Pa-xee" kind="show" id="BUw-Ni-wN6"/>
+                                            <segue destination="cjE-Pa-xee" kind="show" identifier="ToTemplateSource" id="BUw-Ni-wN6"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -70,7 +70,7 @@
         <!--Template source-->
         <scene sceneID="q9I-5b-Gyu">
             <objects>
-                <viewController title="Template source" id="cjE-Pa-xee" customClass="TemplateViewController" customModule="GitignoreTemplates" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TemplateViewController" title="Template source" id="cjE-Pa-xee" customClass="TemplateSourceViewController" customModule="GitignoreTemplates" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CFu-0X-zBg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

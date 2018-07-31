@@ -38,6 +38,22 @@ final class LanguageListViewController: UIViewController {
     }
 }
 
+// MARK: - SegueHandler
+extension LanguageListViewController: SegueHandler {
+
+    enum SegueIdentifier: String {
+        case templateSource = "ToTemplateSource"
+    }
+
+    func performSegueWithIdentifier(segueIdentifier: LanguageListViewController.SegueIdentifier, sender: AnyObject?) {
+        switch segueIdentifier {
+        case .templateSource:
+            guard let sourceVC = storyboard?.instantiateViewController(withType: .templateSourceVC) as? TemplateSourceViewController else { return }
+
+        }
+    }
+}
+
 // MARK: - UITableViewDataSource
 extension LanguageListViewController: UITableViewDataSource {
 
@@ -46,8 +62,7 @@ extension LanguageListViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LanguageCell", for: indexPath)
-
+        let cell = tableView.dequeueReusableCell(withType: .languageCell, for: indexPath)
         cell.textLabel?.text = languages[indexPath.row]
 
         return cell

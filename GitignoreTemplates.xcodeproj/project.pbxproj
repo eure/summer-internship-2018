@@ -13,7 +13,7 @@
 		96B414E321109AC100142302 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96B414E221109AC100142302 /* Assets.xcassets */; };
 		96B414E621109AC100142302 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96B414E421109AC100142302 /* LaunchScreen.storyboard */; };
 		96B414F121109AC100142302 /* GitignoreTemplatesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B414F021109AC100142302 /* GitignoreTemplatesTests.swift */; };
-		96B414FC2110A1F400142302 /* TemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B414FB2110A1F400142302 /* TemplateViewController.swift */; };
+		96B414FC2110A1F400142302 /* TemplateSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B414FB2110A1F400142302 /* TemplateSourceViewController.swift */; };
 		96B414FE2110B4E500142302 /* GitignoreTemplateAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B414FD2110B4E500142302 /* GitignoreTemplateAPIClient.swift */; };
 		96B415002110B4F600142302 /* GitignoreTemplateAPIClientImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B414FF2110B4F600142302 /* GitignoreTemplateAPIClientImpl.swift */; };
 		96B415032110B5EF00142302 /* GitignoreTemplateModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B415022110B5EF00142302 /* GitignoreTemplateModelProtocol.swift */; };
@@ -21,6 +21,9 @@
 		96B415072110B62B00142302 /* GitignoreTemplateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B415062110B62B00142302 /* GitignoreTemplateModel.swift */; };
 		96B415092110B65C00142302 /* GitignoreTemplateModelError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B415082110B65C00142302 /* GitignoreTemplateModelError.swift */; };
 		96B4150E2110B6A800142302 /* GitignoreTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4150D2110B6A800142302 /* GitignoreTemplate.swift */; };
+		96B415132110BA1D00142302 /* UITableViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B415122110BA1D00142302 /* UITableViewExt.swift */; };
+		96B415152110BBC000142302 /* SegueHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B415142110BBC000142302 /* SegueHandler.swift */; };
+		96B415172110BD3800142302 /* UIStoryboardExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B415162110BD3800142302 /* UIStoryboardExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +47,7 @@
 		96B414EC21109AC100142302 /* GitignoreTemplatesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitignoreTemplatesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96B414F021109AC100142302 /* GitignoreTemplatesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitignoreTemplatesTests.swift; sourceTree = "<group>"; };
 		96B414F221109AC100142302 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		96B414FB2110A1F400142302 /* TemplateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateViewController.swift; sourceTree = "<group>"; };
+		96B414FB2110A1F400142302 /* TemplateSourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateSourceViewController.swift; sourceTree = "<group>"; };
 		96B414FD2110B4E500142302 /* GitignoreTemplateAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitignoreTemplateAPIClient.swift; sourceTree = "<group>"; };
 		96B414FF2110B4F600142302 /* GitignoreTemplateAPIClientImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitignoreTemplateAPIClientImpl.swift; sourceTree = "<group>"; };
 		96B415022110B5EF00142302 /* GitignoreTemplateModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitignoreTemplateModelProtocol.swift; sourceTree = "<group>"; };
@@ -52,6 +55,9 @@
 		96B415062110B62B00142302 /* GitignoreTemplateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitignoreTemplateModel.swift; sourceTree = "<group>"; };
 		96B415082110B65C00142302 /* GitignoreTemplateModelError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitignoreTemplateModelError.swift; sourceTree = "<group>"; };
 		96B4150D2110B6A800142302 /* GitignoreTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitignoreTemplate.swift; sourceTree = "<group>"; };
+		96B415122110BA1D00142302 /* UITableViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExt.swift; sourceTree = "<group>"; };
+		96B415142110BBC000142302 /* SegueHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueHandler.swift; sourceTree = "<group>"; };
+		96B415162110BD3800142302 /* UIStoryboardExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +101,10 @@
 			children = (
 				96B414DB21109AC000142302 /* AppDelegate.swift */,
 				96B414DD21109AC000142302 /* LanguageListViewController.swift */,
-				96B414FB2110A1F400142302 /* TemplateViewController.swift */,
+				96B415122110BA1D00142302 /* UITableViewExt.swift */,
+				96B415162110BD3800142302 /* UIStoryboardExt.swift */,
+				96B415142110BBC000142302 /* SegueHandler.swift */,
+				96B414FB2110A1F400142302 /* TemplateSourceViewController.swift */,
 				96B4150A2110B66A00142302 /* Model */,
 				96B415012110B5C700142302 /* APIClient */,
 				96B414DF21109AC000142302 /* Main.storyboard */,
@@ -281,11 +290,14 @@
 				96B415092110B65C00142302 /* GitignoreTemplateModelError.swift in Sources */,
 				96B414DE21109AC000142302 /* LanguageListViewController.swift in Sources */,
 				96B414DC21109AC000142302 /* AppDelegate.swift in Sources */,
-				96B414FC2110A1F400142302 /* TemplateViewController.swift in Sources */,
+				96B414FC2110A1F400142302 /* TemplateSourceViewController.swift in Sources */,
+				96B415132110BA1D00142302 /* UITableViewExt.swift in Sources */,
 				96B415072110B62B00142302 /* GitignoreTemplateModel.swift in Sources */,
 				96B4150E2110B6A800142302 /* GitignoreTemplate.swift in Sources */,
 				96B415002110B4F600142302 /* GitignoreTemplateAPIClientImpl.swift in Sources */,
 				96B414FE2110B4E500142302 /* GitignoreTemplateAPIClient.swift in Sources */,
+				96B415172110BD3800142302 /* UIStoryboardExt.swift in Sources */,
+				96B415152110BBC000142302 /* SegueHandler.swift in Sources */,
 				96B415052110B60C00142302 /* GitignoreTemplateModelDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

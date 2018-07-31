@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class TemplateViewController: UIViewController {
+final class TemplateSourceViewController: UIViewController {
 
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
