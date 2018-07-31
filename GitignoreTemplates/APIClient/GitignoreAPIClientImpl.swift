@@ -8,9 +8,9 @@
 
 import Foundation
 
-final class APIClientImpl {
+final class GitignoreAPIClientImpl {
 
-    static let shared = APIClientImpl()
+    static let shared = GitignoreAPIClientImpl()
 
     enum Path {
         case templateList
@@ -30,7 +30,7 @@ final class APIClientImpl {
 }
 
 // MARK: - APIClient
-extension APIClientImpl: APIClient {
+extension GitignoreAPIClientImpl: GitignoreAPIClient {
 
     func fetchAvailableTemplateList(completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
         guard let url = URL(string: Path.templateList.endpoint) else { return }

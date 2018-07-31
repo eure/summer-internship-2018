@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol APIClient: class {
+protocol GitignoreAPIClient: class {
     func fetchAvailableTemplateList(completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void)
     func fetchTemplateSource(of name: String, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void)
 }
