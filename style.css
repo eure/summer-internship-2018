@@ -1,0 +1,10 @@
+a.menu {
+   text-decoration: none;     
+   border: none;
+   background-color: #fff; 
+   padding: 1px;
+   transition-duration:0.1s;
+}
+a.menu:hover{
+    background-color:#ddd;
+}
