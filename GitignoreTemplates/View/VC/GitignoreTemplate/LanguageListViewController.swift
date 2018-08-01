@@ -21,6 +21,7 @@ final class LanguageListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        configureDependencies()
         configure()
         model.fetchAvailableTemplateList()
     }
@@ -32,12 +33,15 @@ final class LanguageListViewController: UIViewController {
         model.delegate = self
     }
 
-    func configure() {
+    // 依存を構築
+    func configureDependencies() {
         let apiClient = GitignoreTemplateAPIClientImpl.shared
         let model = GitignoreTemplateModel(apiClient: apiClient)
         self.model = model
         model.delegate = self
+    }
 
+    func configure() {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         tableView.refreshControl = refreshControl
@@ -143,10 +147,7 @@ extension LanguageListViewController: GitignoreTemplateModelDelegate {
 
         DispatchQueue.main.async { [unowned self] in
             self.tableView.refreshControl?.endRefreshing()
-
-            self.tableView.beginUpdates()
-            self.tableView.reloadSections([0], with: .automatic)
-            self.tableView.endUpdates()
+            self.reloadTableViewWithAnimation()
         }
     }
 

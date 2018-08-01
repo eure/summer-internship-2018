@@ -19,16 +19,21 @@ final class TemplateSourceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        configureDependencies()
         configure()
-        title = templateName
         model.fetchTemplateSource(of: templateName)
     }
 
-    func configure() {
+    // 依存を構築
+    func configureDependencies() {
         let apiClient = GitignoreTemplateAPIClientImpl.shared
         let model = GitignoreTemplateModel(apiClient: apiClient)
         self.model = model
         model.delegate = self
+    }
+
+    func configure() {
+        title = templateName
     }
 }
 

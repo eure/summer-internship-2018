@@ -29,9 +29,9 @@ extension GitignoreTemplateModel: GitignoreTemplateModelProtocol {
                 httpResponse.statusCode == 200,
                 let data = data,
                 let list = try? JSONDecoder().decode([String].self, from: data)
-                else {
-                    self.delegate?.gitignoreTemplateModel(self, didNotFetch: .templateListFetchFailure)
-                    return
+            else {
+                self.delegate?.gitignoreTemplateModel(self, didNotFetch: .templateListFetchFailure)
+                return
             }
 
             self.delegate?.gitignoreTemplateModel(self, didFetch: list)
@@ -45,9 +45,9 @@ extension GitignoreTemplateModel: GitignoreTemplateModelProtocol {
                 httpResponse.statusCode == 200,
                 let data = data,
                 let template = try? JSONDecoder().decode(GitignoreTemplate.self, from: data)
-                else {
-                    self.delegate?.gitignoreTemplateModel(self, didNotFetch: .templateSourceFetchFailure)
-                    return
+            else {
+                self.delegate?.gitignoreTemplateModel(self, didNotFetch: .templateSourceFetchFailure)
+                return
             }
 
             self.delegate?.gitignoreTemplateModel(self, didFetch: template.source)
