@@ -11,6 +11,7 @@ import Foundation
 final class GitignoreTemplateAPIClientImpl {
 
     static let shared = GitignoreTemplateAPIClientImpl()
+    var dataTask = URLSessionTask()
 
     enum Path {
         case templateList
@@ -34,12 +35,18 @@ extension GitignoreTemplateAPIClientImpl: GitignoreTemplateAPIClient {
 
     func fetchAvailableTemplateList(completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
         guard let url = URL(string: Path.templateList.endpoint) else { return }
-        URLSession.shared.dataTask(with: url, completionHandler: completionHandler).resume()
+        dataTask = URLSession.shared.dataTask(with: url, completionHandler: completionHandler)
+        dataTask.resume()
     }
 
     func fetchTemplateSource(of name: String,
                              completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
         guard let url = URL(string: Path.template.endpoint + "/" + name) else { return }
-        URLSession.shared.dataTask(with: url, completionHandler: completionHandler).resume()
+        dataTask = URLSession.shared.dataTask(with: url, completionHandler: completionHandler)
+        dataTask.resume()
+    }
+
+    func cancelFetching() {
+         dataTask.cancel()
     }
 }

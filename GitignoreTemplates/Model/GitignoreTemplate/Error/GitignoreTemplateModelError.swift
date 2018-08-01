@@ -9,6 +9,7 @@
 import Foundation
 
 enum GitignoreTemplateModelError: Error {
-    case templateListFetchFailure
-    case templateSourceFetchFailure
+    case templateListFetchingFailure
+    case templateSourceFetchingFailure
+    case fetchingCancelled
 }

@@ -11,4 +11,5 @@ import Foundation
 protocol GitignoreTemplateAPIClient: class {
     func fetchAvailableTemplateList(completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void)
     func fetchTemplateSource(of name: String, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void)
+    func cancelFetching()
 }

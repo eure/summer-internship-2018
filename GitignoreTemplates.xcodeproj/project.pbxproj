@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96512BBE2111E12D0007680D /* ErrorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96512BBD2111E12D0007680D /* ErrorExt.swift */; };
 		96B414DC21109AC000142302 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B414DB21109AC000142302 /* AppDelegate.swift */; };
 		96B414DE21109AC000142302 /* LanguageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B414DD21109AC000142302 /* LanguageListViewController.swift */; };
 		96B414E121109AC000142302 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96B414DF21109AC000142302 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		96512BBD2111E12D0007680D /* ErrorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorExt.swift; sourceTree = "<group>"; };
 		96B414D821109AC000142302 /* GitignoreTemplates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitignoreTemplates.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96B414DB21109AC000142302 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96B414DD21109AC000142302 /* LanguageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageListViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				96B415122110BA1D00142302 /* UITableViewExt.swift */,
 				96B415162110BD3800142302 /* UIStoryboardExt.swift */,
 				96B415142110BBC000142302 /* UIViewControllerExt.swift */,
+				96512BBD2111E12D0007680D /* ErrorExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				96B415092110B65C00142302 /* GitignoreTemplateModelError.swift in Sources */,
 				96B414DE21109AC000142302 /* LanguageListViewController.swift in Sources */,
 				96B414DC21109AC000142302 /* AppDelegate.swift in Sources */,
+				96512BBE2111E12D0007680D /* ErrorExt.swift in Sources */,
 				96B414FC2110A1F400142302 /* TemplateSourceViewController.swift in Sources */,
 				96B415132110BA1D00142302 /* UITableViewExt.swift in Sources */,
 				96B415072110B62B00142302 /* GitignoreTemplateModel.swift in Sources */,
@@ -499,6 +503,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = GitignoreTemplates/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -517,6 +522,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = GitignoreTemplates/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (

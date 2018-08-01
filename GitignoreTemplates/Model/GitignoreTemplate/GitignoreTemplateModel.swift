@@ -30,7 +30,7 @@ extension GitignoreTemplateModel: GitignoreTemplateModelProtocol {
                 let data = data,
                 let list = try? JSONDecoder().decode([String].self, from: data)
             else {
-                self.delegate?.gitignoreTemplateModel(self, didNotFetch: .templateListFetchFailure)
+                self.delegate?.gitignoreTemplateModel(self, didNotFetch: .templateListFetchingFailure)
                 return
             }
 
@@ -46,11 +46,19 @@ extension GitignoreTemplateModel: GitignoreTemplateModelProtocol {
                 let data = data,
                 let template = try? JSONDecoder().decode(GitignoreTemplate.self, from: data)
             else {
-                self.delegate?.gitignoreTemplateModel(self, didNotFetch: .templateSourceFetchFailure)
+                if error!.isURLCancelError {
+                    self.delegate?.gitignoreTemplateModel(self, didNotFetch: .fetchingCancelled)
+                } else {
+                    self.delegate?.gitignoreTemplateModel(self, didNotFetch: .templateSourceFetchingFailure)
+                }
                 return
             }
 
             self.delegate?.gitignoreTemplateModel(self, didFetch: template.source)
         }
+    }
+
+    func cancelFetching() {
+        apiClient.cancelFetching()
     }
 }

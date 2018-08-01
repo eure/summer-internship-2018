@@ -24,6 +24,13 @@ final class TemplateSourceViewController: UIViewController {
         model.fetchTemplateSource(of: templateName)
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        // 画面を閉じる前にAPI通信をキャンセルする
+        model.cancelFetching()
+    }
+
     /// 依存を構築
     func configureDependencies() {
         let apiClient = GitignoreTemplateAPIClientImpl.shared
@@ -51,6 +58,7 @@ extension TemplateSourceViewController: GitignoreTemplateModelDelegate {
     }
 
     func gitignoreTemplateModel(_ model: GitignoreTemplateModelProtocol, didNotFetch error: GitignoreTemplateModelError) {
+        guard error == .templateSourceFetchingFailure else { return }
         DispatchQueue.main.async { [unowned self] in
             self.presentSingleDefaultActionAlert(title: "Error",
                                                  message: "Failed to get data\nPlease try again",

@@ -14,4 +14,5 @@ protocol GitignoreTemplateModelProtocol: class {
 
     func fetchAvailableTemplateList()
     func fetchTemplateSource(of name: String)
+    func cancelFetching()
 }
