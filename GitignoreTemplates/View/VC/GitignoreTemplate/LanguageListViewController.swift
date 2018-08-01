@@ -52,9 +52,15 @@ final class LanguageListViewController: UIViewController {
     }
 
     func reloadTableViewWithAnimation() {
-        tableView.beginUpdates()
-        tableView.reloadSections([0], with: .automatic)
-        tableView.endUpdates()
+        if #available(iOS 11.0, *) {
+            tableView.performBatchUpdates({ [unowned self] in
+                self.tableView.reloadSections([0], with: .automatic)
+            })
+        } else {
+            tableView.beginUpdates()
+            tableView.reloadSections([0], with: .automatic)
+            tableView.endUpdates()
+        }
     }
 
     func clearFiltering() {
@@ -72,6 +78,7 @@ extension LanguageListViewController: UISearchBarDelegate {
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
         searchBar.endEditing(true)
     }
 
