@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1E406E682112806700B08EFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E406E672112806700B08EFB /* AppDelegate.swift */; };
+		1E406E6A2112806700B08EFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E406E692112806700B08EFB /* ViewController.swift */; };
+		1E406E6D2112806700B08EFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E406E6B2112806700B08EFB /* Main.storyboard */; };
+		1E406E6F2112806700B08EFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E406E6E2112806700B08EFB /* Assets.xcassets */; };
+		1E406E722112806700B08EFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E406E702112806700B08EFB /* LaunchScreen.storyboard */; };
+		1E406E7D2112806700B08EFB /* eurecaSummerIntrernTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E406E7C2112806700B08EFB /* eurecaSummerIntrernTests.swift */; };
+		1E406E882112806700B08EFB /* eurecaSummerIntrernUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E406E872112806700B08EFB /* eurecaSummerIntrernUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1E406E792112806700B08EFB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1E406E5C2112806600B08EFB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1E406E632112806600B08EFB;
+			remoteInfo = eurecaSummerIntrern;
+		};
+		1E406E842112806700B08EFB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1E406E5C2112806600B08EFB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1E406E632112806600B08EFB;
+			remoteInfo = eurecaSummerIntrern;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1E406E642112806700B08EFB /* eurecaSummerIntrern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eurecaSummerIntrern.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E406E672112806700B08EFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1E406E692112806700B08EFB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1E406E6C2112806700B08EFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1E406E6E2112806700B08EFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1E406E712112806700B08EFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1E406E732112806700B08EFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E406E782112806700B08EFB /* eurecaSummerIntrernTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eurecaSummerIntrernTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E406E7C2112806700B08EFB /* eurecaSummerIntrernTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eurecaSummerIntrernTests.swift; sourceTree = "<group>"; };
+		1E406E7E2112806700B08EFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E406E832112806700B08EFB /* eurecaSummerIntrernUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eurecaSummerIntrernUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E406E872112806700B08EFB /* eurecaSummerIntrernUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eurecaSummerIntrernUITests.swift; sourceTree = "<group>"; };
+		1E406E892112806700B08EFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1E406E612112806600B08EFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E406E752112806700B08EFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E406E802112806700B08EFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1E406E5B2112806600B08EFB = {
+			isa = PBXGroup;
+			children = (
+				1E406E662112806700B08EFB /* eurecaSummerIntrern */,
+				1E406E7B2112806700B08EFB /* eurecaSummerIntrernTests */,
+				1E406E862112806700B08EFB /* eurecaSummerIntrernUITests */,
+				1E406E652112806700B08EFB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1E406E652112806700B08EFB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1E406E642112806700B08EFB /* eurecaSummerIntrern.app */,
+				1E406E782112806700B08EFB /* eurecaSummerIntrernTests.xctest */,
+				1E406E832112806700B08EFB /* eurecaSummerIntrernUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1E406E662112806700B08EFB /* eurecaSummerIntrern */ = {
+			isa = PBXGroup;
+			children = (
+				1E406E672112806700B08EFB /* AppDelegate.swift */,
+				1E406E692112806700B08EFB /* ViewController.swift */,
+				1E406E6B2112806700B08EFB /* Main.storyboard */,
+				1E406E6E2112806700B08EFB /* Assets.xcassets */,
+				1E406E702112806700B08EFB /* LaunchScreen.storyboard */,
+				1E406E732112806700B08EFB /* Info.plist */,
+			);
+			path = eurecaSummerIntrern;
+			sourceTree = "<group>";
+		};
+		1E406E7B2112806700B08EFB /* eurecaSummerIntrernTests */ = {
+			isa = PBXGroup;
+			children = (
+				1E406E7C2112806700B08EFB /* eurecaSummerIntrernTests.swift */,
+				1E406E7E2112806700B08EFB /* Info.plist */,
+			);
+			path = eurecaSummerIntrernTests;
+			sourceTree = "<group>";
+		};
+		1E406E862112806700B08EFB /* eurecaSummerIntrernUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1E406E872112806700B08EFB /* eurecaSummerIntrernUITests.swift */,
+				1E406E892112806700B08EFB /* Info.plist */,
+			);
+			path = eurecaSummerIntrernUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1E406E632112806600B08EFB /* eurecaSummerIntrern */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E406E8C2112806700B08EFB /* Build configuration list for PBXNativeTarget "eurecaSummerIntrern" */;
+			buildPhases = (
+				1E406E602112806600B08EFB /* Sources */,
+				1E406E612112806600B08EFB /* Frameworks */,
+				1E406E622112806600B08EFB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = eurecaSummerIntrern;
+			productName = eurecaSummerIntrern;
+			productReference = 1E406E642112806700B08EFB /* eurecaSummerIntrern.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1E406E772112806700B08EFB /* eurecaSummerIntrernTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E406E8F2112806700B08EFB /* Build configuration list for PBXNativeTarget "eurecaSummerIntrernTests" */;
+			buildPhases = (
+				1E406E742112806700B08EFB /* Sources */,
+				1E406E752112806700B08EFB /* Frameworks */,
+				1E406E762112806700B08EFB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1E406E7A2112806700B08EFB /* PBXTargetDependency */,
+			);
+			name = eurecaSummerIntrernTests;
+			productName = eurecaSummerIntrernTests;
+			productReference = 1E406E782112806700B08EFB /* eurecaSummerIntrernTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1E406E822112806700B08EFB /* eurecaSummerIntrernUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E406E922112806700B08EFB /* Build configuration list for PBXNativeTarget "eurecaSummerIntrernUITests" */;
+			buildPhases = (
+				1E406E7F2112806700B08EFB /* Sources */,
+				1E406E802112806700B08EFB /* Frameworks */,
+				1E406E812112806700B08EFB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1E406E852112806700B08EFB /* PBXTargetDependency */,
+			);
+			name = eurecaSummerIntrernUITests;
+			productName = eurecaSummerIntrernUITests;
+			productReference = 1E406E832112806700B08EFB /* eurecaSummerIntrernUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1E406E5C2112806600B08EFB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "近藤大翔";
+				TargetAttributes = {
+					1E406E632112806600B08EFB = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					1E406E772112806700B08EFB = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 1E406E632112806600B08EFB;
+					};
+					1E406E822112806700B08EFB = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 1E406E632112806600B08EFB;
+					};
+				};
+			};
+			buildConfigurationList = 1E406E5F2112806600B08EFB /* Build configuration list for PBXProject "eurecaSummerIntrern" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1E406E5B2112806600B08EFB;
+			productRefGroup = 1E406E652112806700B08EFB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1E406E632112806600B08EFB /* eurecaSummerIntrern */,
+				1E406E772112806700B08EFB /* eurecaSummerIntrernTests */,
+				1E406E822112806700B08EFB /* eurecaSummerIntrernUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1E406E622112806600B08EFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E406E722112806700B08EFB /* LaunchScreen.storyboard in Resources */,
+				1E406E6F2112806700B08EFB /* Assets.xcassets in Resources */,
+				1E406E6D2112806700B08EFB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E406E762112806700B08EFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E406E812112806700B08EFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1E406E602112806600B08EFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E406E6A2112806700B08EFB /* ViewController.swift in Sources */,
+				1E406E682112806700B08EFB /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E406E742112806700B08EFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E406E7D2112806700B08EFB /* eurecaSummerIntrernTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E406E7F2112806700B08EFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E406E882112806700B08EFB /* eurecaSummerIntrernUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1E406E7A2112806700B08EFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1E406E632112806600B08EFB /* eurecaSummerIntrern */;
+			targetProxy = 1E406E792112806700B08EFB /* PBXContainerItemProxy */;
+		};
+		1E406E852112806700B08EFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1E406E632112806600B08EFB /* eurecaSummerIntrern */;
+			targetProxy = 1E406E842112806700B08EFB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1E406E6B2112806700B08EFB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1E406E6C2112806700B08EFB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1E406E702112806700B08EFB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1E406E712112806700B08EFB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1E406E8A2112806700B08EFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1E406E8B2112806700B08EFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1E406E8D2112806700B08EFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 554S3GFZ58;
+				INFOPLIST_FILE = eurecaSummerIntrern/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = taisho90icloud.com.eurecaSummerIntrern;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1E406E8E2112806700B08EFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 554S3GFZ58;
+				INFOPLIST_FILE = eurecaSummerIntrern/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = taisho90icloud.com.eurecaSummerIntrern;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1E406E902112806700B08EFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 554S3GFZ58;
+				INFOPLIST_FILE = eurecaSummerIntrernTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = taisho90icloud.com.eurecaSummerIntrernTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/eurecaSummerIntrern.app/eurecaSummerIntrern";
+			};
+			name = Debug;
+		};
+		1E406E912112806700B08EFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 554S3GFZ58;
+				INFOPLIST_FILE = eurecaSummerIntrernTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = taisho90icloud.com.eurecaSummerIntrernTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/eurecaSummerIntrern.app/eurecaSummerIntrern";
+			};
+			name = Release;
+		};
+		1E406E932112806700B08EFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 554S3GFZ58;
+				INFOPLIST_FILE = eurecaSummerIntrernUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = taisho90icloud.com.eurecaSummerIntrernUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = eurecaSummerIntrern;
+			};
+			name = Debug;
+		};
+		1E406E942112806700B08EFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 554S3GFZ58;
+				INFOPLIST_FILE = eurecaSummerIntrernUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = taisho90icloud.com.eurecaSummerIntrernUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = eurecaSummerIntrern;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1E406E5F2112806600B08EFB /* Build configuration list for PBXProject "eurecaSummerIntrern" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E406E8A2112806700B08EFB /* Debug */,
+				1E406E8B2112806700B08EFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1E406E8C2112806700B08EFB /* Build configuration list for PBXNativeTarget "eurecaSummerIntrern" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E406E8D2112806700B08EFB /* Debug */,
+				1E406E8E2112806700B08EFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1E406E8F2112806700B08EFB /* Build configuration list for PBXNativeTarget "eurecaSummerIntrernTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E406E902112806700B08EFB /* Debug */,
+				1E406E912112806700B08EFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1E406E922112806700B08EFB /* Build configuration list for PBXNativeTarget "eurecaSummerIntrernUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E406E932112806700B08EFB /* Debug */,
+				1E406E942112806700B08EFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1E406E5C2112806600B08EFB /* Project object */;
+}
