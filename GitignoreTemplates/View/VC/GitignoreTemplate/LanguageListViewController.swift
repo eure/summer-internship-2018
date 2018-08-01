@@ -33,7 +33,11 @@ final class LanguageListViewController: UIViewController {
         model.delegate = self
     }
 
-    // 依存を構築
+    @IBAction func didTapSearchButton(_ sender: UIBarButtonItem) {
+        setSearchBarHiddenWithAnimation(false)
+    }
+
+    /// 依存を構築
     func configureDependencies() {
         let apiClient = GitignoreTemplateAPIClientImpl.shared
         let model = GitignoreTemplateModel(apiClient: apiClient)
@@ -66,6 +70,12 @@ final class LanguageListViewController: UIViewController {
     func clearFiltering() {
         isFiltering = false
         filterLanguages = []
+    }
+
+    func setSearchBarHiddenWithAnimation(_ isHidden: Bool) {
+        UIView.animate(withDuration: 0.3) { [unowned self] in
+            self.searchBar.isHidden = isHidden
+        }
     }
 }
 
@@ -103,6 +113,7 @@ extension LanguageListViewController: UISearchBarDelegate {
 
         clearFiltering()
         reloadTableViewWithAnimation()
+        setSearchBarHiddenWithAnimation(true)
     }
 }
 

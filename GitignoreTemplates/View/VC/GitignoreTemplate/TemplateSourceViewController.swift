@@ -24,7 +24,7 @@ final class TemplateSourceViewController: UIViewController {
         model.fetchTemplateSource(of: templateName)
     }
 
-    // 依存を構築
+    /// 依存を構築
     func configureDependencies() {
         let apiClient = GitignoreTemplateAPIClientImpl.shared
         let model = GitignoreTemplateModel(apiClient: apiClient)

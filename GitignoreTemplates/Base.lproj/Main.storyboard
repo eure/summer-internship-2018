@@ -18,58 +18,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" placeholder="Input text for search language" translatesAutoresizingMaskIntoConstraints="NO" id="VRc-DA-L2t">
-                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <scopeButtonTitles>
-                                    <string>Title</string>
-                                    <string>Title</string>
-                                </scopeButtonTitles>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="e0R-kz-vMi"/>
-                                </connections>
-                            </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="awa-MT-kdt">
-                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LanguageCell" textLabel="D0u-Ho-SQb" style="IBUITableViewCellStyleDefault" id="M5V-4W-ZEP">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="M5V-4W-ZEP" id="2PF-qo-GYa">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="D0u-Ho-SQb">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8rY-u5-BPw">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <searchBar hidden="YES" contentMode="redraw" placeholder="Input text for search language" translatesAutoresizingMaskIntoConstraints="NO" id="VRc-DA-L2t">
+                                        <rect key="frame" x="0.0" y="-64" width="375" height="0.0"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <scopeButtonTitles>
+                                            <string>Title</string>
+                                            <string>Title</string>
+                                        </scopeButtonTitles>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="e0R-kz-vMi"/>
+                                        </connections>
+                                    </searchBar>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="awa-MT-kdt">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LanguageCell" textLabel="D0u-Ho-SQb" style="IBUITableViewCellStyleDefault" id="M5V-4W-ZEP">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="M5V-4W-ZEP" id="2PF-qo-GYa">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="iSJ-ta-ft9"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="SEp-kl-EJt"/>
-                                </connections>
-                            </tableView>
+                                                    <subviews>
+                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="D0u-Ho-SQb">
+                                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="iSJ-ta-ft9"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="SEp-kl-EJt"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="awa-MT-kdt" firstAttribute="top" secondItem="VRc-DA-L2t" secondAttribute="bottom" id="4Ky-dy-Qbh"/>
-                            <constraint firstItem="VRc-DA-L2t" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GhY-9u-fxB"/>
-                            <constraint firstItem="awa-MT-kdt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GsH-dQ-hdu"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="awa-MT-kdt" secondAttribute="trailing" id="JN0-gH-a1t"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="awa-MT-kdt" secondAttribute="bottom" id="Ztc-zK-GLT"/>
-                            <constraint firstItem="VRc-DA-L2t" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bkT-DT-M61"/>
-                            <constraint firstItem="VRc-DA-L2t" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tXy-VC-Q8z"/>
+                            <constraint firstItem="8rY-u5-BPw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7gq-6c-gbX"/>
+                            <constraint firstItem="8rY-u5-BPw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Dxi-RS-YiQ"/>
+                            <constraint firstItem="8rY-u5-BPw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="q4z-Qp-BXm"/>
+                            <constraint firstItem="8rY-u5-BPw" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="qaw-Yc-pbO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Languages" id="hSY-ng-fCB"/>
+                    <navigationItem key="navigationItem" title="Languages" id="hSY-ng-fCB">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="63h-mq-Z0f">
+                            <connections>
+                                <action selector="didTapSearchButton:" destination="BYZ-38-t0r" id="HGI-fp-ooN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="VRc-DA-L2t" id="4jG-m3-Era"/>
                         <outlet property="tableView" destination="awa-MT-kdt" id="2a7-dh-pNP"/>
