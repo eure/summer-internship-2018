@@ -15,7 +15,7 @@ final class LanguageListViewController: UIViewController {
 
     var model: GitignoreTemplateModelProtocol!
     var languages = [String]()
-    var filterLanguages = [String]()
+    var filteredLanguages = [String]()
     var isFiltering = false
 
     override func viewDidLoad() {
@@ -69,7 +69,7 @@ final class LanguageListViewController: UIViewController {
 
     func clearFiltering() {
         isFiltering = false
-        filterLanguages = []
+        filteredLanguages = []
     }
 
     func setSearchBarHiddenWithAnimation(_ isHidden: Bool) {
@@ -106,7 +106,7 @@ extension LanguageListViewController: UISearchBarDelegate {
 
         //  入力されたテキストを使い、言語一覧を前方一致で検索
         isFiltering = true
-        filterLanguages = languages.filter { $0.lowercased().hasPrefix(searchText.lowercased()) }
+        filteredLanguages = languages.filter { $0.lowercased().hasPrefix(searchText.lowercased()) }
         reloadTableViewWithAnimation()
     }
 
@@ -126,14 +126,14 @@ extension LanguageListViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard isFiltering else { return languages.count }
-        return filterLanguages.count
+        return filteredLanguages.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withType: .languageCell, for: indexPath)
 
         if isFiltering {
-            cell.textLabel?.text = filterLanguages[indexPath.row]
+            cell.textLabel?.text = filteredLanguages[indexPath.row]
         } else {
             cell.textLabel?.text = languages[indexPath.row]
         }
@@ -149,7 +149,7 @@ extension LanguageListViewController: UITableViewDelegate {
 
         guard let sourceVC = storyboard?.instantiateViewController(withType: .templateSourceVC) as? TemplateSourceViewController else { return }
         if isFiltering {
-            sourceVC.templateName = filterLanguages[indexPath.row]
+            sourceVC.templateName = filteredLanguages[indexPath.row]
         } else {
             sourceVC.templateName = languages[indexPath.row]
         }
