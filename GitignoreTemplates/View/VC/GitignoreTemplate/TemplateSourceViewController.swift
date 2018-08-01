@@ -20,6 +20,7 @@ final class TemplateSourceViewController: UIViewController {
         super.viewDidLoad()
 
         configure()
+        title = templateName
         model.fetchTemplateSource(of: templateName)
     }
 

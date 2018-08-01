@@ -10,10 +10,13 @@ import UIKit
 
 final class LanguageListViewController: UIViewController {
 
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
 
     var model: GitignoreTemplateModelProtocol!
     var languages = [String]()
+    var filterLanguages = [String]()
+    var isFiltering = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,19 +46,71 @@ final class LanguageListViewController: UIViewController {
     @objc func refresh() {
         model.fetchAvailableTemplateList()
     }
+
+    func reloadTableViewWithAnimation() {
+        tableView.beginUpdates()
+        tableView.reloadSections([0], with: .automatic)
+        tableView.endUpdates()
+    }
+
+    func clearFiltering() {
+        isFiltering = false
+        filterLanguages = []
+    }
+}
+
+// MARK: - UISearchBarDelegate
+extension LanguageListViewController: UISearchBarDelegate {
+
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        searchBar.showsCancelButton = true
+        return true
+    }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+    }
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard !searchText.isEmpty else {
+            // 入力されたテキストが空なので、フィルタリングをクリア
+            clearFiltering()
+            reloadTableViewWithAnimation()
+            return
+        }
+
+        //  入力されたテキストを使い、言語一覧を前方一致で検索
+        isFiltering = true
+        filterLanguages = languages.filter { $0.lowercased().hasPrefix(searchText.lowercased()) }
+        reloadTableViewWithAnimation()
+    }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+        searchBar.text = ""
+        searchBar.endEditing(true)
+
+        clearFiltering()
+        reloadTableViewWithAnimation()
+    }
 }
 
 // MARK: - UITableViewDataSource
 extension LanguageListViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return languages.count
+        guard isFiltering else { return languages.count }
+        return filterLanguages.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withType: .languageCell, for: indexPath)
-        cell.textLabel?.text = languages[indexPath.row]
 
+        if isFiltering {
+            cell.textLabel?.text = filterLanguages[indexPath.row]
+        } else {
+            cell.textLabel?.text = languages[indexPath.row]
+        }
         return cell
     }
 }
@@ -67,7 +122,12 @@ extension LanguageListViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
 
         guard let sourceVC = storyboard?.instantiateViewController(withType: .templateSourceVC) as? TemplateSourceViewController else { return }
-        sourceVC.templateName = languages[indexPath.row]
+        if isFiltering {
+            sourceVC.templateName = filterLanguages[indexPath.row]
+        } else {
+            sourceVC.templateName = languages[indexPath.row]
+        }
+
         // 共通のmodelを渡す
         sourceVC.model = model
 
