@@ -75,6 +75,10 @@ final class LanguageListViewController: UIViewController {
     func setSearchBarHiddenWithAnimation(_ isHidden: Bool) {
         UIView.animate(withDuration: 0.3) { [unowned self] in
             self.searchBar.isHidden = isHidden
+
+            if !isHidden {
+                self.searchBar.becomeFirstResponder()
+            }
         }
     }
 }
