@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This website uses GitHub API to search GitHub users in a specific location.
+This website uses *GitHub API* to search GitHub users in a specific location.
 And you can browse the details of the users in the search result.
 
 ## Technologies
@@ -28,9 +28,9 @@ Run the application:
 
 ### Home Page
 
-Type in some location text you want to search for into the *Location* text field.
+Type in some location text you want to search for into the **Location** text field.
 The location you input can be countries or cities.
-After typing in the location text, clicking the *Search Button* on the right of the input *Location* text field will display a list of GitHub users whose locations contain the text you have input.
+After typing in the location text, clicking the **Search Button** on the right of the input **Location** text field will display a list of GitHub users whose locations contain the text you have input.
 
 For every user listed, the information will be organized in a card view.
 And here are the information that will display:
@@ -53,4 +53,4 @@ In the user details page, this information will display:
 * user's follower count
 * user's following count
 
-And clicking the *Back* button on the top left of the page will go back to the home page.
+And clicking the **Back button** on the top left of the page will go back to the home page.
