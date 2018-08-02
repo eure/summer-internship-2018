@@ -28,7 +28,9 @@ class Details extends Component {
 
     return (
       <div className="app">
+        {/* トップバー */}
         <NavBarDetails page="Details" />
+        {/* 指定ユーザ情報表示 */}
         <UserDetails user={this.state.user}/>
       </div>
     );

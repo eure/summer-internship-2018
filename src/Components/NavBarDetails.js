@@ -14,9 +14,11 @@ class NavBarDetails extends Component {
       <div>
         <AppBar position="static" color="secondary">
           <Toolbar>
+            {/* Home ページへ戻るボタン */}
             <IconButton aria-label="Back">
               <Link to="/" style={{ color: "white" }}><Icon>arrow_back</Icon></Link>
             </IconButton>
+            {/* トップバータイトル */}
             <Typography variant="title" color="inherit">
               GitHub Location Search - {this.props.page}
             </Typography>
