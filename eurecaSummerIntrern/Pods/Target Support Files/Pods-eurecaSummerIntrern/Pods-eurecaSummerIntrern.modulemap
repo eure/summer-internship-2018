@@ -1,0 +1,6 @@
+framework module Pods_eurecaSummerIntrern {
+  umbrella header "Pods-eurecaSummerIntrern-umbrella.h"
+
+  export *
+  module * { export * }
+}
