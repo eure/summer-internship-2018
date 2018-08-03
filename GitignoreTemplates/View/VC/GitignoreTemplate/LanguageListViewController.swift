@@ -52,6 +52,7 @@ final class LanguageListViewController: UIViewController {
         tableView.refreshControl = refreshControl
         // 初期ロードでは、引っ張っての更新を禁止する
         tableView.alwaysBounceVertical = false
+        navigationItem.rightBarButtonItem?.isEnabled = false
     }
 
     @objc func refresh() {
@@ -176,6 +177,7 @@ extension LanguageListViewController: GitignoreTemplateModelDelegate {
             self.reloadTableViewWithAnimation()
             // 引っ張っての更新を有効にする
             self.tableView.alwaysBounceVertical = true
+            self.navigationItem.rightBarButtonItem?.isEnabled = true
         }
     }
 
