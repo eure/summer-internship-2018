@@ -12,6 +12,7 @@ final class LanguageListViewController: UIViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
 
     var model: GitignoreTemplateModelProtocol!
     var languages = [String]()
@@ -19,7 +20,7 @@ final class LanguageListViewController: UIViewController {
     var isFiltering = false
 
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad()                     
 
         configureDependencies()
         configure()
@@ -49,6 +50,8 @@ final class LanguageListViewController: UIViewController {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         tableView.refreshControl = refreshControl
+        // 初期ロードでは、引っ張っての更新を禁止する
+        tableView.alwaysBounceVertical = false
     }
 
     @objc func refresh() {
@@ -169,7 +172,10 @@ extension LanguageListViewController: GitignoreTemplateModelDelegate {
 
         DispatchQueue.main.async { [unowned self] in
             self.tableView.refreshControl?.endRefreshing()
+            self.indicator.stopAnimating()
             self.reloadTableViewWithAnimation()
+            // 引っ張っての更新を有効にする
+            self.tableView.alwaysBounceVertical = true
         }
     }
 
@@ -177,12 +183,16 @@ extension LanguageListViewController: GitignoreTemplateModelDelegate {
     }
 
     func gitignoreTemplateModel(_ model: GitignoreTemplateModelProtocol, didNotFetch error: GitignoreTemplateModelError) {
+        guard error == .templateListFetchingFailure else { return }
         DispatchQueue.main.async { [unowned self] in
             self.presentSingleDefaultActionAlert(title: "Error",
                                                  message: "Failed to get data\nPlease try again",
                                                  actionTitle: "OK",
                                                  completion: { [unowned self] in
                                                     self.tableView.refreshControl?.endRefreshing()
+                                                    self.indicator.stopAnimating()
+                                                    // 引っ張っての更新を有効にする
+                                                    self.tableView.alwaysBounceVertical = true
             })
         }
     }
