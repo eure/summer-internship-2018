@@ -8,12 +8,10 @@
 
 import Foundation
 
-extension Error {
+extension NSError {
 
     var isURLCancelError: Bool {
-        let error = self as NSError
-
-        return error.domain == "NSURLErrorDomain" &&
-            error.code == -999
+        return domain == "NSURLErrorDomain" &&
+            code == -999
     }
 }

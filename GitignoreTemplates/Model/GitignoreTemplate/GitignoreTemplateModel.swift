@@ -46,7 +46,7 @@ extension GitignoreTemplateModel: GitignoreTemplateModelProtocol {
                 let data = data,
                 let template = try? JSONDecoder().decode(GitignoreTemplate.self, from: data)
             else {
-                if error!.isURLCancelError {
+                if (error! as NSError).isURLCancelError {
                     self.delegate?.gitignoreTemplateModel(self, didNotFetch: .fetchingCancelled)
                 } else {
                     self.delegate?.gitignoreTemplateModel(self, didNotFetch: .templateSourceFetchingFailure)
