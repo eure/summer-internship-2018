@@ -6,10 +6,8 @@ import SwiftyJSON
 class SecondViewController: UIViewController,UINavigationBarDelegate, UITextViewDelegate {
     
     var name:String?
-    var count  = 0
     var image:UIImage?
     let CACHE_SEC : TimeInterval = 5 * 60; //5分キャッシュ
-    
     @IBOutlet weak var Avatar: UIImageView!
     @IBOutlet weak var user_name: UILabel!
     @IBOutlet weak var avatarUrl: UITextView!
@@ -26,6 +24,7 @@ class SecondViewController: UIViewController,UINavigationBarDelegate, UITextView
         super.viewDidLoad()
         avatarUrl.isSelectable = true
         avatarUrl.delegate = self
+        avatarUrl.isEditable = false
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "閉じる", style: UIBarButtonItemStyle.plain, target: self, action: #selector(SecondViewController.close))
         if root_acount.name.isEmpty{
             let string = "https://api.github.com/users/" + name!
@@ -59,6 +58,8 @@ class SecondViewController: UIViewController,UINavigationBarDelegate, UITextView
                                           value: root_acount.urlString,
                                           range: NSString(string: root_acount.urlString).range(of: root_acount.urlString))
             avatarUrl.attributedText = attributedString
+            avatarUrl.font = UIFont.systemFont(ofSize: 20)
+            avatarUrl.textAlignment = NSTextAlignment.center
             loadImage(urlString: root_acount.avatar_url)
         }
     }

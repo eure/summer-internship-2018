@@ -51,9 +51,17 @@ class FirstTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return makeCell(indexPath: indexPath)
+    }
+    
+    func makeCell(indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "aaa")
-        cell.detailTextLabel?.text = array[indexPath.row].type
-        cell.textLabel?.text = array[indexPath.row].name
+        self.tableView.rowHeight = 60.0
+        cell.detailTextLabel?.text = "Event: " + array[indexPath.row].type
+        cell.textLabel?.text = "Name: " + array[indexPath.row].name
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 25)
+        cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 15)
+        cell.layer.borderWidth = 0.5
         return cell
     }
     
