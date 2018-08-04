@@ -14,7 +14,7 @@
 		1E406E7D2112806700B08EFB /* eurecaSummerIntrernTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E406E7C2112806700B08EFB /* eurecaSummerIntrernTests.swift */; };
 		1E406E882112806700B08EFB /* eurecaSummerIntrernUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E406E872112806700B08EFB /* eurecaSummerIntrernUITests.swift */; };
 		1E406E962112834C00B08EFB /* FirstTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E406E952112834C00B08EFB /* FirstTableViewController.swift */; };
-		1E406E992112850D00B08EFB /* SendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E406E982112850D00B08EFB /* SendTableViewController.swift */; };
+		1E95FAA1211477230032FA23 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E95FAA0211477230032FA23 /* SecondViewController.swift */; };
 		84EA80F6BFAE3C6BECB64A57 /* Pods_eurecaSummerIntrern.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280DF2CA5781A6486A904B16 /* Pods_eurecaSummerIntrern.framework */; };
 		AF5B500ADB5582A893031F23 /* Pods_eurecaSummerIntrernTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91364947BCFB3B6F49548256 /* Pods_eurecaSummerIntrernTests.framework */; };
 		BDC0D20D7D883907B3C838B2 /* Pods_eurecaSummerIntrernUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4A91BB17B6E82564863B103 /* Pods_eurecaSummerIntrernUITests.framework */; };
@@ -52,7 +52,7 @@
 		1E406E872112806700B08EFB /* eurecaSummerIntrernUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eurecaSummerIntrernUITests.swift; sourceTree = "<group>"; };
 		1E406E892112806700B08EFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E406E952112834C00B08EFB /* FirstTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTableViewController.swift; sourceTree = "<group>"; };
-		1E406E982112850D00B08EFB /* SendTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendTableViewController.swift; sourceTree = "<group>"; };
+		1E95FAA0211477230032FA23 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		280DF2CA5781A6486A904B16 /* Pods_eurecaSummerIntrern.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eurecaSummerIntrern.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F95D2427ACA472915D122B4 /* Pods-eurecaSummerIntrern.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eurecaSummerIntrern.release.xcconfig"; path = "Pods/Target Support Files/Pods-eurecaSummerIntrern/Pods-eurecaSummerIntrern.release.xcconfig"; sourceTree = "<group>"; };
 		91364947BCFB3B6F49548256 /* Pods_eurecaSummerIntrernTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eurecaSummerIntrernTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,7 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				1E406E952112834C00B08EFB /* FirstTableViewController.swift */,
-				1E406E982112850D00B08EFB /* SendTableViewController.swift */,
+				1E95FAA0211477230032FA23 /* SecondViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -389,9 +389,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E95FAA1211477230032FA23 /* SecondViewController.swift in Sources */,
 				1E406E962112834C00B08EFB /* FirstTableViewController.swift in Sources */,
 				1E406E682112806700B08EFB /* AppDelegate.swift in Sources */,
-				1E406E992112850D00B08EFB /* SendTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

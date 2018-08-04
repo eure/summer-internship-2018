@@ -1,10 +1,3 @@
-//
-//  FirstTableViewController.swift
-//  eurecaSummerIntrern
-//
-//  Created by 近藤大翔 on 2018/08/02.
-//  Copyright © 2018年 近藤大翔. All rights reserved.
-//
 
 import UIKit
 import SwiftyJSON
@@ -20,18 +13,11 @@ class FirstTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //let queryItems = [ URLQueryItem(name:"operation",value: "searchRetrieve")]
         let compnents = URLComponents(string: "https://api.github.com/repos/eure/summer-internship-2018/events")
-        //compnents?.queryItems = queryItems
         let url = compnents?.url
         let task = URLSession.shared.dataTask(with: url!) { data, response, error in
-            if let data = data, let response = response {
-                print(response)
+            if let data = data, let _ = response {
                 let json = JSON(data)
-                if json.isEmpty {
-                }else{
-                    print(json)
-                }
                 for index in 0...19 {
                     var feed = feedApiInfo()
                     feed.type = json[index]["type"].rawString()!
@@ -52,18 +38,15 @@ class FirstTableViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
+
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return array.count
     }
 
@@ -72,6 +55,21 @@ class FirstTableViewController: UITableViewController {
         cell.detailTextLabel?.text = array[indexPath.row].type
         cell.textLabel?.text = array[indexPath.row].name
         return cell
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        self.performSegue(withIdentifier: "ToSecondView", sender: array[indexPath.row].name)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToSecondView" {
+            let name = sender as! String
+            let nc = segue.destination as! UINavigationController
+            let vc = nc.topViewController as! SecondViewController
+            vc.name = name
+        }
     }
  
 
