@@ -1,57 +1,36 @@
-# summer-internship-2018
+# summer-internship-2018(サーバーサイド 課題1)
 
-エウレカサマーインターン2018の技術課題提出用リポジトリです。
 
-## 概要
+## 仕様説明
+github trendのページから情報をgolangでクロールしてきて、reactで描画します。
+全体とは別に、いくつかの言語別のトレンドも表示できるようにしました。
 
-### 提出方法
-このリポジトリをフォークして開発を行い、Pull Request形式で課題提出を行ってください。
+![](https://raw.githubusercontent.com/hukuda222/summer-internship-2018/server-task1/img/image.png)
 
-タイトルの先頭にAndroid/iOS/Webフロントエンド/サーバーサイドのいずれかを付けてください。
 
-Descriptionに以下の情報を記載してください。
+## 環境構築マニュアル
+```bash
+go get -u github.com/PuerkitoBio/goquery
+go get -u github.com/jteeuwen/go-bindata/...
+go get -u github.com/elazarl/go-bindata-assetfs/...
+go get -u github.com/gin-gonic/gin
+go get -u github.com/gin-gonic/contrib/static
+go get -u github.com/pilu/fresh
+go get -u gopkg.in/olebedev/go-duktape.v2
 
-- 仕様説明
-    - 実現した機能の簡単な解説
-    - スクリーンショット
-- 環境構築マニュアル
-- 言語/ライブラリ/アーキテクチャなどの選定理由
-- こだわりポイント
+npm install
 
-### 評価ポイント
-- 実行可能であること
-- 要件が満たせていること
-- 適切な命名やコメントなど、チーム開発において必要な要素が満たされていること
-- 設計やコーディングルールに一貫性があること
-- パフォーマンスに留意した実装になっていること
+npm run bindata
 
-## Android/iOS/Webフロントエンド
+npm run dev & fresh
+```
 
-### 課題
-1. [GitHub API](https://developer.github.com/v3/activity/)から好きなものを選び、リスト形式で表示してください
-2. リスト押下で詳細な情報が閲覧できる画面に遷移してください
-3. リストおよび詳細画面に表示する情報は自由に決めてください
+http://localhost:3000/を開くと見られます。
 
-### 使用技術
-- GitHub APIではGraphQLを使用しても構いません
-- ライブラリは自由に使用して構いません
-- AndroidはJava/Kotlinのどちらかで開発してください
-- iOSはSwiftで開発してください
-- WebフロントエンドはなんらかのAltJS（Babel,TypeScript,flowなど）とSPAフレームワーク（React,Vue,Angularなど）で開発してください
 
-## サーバーサイド
-以下のどちらかを選択してください。
+## 言語/ライブラリ/アーキテクチャなどの選定理由
+最近流行っているのでサーバーサイドをGolangで、クライアントサイドかなり使われてる割に僕自身は使ったことのなかったのでreact.jsで実装しました。
 
-### 課題1
-1. [GitHubトレンド](https://github.com/trending)をリスト形式で表示できるサイトを作成してください
-2. リスト押下で詳細な情報が閲覧できる画面に遷移してください
-3. リストおよび詳細画面に表示する情報は自由に決めてください
+## こだわりポイント
+特にないです。
 
-### 課題2
-1. 任意のRSSフィードを登録し、リスト形式で表示できるサイトを作成してください
-2. リスト押下で詳細な情報が閲覧できる画面に遷移してください
-3. リストおよび詳細画面に表示する情報は自由に決めてください
-
-### 使用技術
-- HTMLをサーバーサイドレンダリングするアプリケーションとして実装してください
-- 開発言語/フレームワークに指定はありません
