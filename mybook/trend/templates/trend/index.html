@@ -1,0 +1,16 @@
+{% extends "trend/base.html" %}
+{% load static %}
+{% block extra_header %}
+
+{% endblock %}
+{% block title %}Index{% endblock %}
+{% block content %}
+    <h1>Trending</h1>
+<div class="trend-list">
+{% for trend in trend_list %}
+    <div class="trend-rep">
+        <a href="{% url 'trend:detail' trend.pk %}" title="{{ trend.des }}">{{ trend.rep }}</a>
+    </div>
+{% endfor %}
+</div>
+{% endblock %}

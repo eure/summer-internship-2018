@@ -10,5 +10,5 @@ def index(request):
 
 
 def detail(request, n):
-    trend = TrendSet.object.get(id=n)
+    trend = TrendSet.objects.get(id=n)
     return render(request, 'trend/detail.html', {'trend': trend})

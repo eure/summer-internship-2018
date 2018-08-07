@@ -1,0 +1,15 @@
+{% extends "trend/base.html" %}
+{% load static %}
+{% block extra_css %}
+{% endblock %}
+{% block title %}Detail: {{ trend.rep }}{% endblock %}
+{% block content %}
+    <h2>
+        <a href="https://github.com/{{ trend.rep }}">{{ trend.rep }}</a>
+    </h2>
+
+<h3>README.md</h3>
+<div class="detail_desc rounded">
+    <pre>{{ trend.des }}</pre>
+</div>
+{% endblock %}
