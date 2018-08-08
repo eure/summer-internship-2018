@@ -110,7 +110,7 @@ class Search_ViewController: UIViewController,UISearchBarDelegate,UITableViewDat
     func alert(_ error : String){                                                                    //エラー表示処理
         let ac = UIAlertController(title: "⚠️", message: error, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default))
-        present(ac,animated: true)
+        present(ac,animated: true)                                                                  
     }
 }
 
