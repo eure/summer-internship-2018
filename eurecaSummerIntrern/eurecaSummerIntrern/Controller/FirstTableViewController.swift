@@ -56,12 +56,16 @@ class FirstTableViewController: UITableViewController {
     
     func makeCell(indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "aaa")
-        self.tableView.rowHeight = 60.0
+//        self.tableView.rowHeight = 60.0
         cell.detailTextLabel?.text = "Event: " + array[indexPath.row].type
         cell.textLabel?.text = "Name: " + array[indexPath.row].name
-        cell.textLabel?.font = UIFont.systemFont(ofSize: 25)
-        cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 15)
-        cell.layer.borderWidth = 0.5
+//        cell.textLabel?.font = UIFont.systemFont(ofSize: 25)
+//        cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 15)
+//        cell.layer.borderWidth = 0.7
+//        let bottomBorder = CALayer()
+//        bottomBorder.frame = CGRect(x: 0, y: cell.frame.height, width:cell.frame.width, height:1.0)
+//        bottomBorder.backgroundColor = UIColor.lightGray.cgColor
+//        cell.layer.addSublayer(bottomBorder)
         return cell
     }
     
