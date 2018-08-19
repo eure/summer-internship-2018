@@ -1,0 +1,29 @@
+{{ define "index" }}
+<!DOCTYPE html>
+<html lang="{{ .Lang }}">
+<head>
+  <meta charset="{{ .Charset}}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{ .Title }} - {{ .SiteName }}</title>
+</head>
+<body>
+  <h1>{{ .Title }}</h1>
+  <ul>
+    {{ range .Data }}
+    <li>
+      <ul>
+        <li>{{ .Name }}</li>
+        <li>{{ .URL }}</li>
+        <li>{{ .Description }}</li>
+        <li>{{ .ProgramingLanguage }}</li>
+        <li>{{ .Star }}</li>
+        <li>{{ .Fork }}</li>
+        <li>{{ .StarToday }}</li>
+      </ul>
+    </li>
+    {{ end }}
+  </ul>
+</body>
+</html>
+{{ end }}
