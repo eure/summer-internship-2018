@@ -3,17 +3,16 @@ h1 {
   text-align: center;
 }
 .container {
-  max-width: 1200px;
+  max-width: 640px;
 }
 .entory {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  flex-wrap: wrap;
 }
 .entory-box {
   display: flex;
   flex-direction: column;
-  max-width: 535px;
   width: 100%;
   margin: 10px;
   padding: 10px;
