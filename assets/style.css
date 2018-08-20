@@ -1,0 +1,43 @@
+h1 {
+  font-size: 2.5em;
+  text-align: center;
+}
+.container {
+  max-width: 1200px;
+}
+.trend {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.trend-box {
+  display: flex;
+  flex-direction: column;
+  max-width: 980px;
+  width: 100%;
+  margin: 10px;
+  padding: 10px;
+}
+.trend-box-content {
+  flex: 1;
+  text-align: center;
+}
+.link {
+  font-size: .8rem;
+  color: #666;
+}
+.link:hover {
+  color: #666;
+}
+.social-info {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+.social-info li {
+  padding: 10px;
+}
+.back-top-page-link {
+  margin: 10px;
+  text-align: center;
+}

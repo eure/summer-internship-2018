@@ -1,8 +1,8 @@
 package main
 
 import (
-	"html/template"
 	"io"
+	"text/template"
 
 	"github.com/labstack/echo"
 )
@@ -45,7 +45,10 @@ func main() {
 	}
 	e.Renderer = template
 
+	e.Static("/static", "assets")
+
 	e.GET("/", trend)
+	e.GET("/:user/:repositoryName", repository)
 
 	e.Logger.Fatal(e.Start(":8000"))
 }

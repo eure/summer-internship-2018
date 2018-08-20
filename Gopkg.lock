@@ -42,6 +42,12 @@
 
 [[projects]]
   branch = "master"
+  name = "github.com/shurcooL/sanitized_anchor_name"
+  packages = ["."]
+  revision = "86672fcb3f950f35f2e675df2240550f2a50762f"
+
+[[projects]]
+  branch = "master"
   name = "github.com/valyala/bytebufferpool"
   packages = ["."]
   revision = "e746df99fe4a3986f4d4f79e13c1e0117ce9c2f7"
@@ -76,9 +82,15 @@
   packages = ["unix"]
   revision = "1c9583448a9c3aa0f9a6a5241bf73c0bd8aafded"
 
+[[projects]]
+  name = "gopkg.in/russross/blackfriday.v2"
+  packages = ["."]
+  revision = "cadec560ec52d93835bf2f15bd794700d3a2473b"
+  version = "v2.0.0"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "511ce4dc8ce92ce0c169a567c1b74a4552b974e4704d3cb407a27b31a7741e05"
+  inputs-digest = "31f4723cbeade68e36365558012ac2ad48b0ecabc028a2e93ad94d18070c2252"
   solver-name = "gps-cdcl"
   solver-version = 1
