@@ -41,6 +41,12 @@
   version = "v0.0.3"
 
 [[projects]]
+  name = "github.com/patrickmn/go-cache"
+  packages = ["."]
+  revision = "a3647f8e31d79543b2d0f0ae2fe5c379d72cedc0"
+  version = "v2.1.0"
+
+[[projects]]
   branch = "master"
   name = "github.com/shurcooL/sanitized_anchor_name"
   packages = ["."]
@@ -91,6 +97,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "31f4723cbeade68e36365558012ac2ad48b0ecabc028a2e93ad94d18070c2252"
+  inputs-digest = "8431635136968736eb51ee0bc18e664cdb87be56b855020a6f160b30b33df3ac"
   solver-name = "gps-cdcl"
   solver-version = 1

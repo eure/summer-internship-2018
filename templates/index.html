@@ -60,7 +60,7 @@
       {{ range .Data }}
       <div class="trend-box" style="border: solid 8px {{ .Color }};border-radius: 4px;">
         <div class="trend-box-content">
-          <h3><a href="/{{ .FullName }}" style="color: {{ .Color }};">{{ .FullName }}</a></h3>
+          <h2><a href="/repo/{{ .FullName }}" style="color: {{ .Color }};">{{ .FullName }}</a></h2>
           <p>{{ .Description }}</p>
           <a class="link" href="{{ .URL }}">{{ .URL }}</a>
         </div>
