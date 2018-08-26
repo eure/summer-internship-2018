@@ -1,0 +1,37 @@
+﻿@{
+	ViewBag.Title = "GitHub Trends List";
+}
+
+<div class="jumbotron">
+	<h1>GitHub Trend List</h1>
+</div>
+<div>
+	<ul>
+		@foreach (EurekaGit.Models.Repository repo in ViewBag.Trends)
+		{
+			<li class="my-block">
+				<div>
+					<h3>
+						@Html.ActionLink($"{repo.Owner} / {repo.Name}", "Index", "Details", new { owner = repo.Owner, name = repo.Name }, new { @class = "btn btn-primary btn-lg" })
+					</h3>
+				</div>
+				<div>
+					<p>@repo.Description</p>
+				</div>
+				<div>
+					<span class="lang-circle" style="background-color:@(repo.Language?.Color ?? "black");"></span>
+					@(repo.Language?.Name ?? "Unknown"),
+					Star: @repo.TotalStars (@repo.StarsToday today),
+					Forked: @repo.ForkedCount.
+				</div>
+				<div>
+					Built by
+					@foreach (var contr in repo.Contributors)
+					{
+						<a href="https://github.com/@contr" class="btn btn-default btn-user">@contr</a>
+					}
+				</div>
+			</li>
+		}
+	</ul>
+</div>

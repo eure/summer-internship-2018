@@ -1,0 +1,33 @@
+﻿@{
+	ViewBag.Title = "Index";
+}
+<div class="jumbotron">
+	<h1>Details of @ViewBag.Owner / @ViewBag.Name</h1>
+</div>
+<div class="my-block">
+		<h2>
+			<p>@ViewBag.Repository.Description</p>
+		</h2>
+		<div>
+			<p>
+				<span class="lang-circle" style="background-color:@(ViewBag.Repository.Language?.Color ?? "black");"></span>
+				@(ViewBag.Repository.Language?.Name ?? "Unknown")
+			</p>
+			<p class="info">
+				Star: @ViewBag.Repository.TotalStars (@ViewBag.Repository.StarsToday today)
+			</p>
+			<p class="info">
+				Forked: @ViewBag.Repository.ForkedCount
+			</p>
+		</div>
+		<div>
+			Built by
+			@foreach (var contr in ViewBag.Repository.Contributors)
+			{
+				<a href="https://github.com/@contr" class="btn btn-default btn-user">@contr</a>
+			}
+		</div>
+		<div class="d-git">
+			<a href="https://github.com/@ViewBag.Owner/@ViewBag.Name" class="btn btn-primary btn-lg btn-git">See @ViewBag.Owner / @ViewBag.Name in GitHub</a>
+		</div>
+</div>
